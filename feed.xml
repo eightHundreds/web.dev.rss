@@ -11,7 +11,10 @@
             <title><![CDATA[七月网络平台新功能]]></title>
             <link>https://web.dev/web-platform-07-2023/</link>
             <guid>https://web.dev/web-platform-07-2023/</guid>
-            <content:encoded><![CDATA[<h2 id="stable-browser-releases">稳定的浏览器版本<a class="headline-link" href="https://web.dev/web-platform-07-2023/#stable-browser-releases">#</a></h2>
+            <content:encoded><![CDATA[<div>
+    <h1>GPT总结</h1>
+    <summary>这篇文章讨论了2023年7月火狐115和铬115版本的稳定性对网络平台的意义。其中提到了火狐115和铬115版本的一些新功能和改进，如CSS的多个值展示属性、滚动驱动的动画、隐私沙箱API、CSS动画合成属性和数组方法。此外，文章还提到了火狐116和铬116的测试版浏览器发布，介绍了它们的一些亮点功能，如音频输出设备API和CSS运动路径。总体而言，这些稳定版本和测试版的浏览器带来了许多出色的功能和改进，对于网络平台的发展具有重要意义。</summary>
+    <div></div></div><h2 id="stable-browser-releases">稳定的浏览器版本<a class="headline-link" href="https://web.dev/web-platform-07-2023/#stable-browser-releases">#</a></h2>
 <p>2023年7月<a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/115" rel="noopener">火狐115</a> 和<a href="https://developer.chrome.com/blog/new-in-chrome-115/" rel="noopener">铬115</a> 变得稳定。这篇文章探讨了这对网络平台意味着什么。</p>
 <aside class="aside flow bg-state-bad-bg color-state-bad-text"><p class="cluster color-state-bad-text"><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Error sign">   <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-10v6h2V7h-2z"></path> </svg></span><strong>警告</strong></p><div class=" flow"> 我们在这些帖子中包含从 MDN 中提取的浏览器兼容性数据，这些数据对于最新的浏览器版本可能尚未更新。该帖子一旦出现在帖子中，就会显示正确的信息<a href="https://github.com/mdn/browser-compat-data/releases">浏览器兼容数据发布</a>。</div></aside>
 <h3 id="multiple-values-for-the-css-display-property">CSS 的多个值<code>展示</code> 财产<a class="headline-link" href="https://web.dev/web-platform-07-2023/#multiple-values-for-the-css-display-property">#</a></h3>
