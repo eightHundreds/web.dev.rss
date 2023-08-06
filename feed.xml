@@ -13,7 +13,19 @@
             <guid>https://web.dev/web-platform-07-2023/</guid>
             <content:encoded><![CDATA[<div>
     <h1>GPT总结</h1>
-    <summary>这篇文章讨论了2023年7月火狐115和铬115版本的稳定性对网络平台的意义。其中提到了火狐115和铬115版本的一些新功能和改进，如CSS的多个值展示属性、滚动驱动的动画、隐私沙箱API、CSS动画合成属性和数组方法。此外，文章还提到了火狐116和铬116的测试版浏览器发布，介绍了它们的一些亮点功能，如音频输出设备API和CSS运动路径。总体而言，这些稳定版本和测试版的浏览器带来了许多出色的功能和改进，对于网络平台的发展具有重要意义。</summary>
+    <summary>2023年7月，Firefox 115和Chrome 115发布了稳定版本。这篇文章介绍了这对于Web平台意味着什么。
+
+Chrome 115中包含了CSS display属性的多个值。这意味着display: flex变成了display: block flex，display: block变成了display: block flow。单个值作为传统关键字保留，这些值现在在三个主要引擎中都可用。
+
+Chrome 115还引入了ScrollTimeline和ViewTimeline扩展，用于Web动画规范。这使得可以通过CSS和JavaScript实现滚动驱动的动画。
+
+Chrome 115还支持Privacy Sandbox的相关性和测量API。这包括Topics、Protected Audience、Attribution Reporting、Private Aggregation、Shared Storage和Fenced Frames API。
+
+Firefox 115支持CSS animation-composition属性，使得animation-composition在所有三个主要引擎中都得到支持。
+
+Firefox 115还引入了一组Array和TypedArray的方法，包括Array.toReversed()、Array.toSorted()、Array.toSpliced()、Array.with()、TypedArrays.toReversed()、TypedArrays.toSorted()和TypedArrays.with()。
+
+Beta版本的浏览器提供了下一个稳定版本的预览。Firefox 116和Chrome 116的新beta版本带来了许多优秀的功能。其中，Firefox 116在除Android外的所有平台上支持Audio Output Devices API，允许Web应用将音频输出重定向到允许的蓝牙耳机、扬声器或其他设</summary>
     <div></div></div><h2 id="stable-browser-releases">稳定的浏览器版本<a class="headline-link" href="https://web.dev/web-platform-07-2023/#stable-browser-releases">#</a></h2>
 <p>2023年7月<a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/115" rel="noopener">火狐115</a> 和<a href="https://developer.chrome.com/blog/new-in-chrome-115/" rel="noopener">铬115</a> 变得稳定。这篇文章探讨了这对网络平台意味着什么。</p>
 <aside class="aside flow bg-state-bad-bg color-state-bad-text"><p class="cluster color-state-bad-text"><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Error sign">   <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-10v6h2V7h-2z"></path> </svg></span><strong>警告</strong></p><div class=" flow"> 我们在这些帖子中包含从 MDN 中提取的浏览器兼容性数据，这些数据对于最新的浏览器版本可能尚未更新。该帖子一旦出现在帖子中，就会显示正确的信息<a href="https://github.com/mdn/browser-compat-data/releases">浏览器兼容数据发布</a>。</div></aside>
@@ -164,6 +176,156 @@
 <p>Chrome 116 包含 CSS 运动路径，允许任何图形对象沿着开发人员指定的路径进行动画处理。这允许许多强大的新变换可能性，例如使用极坐标定位（使用<code>射线（）</code> 函数）而不是使用的标准直角坐标<code>翻译（）</code> 函数，或者沿着定义的路径对元素进行动画处理。这使得定义复杂而美丽的二维空间过渡变得更加容易。路径可以指定为<code>圆圈（）</code>,<code>椭圆（）</code>,<code>矩形（）</code>,<code>插图（）</code>,<code>xywh()</code>,<code>多边形（）</code>,<code>射线（）</code> 和<code>网址（）</code>。</p>
 <p>Chrome 116 中还有<a href="https://developer.chrome.com/docs/web-platform/document-picture-in-picture/" rel="noopener">文档画中画 API</a>。这使得可以使用任意 HTMLElement 填充始终位于顶部的窗口。这是对现有 HTMLVideoElement API 的扩展，仅允许将 HTMLVideoElement 放入画中画 (PiP) 窗口中。</p>
 <p><em>拍摄者<a href="https://unsplash.com/@ninjason" rel="noopener">梁杰森</a>。</em></p>
+<hr><h2 id="stable-browser-releases">Stable browser releases <a class="headline-link" href="https://web.dev/web-platform-07-2023/#stable-browser-releases">#</a></h2>
+<p>In July 2023 <a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/115" rel="noopener">Firefox 115</a> and <a href="https://developer.chrome.com/blog/new-in-chrome-115/" rel="noopener">Chrome 115</a> became stable. This post takes a look at what that means for the web platform.</p>
+<aside class="aside flow bg-state-bad-bg color-state-bad-text"><p class="cluster color-state-bad-text"><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Error sign">   <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-10v6h2V7h-2z"></path> </svg></span><strong>Caution</strong></p><div class=" flow"> We include browser compatibility data pulled from MDN in these posts which may not have been updated yet for very recent browser releases. The post will show the correct information as soon as it appears in the <a href="https://github.com/mdn/browser-compat-data/releases">browser-compat-data release</a>. </div></aside>
+<h3 id="multiple-values-for-the-css-display-property">Multiple values for the CSS <code>display</code> property <a class="headline-link" href="https://web.dev/web-platform-07-2023/#multiple-values-for-the-css-display-property">#</a></h3>
+<p>Chrome 115 includes multiple values for the CSS <code>display</code> property. This means that <code>display: flex</code> becomes <code>display: block flex</code> and <code>display: block</code> becomes <code>display: block flow</code>. The single values are maintained as legacy keywords, these values are now available in the three major engines.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox 70, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+70
+</span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari 15, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+15
+</span>
+</li><p></p>
+  </ul>
+</div>
+<h3 id="scroll-driven-animations">Scroll-driven animations <a class="headline-link" href="https://web.dev/web-platform-07-2023/#scroll-driven-animations">#</a></h3>
+<p>Also in Chrome 115 are the <code>ScrollTimeline</code> and <code>ViewTimeline</code> extensions to the Web Animations specification. These enable <a href="https://developer.chrome.com/articles/scroll-driven-animations/" rel="noopener">scroll-driven animations</a> via CSS and JavaScript.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<h3 id="privacy-sandbox-apis">Privacy Sandbox APIs <a class="headline-link" href="https://web.dev/web-platform-07-2023/#privacy-sandbox-apis">#</a></h3>
+<p>The Privacy Sandbox <a href="https://developer.chrome.com/blog/privacy-sandbox-launch/" rel="noopener">relevance and measurement APIs</a> shipped in Chrome 115. This includes the Topics, Protected Audience, Attribution Reporting, Private Aggregation, Shared Storage, and Fenced Frames APIs.</p>
+<p>To understand more about these APIs check out the <a href="https://developer.chrome.com/blog/privacy-sandbox-demos/" rel="noopener">Privacy Sandbox demos</a>.</p>
+<h3 id="the-animation-composition-property">The <code>animation-composition</code> property <a class="headline-link" href="https://web.dev/web-platform-07-2023/#the-animation-composition-property">#</a></h3>
+<p>Firefox 115 supports the CSS <a href="https://developer.mozilla.org/docs/Web/CSS/animation-composition" rel="noopener"><code>animation-composition</code></a> property. Making <code>animation-composition</code> supported in all three major engines. Learn more in the article <a href="https://developer.chrome.com/articles/css-animation-composition/" rel="noopener">Specify how multiple animation effects should composite with animation-composition</a>.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome 112, Supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      112
+    </span>
+    </li><li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="firefox">
+      <span class="visually-hidden">Firefox 104, Behind a flag</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="flag" title="Behind a flag" aria-label="Behind a flag">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge 112, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+112
+</span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari 16, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+16
+</span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/animation-composition#browser_compatibility" target="_blank">Source</a>
+</div>
+<h3 id="array-methods">Array methods <a class="headline-link" href="https://web.dev/web-platform-07-2023/#array-methods">#</a></h3>
+<p>Also reaching interoperability with Firefox 115 are a set of methods for <code>Array</code> and <code>TypedArray</code>.  <code>Array.toReversed()</code>, <code>Array.toSorted()</code>, <code>Array.toSpliced()</code>, <code>Array.with()</code>, <code>TypedArrays.toReversed()</code>, <code>TypedArrays.toSorted()</code>, and <code>TypedArrays.with()</code> return a new array with elements that have been shallow copied.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome 110, Supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      110
+    </span>
+    </li><li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="firefox">
+      <span class="visually-hidden">Firefox, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge 110, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+110
+</span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari 16, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+16
+</span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed#browser_compatibility" target="_blank">Source</a>
+</div>
+<h2 id="beta-browser-releases">Beta browser releases <a class="headline-link" href="https://web.dev/web-platform-07-2023/#beta-browser-releases">#</a></h2>
+<p>Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release. New betas are <a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/116" rel="noopener">Firefox 116</a> and <a href="https://developer.chrome.com/blog/chrome-116-beta/" rel="noopener">Chrome 116</a>. The <a href="https://developer.apple.com/documentation/safari-release-notes/safari-16_6-release-notes" rel="noopener">Safari 17</a>  and <a href="https://developer.apple.com/documentation/safari-release-notes/safari-16_6-release-notes" rel="noopener">Safari 16.6</a> betas are still ongoing. These releases bring many great features to the platform. Check out the release notes for all of the details, here are just a few highlights.</p>
+<p>Firefox 116 supports the <a href="https://developer.mozilla.org/docs/Web/API/Audio_Output_Devices_API" rel="noopener">Audio Output Devices API</a> on all platforms except for Android. This API allows web applications to redirect audio output to a permitted Bluetooth headset, speakerphone, or other device, instead of having to use the browser or underlying OS default.</p>
+<p>Chrome 116 includes CSS Motion Path allowing any graphical object to be animated it along a path specified by the developer. This allows a number of powerful new transform possibilities, such as positioning using polar coordinates (with the <code>ray()</code> function) rather than the standard rectangular coordinates used by the <code>translate()</code> function, or animating an element along a defined path. This makes it easier to define complex and beautiful 2d spatial transitions. A path can be specified as <code>circle()</code>, <code>ellipse()</code>, <code>rect()</code>, <code>inset()</code>, <code>xywh()</code>, <code>polygon()</code>, <code>ray()</code> and <code>url()</code>.</p>
+<p>Also in Chrome 116 is the <a href="https://developer.chrome.com/docs/web-platform/document-picture-in-picture/" rel="noopener">Document Picture-in-Picture API</a>. This enables an always-on-top window that can be populated with arbitrary HTMLElements. This is an expansion upon the existing HTMLVideoElement API that only allows for an HTMLVideoElement to be put into a Picture-in-Picture (PiP) window.</p>
+<p><em>Photo by <a href="https://unsplash.com/@ninjason" rel="noopener">Jason Leung</a>.</em></p>
 ]]></content:encoded>
         </item>
     </channel>
