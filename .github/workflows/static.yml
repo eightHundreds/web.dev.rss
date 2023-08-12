@@ -63,6 +63,7 @@ jobs:
           git config user.name "eightHundreds"
           git config user.email "mingoing@outlook.com"
           git commit -m "update feed.xml"
+          git push
 
   # Single deploy job since we're just deploying
   deploy:
