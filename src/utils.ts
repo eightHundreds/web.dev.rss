@@ -6,10 +6,10 @@ const endpointDetect = "https://translation.googleapis.com/language/translate/v2
 
 const API_KEYS = {
   googleApiKey: process.env.googleApiKey!,
-  azureOpenAIApiKey: process.env.azureOpenAIApiKey!,
-  azureOpenAIApiInstanceName: process.env.azureOpenAIApiInstanceName!,
-  azureOpenAIApiDeploymentName: process.env.azureOpenAIApiDeploymentName!,
-  azureOpenAIApiVersion: process.env.azureOpenAIApiVersion!,
+  azureOpenAIApiKey: process.env.AZUREOPENAIAPIKEY!,
+  azureOpenAIApiInstanceName: process.env.AZUREOPENAIAPIINSTANCENAME!,
+  azureOpenAIApiDeploymentName: process.env.AZUREOPENAIAPIDEPLOYMENTNAME!,
+  azureOpenAIApiVersion: process.env.AZUREOPENAIAPIVERSION!,
 };
 export function formParams(params: any) {
   const esc = encodeURIComponent;
