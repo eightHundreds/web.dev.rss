@@ -45,7 +45,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run
-        run: ts-node-dev src/index.ts
+        run: npx ts-node-dev src/index.ts
       - name: commit
         run: |
           git add .
