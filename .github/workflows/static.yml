@@ -31,8 +31,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     steps:
-      - name: test
-        run: env
       - name: Checkout
         uses: actions/checkout@v2
       - name: 设置pnpm
@@ -49,6 +47,11 @@ jobs:
         run: pnpm install
       - name: Run
         run: npx ts-node src/index.ts
+        env:
+          AZUREOPENAIAPIKEY: ${{ secrets.AZUREOPENAIAPIKEY }}
+          AZUREOPENAIAPIINSTANCENAME: ${{ secrets.AZUREOPENAIAPIINSTANCENAME }}
+          AZUREOPENAIAPIVERSION: ${{ secrets.AZUREOPENAIAPIVERSION }}
+          AZUREOPENAIAPIDEPLOYMENTNAME: ${{ secrets.AZUREOPENAIAPIDEPLOYMENTNAME }}
       - name: commit
         run: |
           git add .
