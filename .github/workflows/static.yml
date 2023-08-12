@@ -31,6 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     steps:
+      - name: test
+        run: env
       - name: Checkout
         uses: actions/checkout@v2
       - name: 设置pnpm
