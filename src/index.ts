@@ -30,7 +30,10 @@ const main = async () => {
     const exist = translatedWebDevFeed.items.find((i) => i.guid === item.id);
     if (exist) {
       // @ts-ignore
-      feed.addItem(exist);
+      feed.addItem({
+        ...exist,
+        content: exist["content:encoded"],
+      });
       console.log("进度", index, "/", webDevFeed.items.length);
       continue;
     }
