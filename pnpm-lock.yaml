@@ -14,6 +14,7 @@ specifiers:
   openai: ^3.3.0
   qs: ^6.11.2
   rss-parser: ^3.13.0
+  ts-node: ^10.9.1
   ts-node-dev: ^2.0.0
   tslib: ^2.6.1
   typescript: ^5.1.6
@@ -35,6 +36,7 @@ dependencies:
 devDependencies:
   '@translate-tools/core': 1.0.0
   feed: 4.2.2
+  ts-node: 10.9.1_typescript@5.1.6
   ts-node-dev: 2.0.0_typescript@5.1.6
   typescript: 5.1.6
 
