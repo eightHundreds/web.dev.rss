@@ -29,6 +29,7 @@ jobs:
   # 初始化项目并执行src/index.ts
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -45,7 +46,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run
-        run: npx ts-node-dev src/index.ts
+        run: npx ts-node src/index.ts
       - name: commit
         run: |
           git add .
