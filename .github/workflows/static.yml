@@ -32,10 +32,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node.js and pnpm
-        uses: actions/setup-node@v2
+      - name: 设置pnpm
+        uses: pnpm/action-setup@v2
         with:
-          node-version: "14"
+          version: 7
+          run_install: false
+      - name: 设置Nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
@@ -55,6 +60,7 @@ jobs:
 
   # Single deploy job since we're just deploying
   deploy:
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
