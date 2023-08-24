@@ -4,9 +4,333 @@
         <title>web.dev</title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Wed, 16 Aug 2023 12:40:28 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 23 Aug 2023 11:10:30 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[测试或不测试，技术角度]]></title>
+            <link>https://web.dev/ta-what-to-test/</link>
+            <guid>https://web.dev/ta-what-to-test/</guid>
+            <content:encoded><![CDATA[<div>
+    <h1>GPT总结</h1>
+    <summary>这篇文章深入探讨了从技术角度创建测试用例的细节，详细说明了每个测试应该包含什么，以及应该避免什么。从根本上说，你将了解到关于“什么需要测试”或“什么不需要测试”的古老问题的答案。
+
+总体指导原则和模式 #
+值得注意的是，无论是进行单元测试、集成测试还是端到端测试，都需要遵循特定的模式和原则。这些原则可以应用于两种类型的测试，因此它们是一个很好的起点。
+保持简单 #
+在编写测试时，最重要的一点是保持简单。要考虑到大脑的容量。主要的生产代码占据了很大的空间，留下很少的空间来容纳额外的复杂性。这对于测试来说尤其如此。
+如果可用的头脑空间较少，你可能会在测试工作中变得更加放松。这就是为什么在测试中优先考虑简单性非常重要。事实上，Yoni Goldberg的JavaScript测试最佳实践强调了黄金法则的重要性——你的测试应该像一个助手，而不是一个复杂的数学公式。换句话说，你应该能够在第一眼就理解你的测试的意图。
+
+无论测试的复杂性如</summary>
+    <div>
+    <div>OriginTitle: To test or not to test, a technical perspective</div>
+
+    </div></div><p>这<a href="https://web.dev/ta-types/">上一篇文章</a>涵盖了测试用例的基础知识及其应包含的内容。 本文从技术角度深入探讨了测试用例的创建，详细说明了每个测试中应该包含哪些内容以及应该避免哪些内容。 本质上，您将了解“测试什么”或“不测试什么”这些古老问题的答案。</p>
+<img alt="What to test or not to test." decoding="async" height="450" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format" srcset="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=1600 1600w" width="800">
+<h2 id="general-guidelines-and-patterns">一般准则和模式<a class="headline-link" href="https://web.dev/ta-what-to-test/#general-guidelines-and-patterns">#</a></h2>
+<p>值得注意的是，无论您是进行单元测试、集成测试还是端到端测试，特定的模式和点都至关重要。 这些原则可以而且应该适用于这两种类型的测试，因此它们是一个很好的起点。</p>
+<h3 id="keep-it-simple">把事情简单化<a class="headline-link" href="https://web.dev/ta-what-to-test/#keep-it-simple">#</a></h3>
+<p>在编写测试时，要记住的最重要的事情之一就是保持简单。 考虑大脑的能力很重要。 主要生产代码占用了大量空间，几乎没有留下额外复杂性的空间。 对于测试来说尤其如此。</p>
+<p>如果可用的顶部空间较少，您的测试工作可能会变得更加轻松。 这就是为什么在测试中优先考虑简单性至关重要。 事实上，尤尼·戈德堡<a href="https://github.com/goldbergyoni/javascript-testing-best-practices#%EF%B8%8F-0-the-golden-rule-design-for-lean-testing" rel="noopener">JavaScript 测试最佳实践</a>强调黄金法则的重要性——你的测试应该像一个助手，而不是一个复杂的数学公式。 换句话说，您应该能够第一眼就理解您的测试的意图。</p>
+<img alt="Don't make tests complex, they shouldn't feel this way." decoding="async" height="450" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format" srcset="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=1600 1600w" width="800">
+<p>您应该以所有类型的测试的简单性为目标，无论其复杂程度如何。 事实上，测试越复杂，简化它就越重要。 实现这一目标的一种方法是通过扁平测试设计，其中测试尽可能简单，并且仅测试必要的内容。 这意味着每个测试应该只包含一个测试用例，并且该测试用例应该专注于测试单个特定的功能或特性。</p>
+<p>从这个角度思考：在阅读失败的测试时应该很容易识别出了什么问题。 这就是为什么保持测试简单且易于理解很重要。 这样做可以让您在出现问题时快速识别并解决问题。</p>
+<h3 id="test-whats-worth-it">测试一下什么是值得的<a class="headline-link" href="https://web.dev/ta-what-to-test/#test-whats-worth-it">#</a></h3>
+<p>扁平测试设计还可以鼓励集中注意力并有助于确保您的测试有意义。 请记住，您不想仅仅为了覆盖范围而创建测试 - 它们应该始终有一个目的。</p>
+<img alt="Don't test all the things." decoding="async" height="450" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format" srcset="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=1600 1600w" width="800">
+<aside class="aside flow bg-state-info-bg color-state-info-text"><div class=" flow">在我们的<a href="https://web.dev/ta-types/">上一篇文章</a>，我们讨论了在确定测试工作优先级时要记住的三个关键点。 这三个优先事项可以帮助您决定是否应将相关案例包含在您的测试中。</div></aside>
+<h3 id="dont-test-implementation-details">不要测试实现细节<a class="headline-link" href="https://web.dev/ta-what-to-test/#dont-test-implementation-details">#</a></h3>
+<p>测试中的一个常见问题是测试通常旨在测试实现细节，例如在组件中使用选择器或端到端测试。 实现细节是指代码的用户通常不会使用、看到甚至不知道的事情。 这可能导致测试中的两个主要问题：假阴性和假阳性。</p>
+<p>当测试失败时，即使测试的代码是正确的，也会出现漏报。 当由于应用程序代码重构而导致实现细节发生变化时，就会发生这种情况。 另一方面，当测试通过时，即使正在测试的代码不正确，也会出现误报。</p>
+<p>此问题的一种解决方案是考虑您拥有的不同类型的用户。 最终用户和开发人员的方法可能不同，他们与代码的交互也可能不同。 在规划测试时，必须考虑用户将看到什么或与之交互，并使测试依赖于这些东西而不是实现细节。</p>
+<p>例如，选择不易更改的选择器可以使测试更加可靠：数据属性而不是 CSS 选择器。 欲了解更多详情，请参阅<a href="https://kentcdodds.com/blog/testing-implementation-details" rel="noopener">肯特·C·多兹的文章</a>关于这个主题，或者继续关注——稍后将有一篇关于这个主题的文章。</p>
+<aside class="aside flow bg-state-info-bg color-state-info-text"><div class=" flow">相反，如果您编写得很好，这也会对您的源代码结构产生积极的影响，例如，当您考虑代码的可测试性时。</div></aside>
+<h3 id="mocking-dont-lose-control">嘲笑：不要失去控制<a class="headline-link" href="https://web.dev/ta-what-to-test/#mocking-dont-lose-control">#</a></h3>
+<p>模拟是一个广泛的概念，用于单元测试，有时也用于集成测试。 它涉及创建虚假数据或组件来模拟对应用程序具有完全控制权的依赖关系。 这允许进行隔离测试。</p>
+<p>在测试中使用模拟可以提高可预测性、关注点分离和性能。 而且，如果您需要进行需要人工参与的测试（例如护照验证），则必须使用模拟来隐藏它。 出于所有这些原因，模拟是一个值得考虑的有价值的工具。</p>
+<p>同时，模拟可能会影响测试的准确性，因为它们是模拟，而不是真实的用户体验。 因此，在使用模拟和存根时需要小心。</p>
+<h4 id="should-you-mock-in-end-to-end-tests">你应该在端到端测试中进行模拟吗？<a class="headline-link" href="https://web.dev/ta-what-to-test/#should-you-mock-in-end-to-end-tests">#</a></h4>
+<p>一般来说，没有。 然而，嘲笑有时可以成为救星——所以我们不能完全排除它。</p>
+<p>想象一下这样的场景：您正在为涉及第三方支付提供商服务的功能编写测试。 您处于他们提供的沙箱环境中，这意味着没有发生真正的交易。 不幸的是，沙箱出现故障，从而导致您的测试失败。 修复需要由支付提供商完成。 您所能做的就是等待提供商解决问题。</p>
+<p>在这种情况下，减少对您无法控制的服务的依赖可能会更有利。 
+ 仍然建议在集成或端到端测试中谨慎使用模拟，因为它会降低测试的置信度。</p>
+<h2 id="test-specifics-dos-and-donts">测试细节：注意事项<a class="headline-link" href="https://web.dev/ta-what-to-test/#test-specifics-dos-and-donts">#</a></h2>
+<p>那么，总而言之，测试包含哪些内容？ 测试类型之间是否存在差异？ 让我们仔细看看针对主要测试类型量身定制的一些具体方面。</p>
+<h3 id="what-belongs-to-a-good-unit-test">什么属于好的单元测试？<a class="headline-link" href="https://web.dev/ta-what-to-test/#what-belongs-to-a-good-unit-test">#</a></h3>
+<p>理想且有效的单元测试应该：</p>
+<ul>
+<li>专注于具体方面。</li>
+<li>独立经营。</li>
+<li>涵盖小规模场景。</li>
+<li>使用描述性名称。</li>
+<li>如果适用，请遵循 AAA 模式。</li>
+<li>保证全面的测试覆盖率。</li>
+</ul>
+<div class="table-wrapper scrollbar">
+<table>
+<thead>
+<tr>
+<th>做 ✅</th>
+<th>不要❌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>保持测试尽可能小。 每个测试用例测试一件事。</td>
+<td>对大型单元编写测试。</td>
+</tr>
+<tr>
+<td>始终保持测试隔离并模拟您单元之外所需的东西。</td>
+<td>包括其他组件或服务。</td>
+</tr>
+<tr>
+<td>保持测试独立。</td>
+<td>依赖以前的测试或共享测试数据。</td>
+</tr>
+<tr>
+<td>覆盖<a href="https://web.dev/ta-test-cases/#test-paths-typical-kinds-of-test-cases">不同的场景和路径</a>。</td>
+<td>将自己限制在最大的快乐路径或负面测试中。</td>
+</tr>
+<tr>
+<td>使用描述性测试标题，以便您可以立即了解测试的内容。</td>
+<td>仅通过函数名称进行测试，因此描述性不够：<code>测试构建Foo()</code>或者<code>测试获取Id()</code>。</td>
+</tr>
+<tr>
+<td>以良好的代码覆盖率或更广泛的测试用例为目标，尤其是在这个阶段。</td>
+<td>从每个类一直到数据库 (I/O) 级别进行测试。</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="what-belongs-to-a-good-integration-test">什么属于好的集成测试？<a class="headline-link" href="https://web.dev/ta-what-to-test/#what-belongs-to-a-good-integration-test">#</a></h3>
+<p>理想的集成测试也与单元测试共享一些标准。 但是，您还需要考虑其他几点。 一个好的集成测试应该：</p>
+<ul>
+<li>模拟组件之间的交互。</li>
+<li>涵盖现实世界的场景，并使用模拟或存根。</li>
+<li>考虑性能。</li>
+</ul>
+<div class="table-wrapper scrollbar">
+<table>
+<thead>
+<tr>
+<th>做 ✅</th>
+<th>不要❌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>测试集成点：验证每个单元在相互集成时是否能够正常工作。</td>
+<td>单独测试每个单元——这就是单元测试的目的。</td>
+</tr>
+<tr>
+<td>测试真实场景：使用源自真实数据的测试数据。</td>
+<td>使用重复的自动生成的测试数据或其他不反映真实用例的数据。</td>
+</tr>
+<tr>
+<td>使用模拟和存根作为外部依赖项来保持对完整测试的控制。</td>
+<td>创建对第三方服务的依赖关系，例如对外部服务的网络请求。</td>
+</tr>
+<tr>
+<td>每次测试之前和之后进行清理程序。</td>
+<td>忘记在测试中使用清理措施，否则由于缺乏适当的测试隔离，可能会导致测试失败或误报。</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="what-belongs-to-a-good-end-to-end-test">什么属于良好的端到端测试？<a class="headline-link" href="https://web.dev/ta-what-to-test/#what-belongs-to-a-good-end-to-end-test">#</a></h3>
+<p>全面的端到端测试应该：</p>
+<ul>
+<li>复制用户交互。</li>
+<li>涵盖重要场景。</li>
+<li>跨越多个层。</li>
+<li>管理异步操作。</li>
+<li>验证结果。</li>
+<li>考虑绩效。</li>
+</ul>
+<div class="table-wrapper scrollbar">
+<table>
+<thead>
+<tr>
+<th>做 ✅</th>
+<th>不要❌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>使用 API 驱动的快捷方式。<a href="https://docs.cypress.io/guides/references/best-practices#Organizing-Tests-Logging-In-Controlling-State" rel="noopener">了解更多</a>。</td>
+<td>对每个步骤使用 UI 交互，包括<code>在每个之前</code>钩。</td>
+</tr>
+<tr>
+<td>每次测试前进行清理程序。 与单元测试和集成测试相比，要更加注意测试隔离，因为这里出现副作用的风险更高。</td>
+<td>每次测试后忘记清理。 如果不清理剩余的状态、数据或副作用，它们将影响稍后执行的其他测试。</td>
+</tr>
+<tr>
+<td>将端到端测试视为系统测试。 这意味着您需要测试整个应用程序堆栈。</td>
+<td>单独测试每个单元——这就是单元测试的目的。</td>
+</tr>
+<tr>
+<td>在测试中使用最少的模拟或不使用模拟。 如果您想模拟外部依赖项，请仔细考虑。</td>
+<td>严重依赖模拟。</td>
+</tr>
+<tr>
+<td>考虑性能和工作负载，例如，不要在同一测试中过度测试大型场景。</td>
+<td>无需使用快捷方式即可覆盖大型工作流程。</td>
+</tr>
+</tbody>
+</table>
+</div><aside class="aside flow bg-state-info-bg color-state-info-text"><div class=" flow">这篇博文由 Ramona 撰写，并接受了以下人士的意见和评论<a href="https://web.dev/authors/jecelynyeen/">叶洁琳</a>（<a href="https://twitter.com/jecfish">推特</a>),<a href="https://www.linkedin.com/in/michael-hablich-2128646/">迈克尔·哈布里奇</a>（<a href="https://twitter.com/MHablich">推特</a>),<a href="https://web.dev/authors/rachelandrew/">雷切尔·安德鲁</a>， 和<a href="https://www.linkedin.com/in/sofia-yemelianova/">索菲亚·艾米利亚诺娃</a>。</div></aside>
+<hr><p>The <a href="https://web.dev/ta-types/">previous article</a> covered the basics of test cases and what they should contain. This article delves deeper into the creation of test cases from a technical perspective, detailing what should be included in each test and what to avoid. Essentially, you'll learn the answer to the age-old questions of "What to test" or "What not to test".</p>
+<img alt="What to test or not to test." decoding="async" height="450" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format" srcset="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/lwKU8pzIWPZiDg8ss7ad.jpeg?auto=format&amp;w=1600 1600w" width="800">
+<h2 id="general-guidelines-and-patterns">General guidelines and patterns <a class="headline-link" href="https://web.dev/ta-what-to-test/#general-guidelines-and-patterns">#</a></h2>
+<p>It's worth noting that specific patterns and points are crucial, regardless of whether you're conducting unit, integration, or end-to-end tests. These principles can and should be applied to both types of testing, so they are a good place to start.</p>
+<h3 id="keep-it-simple">Keep it simple <a class="headline-link" href="https://web.dev/ta-what-to-test/#keep-it-simple">#</a></h3>
+<p>When it comes to writing tests, one of the most important things to remember is to keep it simple. It's important to consider the brain's capacity. The main production code takes up significant space, leaving little room for additional complexity. This is especially true for testing.</p>
+<p>If there's less headspace available, you may become more relaxed in your testing efforts. That's why it's crucial to prioritize simplicity in testing. In fact, Yoni Goldberg's <a href="https://github.com/goldbergyoni/javascript-testing-best-practices#%EF%B8%8F-0-the-golden-rule-design-for-lean-testing" rel="noopener">JavaScript testing best practices</a> emphasize the importance of the Golden Rule—your test should feel like an assistant and not like a complex mathematical formula. In other words, you should be able to understand your test's intent at first glance.</p>
+<img alt="Don't make tests complex, they shouldn't feel this way." decoding="async" height="450" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format" srcset="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/3r1qa9Ai1EMhb47Yiuuq.jpeg?auto=format&amp;w=1600 1600w" width="800">
+<p>You should aim for simplicity in all types of tests, regardless of their complexity. In fact, the more complex a test is, the more critical it is to simplify it. One way to achieve this is through a flat test design, where tests are kept as simple as possible, and to only test what is necessary. This means each test should contain only one test case, and the test case should be focused on testing a single, specific functionality or feature.</p>
+<p>Think about it from this perspective: it should be easy to identify what went wrong when reading a failing test. This is why keeping tests simple and easy to understand is important. Doing so lets you quickly identify and fix issues when they arise.</p>
+<h3 id="test-whats-worth-it">Test what's worth it <a class="headline-link" href="https://web.dev/ta-what-to-test/#test-whats-worth-it">#</a></h3>
+<p>The flat test design also encourages focus and helps ensure your tests are meaningful. Remember, you don't want to create tests just for the sake of coverage—they should always have a purpose.</p>
+<img alt="Don't test all the things." decoding="async" height="450" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format" srcset="https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/halb4R8zvaEdr85qhIIT.jpeg?auto=format&amp;w=1600 1600w" width="800">
+<aside class="aside flow bg-state-info-bg color-state-info-text"><div class=" flow"> In our <a href="https://web.dev/ta-types/">previous article</a>, we discussed three key points to remember when prioritizing your testing efforts. These three priorities may help you decide whether the case in question should be included in your test. </div></aside>
+<h3 id="dont-test-implementation-details">Don't test implementation details <a class="headline-link" href="https://web.dev/ta-what-to-test/#dont-test-implementation-details">#</a></h3>
+<p>One common problem in testing is that tests are often designed to test implementation details, such as using selectors in components or end-to-end tests. Implementation details refer to things that users of your code will not typically use, see, or even know about. This can lead to two major problems in tests: false negatives and false positives.</p>
+<p>False negatives occur when a test fails, even though the tested code is correct. This can happen when the implementation details change due to a refactoring of the application code. On the other hand, false positives occur when a test passes, even though the code being tested is incorrect.</p>
+<p>One solution to this problem is to consider the different types of users you have. End users and developers can differ in their approach, and they may interact with the code differently. When planning tests, it is essential to consider what users will see or interact with, and make the tests dependent on those things instead of the implementation details.</p>
+<p>For example, choosing selectors that are less prone to change can make tests more reliable: data-attributes instead of CSS selectors. For more details, refer to <a href="https://kentcdodds.com/blog/testing-implementation-details" rel="noopener">Kent C. Dodds' article</a> on this topic, or stay tuned—an article on this topic is coming later.</p>
+<aside class="aside flow bg-state-info-bg color-state-info-text"><div class=" flow"> On the contrary, if you write tests well, this can also have positive implications on your source code structure, for example, when you consider the testability of your code. </div></aside>
+<h3 id="mocking-dont-lose-control">Mocking: Don't lose control <a class="headline-link" href="https://web.dev/ta-what-to-test/#mocking-dont-lose-control">#</a></h3>
+<p>Mocking is a broad concept used in unit testing and sometimes in integration testing. It involves creating fake data or components to simulate dependencies that have complete control over the application. This allows for isolated testing.</p>
+<p>Using mocks in your tests can improve predictability, separation of concerns, and performance. And, if you need to conduct a test that requires human involvement (such as passport verification), you'll have to conceal it using a mock. For all these reasons, mocks are a valuable tool to consider.</p>
+<p>At the same time, mocking may affect the accuracy of the test because they are mocks, not the real user experiences. So you need to be mindful when using mocks and stubs.</p>
+<h4 id="should-you-mock-in-end-to-end-tests">Should you mock in end-to-end tests? <a class="headline-link" href="https://web.dev/ta-what-to-test/#should-you-mock-in-end-to-end-tests">#</a></h4>
+<p>In general, no. However, mocking can be a lifesaver sometimes—so let's not rule it out completely.</p>
+<p>Imagine this scenario: you're writing a test for a feature involving a third-party payment provider service. You're in a sandbox environment that they have provided, meaning no real transactions are taking place. Unfortunately, the sandbox is malfunctioning, thereby causing your tests to fail. The fix needs to be done by the payment provider. All you can do is wait for the issue to be resolved by the provider.</p>
+<p>In this case, it might be more beneficial to lessen the dependency on services you cannot control.
+It's still advisable to use mocking carefully in integration or end-to-end tests as it decreases the confidence level of your tests.</p>
+<h2 id="test-specifics-dos-and-donts">Test specifics: Dos and don'ts <a class="headline-link" href="https://web.dev/ta-what-to-test/#test-specifics-dos-and-donts">#</a></h2>
+<p>So, all in all, what does a test contain? And are there differences between the testing types? Let's take a closer look at some specific aspects tailored to the main testing types.</p>
+<h3 id="what-belongs-to-a-good-unit-test">What belongs to a good unit test? <a class="headline-link" href="https://web.dev/ta-what-to-test/#what-belongs-to-a-good-unit-test">#</a></h3>
+<p>An ideal and effective unit test should:</p>
+<ul>
+<li>Concentrate on specific aspects.</li>
+<li>Operate independently.</li>
+<li>Encompass small-scale scenarios.</li>
+<li>Use descriptive names.</li>
+<li>Follow the AAA pattern if applicable.</li>
+<li>Guarantee comprehensive test coverage.</li>
+</ul>
+<div class="table-wrapper scrollbar">
+<table>
+<thead>
+<tr>
+<th>Do ✅</th>
+<th>Don't ❌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keep the tests as small as possible. Test one thing per test case.</td>
+<td>Write tests over large units.</td>
+</tr>
+<tr>
+<td>Always keep tests isolated and mock the things you need which are outside your unit.</td>
+<td>Include other components or services.</td>
+</tr>
+<tr>
+<td>Keep tests independent.</td>
+<td>Rely on previous tests or share test data.</td>
+</tr>
+<tr>
+<td>Cover <a href="https://web.dev/ta-test-cases/#test-paths-typical-kinds-of-test-cases">different scenarios and paths</a>.</td>
+<td>Limit yourself to the happy path or negative tests at maximum.</td>
+</tr>
+<tr>
+<td>Use descriptive test titles, so you can immediately see what your test is about.</td>
+<td>Test by function name only, not being descriptive enough as a result: <code>testBuildFoo()</code> or <code>testGetId()</code>.</td>
+</tr>
+<tr>
+<td>Aim for good code coverage or a broader range of test cases, especially at this stage.</td>
+<td>Test from every class down to database (I/O) level.</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="what-belongs-to-a-good-integration-test">What belongs to a good integration test? <a class="headline-link" href="https://web.dev/ta-what-to-test/#what-belongs-to-a-good-integration-test">#</a></h3>
+<p>An ideal integration test shares some criteria with unit tests, too. However, there are a couple of additional points that you need to consider. A great integration test should:</p>
+<ul>
+<li>Simulate interactions between components.</li>
+<li>Cover real-world scenarios, and use mocks or stubs.</li>
+<li>Consider performance.</li>
+</ul>
+<div class="table-wrapper scrollbar">
+<table>
+<thead>
+<tr>
+<th>Do ✅</th>
+<th>Don't ❌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test the integration points: verify that each unit works together gracefully when integrated with each other.</td>
+<td>Test each unit in isolation—that's what unit tests are for.</td>
+</tr>
+<tr>
+<td>Test real-world scenarios: use test data derived from real-world data.</td>
+<td>Use repetitive auto-generated test data or other data which doesn't reflect real-world use cases.</td>
+</tr>
+<tr>
+<td>Use mocks and stubs for external dependencies to maintain control of your complete test.</td>
+<td>Create dependencies on third-party services, for example, network requests to outside services.</td>
+</tr>
+<tr>
+<td>Use a clean-up routine before and after each test.</td>
+<td>Forget to use clean-up measures inside your tests, otherwise this can lead to test failures or false positives, due to lack of proper test isolation.</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="what-belongs-to-a-good-end-to-end-test">What belongs to a good end-to-end test? <a class="headline-link" href="https://web.dev/ta-what-to-test/#what-belongs-to-a-good-end-to-end-test">#</a></h3>
+<p>A comprehensive end-to-end test should:</p>
+<ul>
+<li>Replicate user interactions.</li>
+<li>Encompass vital scenarios.</li>
+<li>Span multiple layers.</li>
+<li>Manage asynchronous operations.</li>
+<li>Verify results.</li>
+<li>Account for performance.</li>
+</ul>
+<div class="table-wrapper scrollbar">
+<table>
+<thead>
+<tr>
+<th>Do ✅</th>
+<th>Don't ❌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Use API-driven shortcuts. <a href="https://docs.cypress.io/guides/references/best-practices#Organizing-Tests-Logging-In-Controlling-State" rel="noopener">Learn more</a>.</td>
+<td>Use UI interactions for every step, including the <code>beforeEach</code> hook.</td>
+</tr>
+<tr>
+<td>Use a clean-up routine before each test. Take even more care of test isolation than you do in unit and integration tests because there's a higher risk of side effects here.</td>
+<td>Forget to clean up after each test. If you don't clean up the leftover state, data or side effects, they will affect other tests executed later.</td>
+</tr>
+<tr>
+<td>Regard end-to-end tests as system tests. This means you need to test the whole application stack.</td>
+<td>Test each unit in isolation—that's what unit tests are for.</td>
+</tr>
+<tr>
+<td>Use minimal or no mocking inside the test. Consider carefully if you want to mock external dependencies.</td>
+<td>Rely heavily on mocks.</td>
+</tr>
+<tr>
+<td>Consider performance and workload by, for example, not over-testing large scenarios in the same test.</td>
+<td>Cover large workflows without using shortcuts.</td>
+</tr>
+</tbody>
+</table>
+</div><aside class="aside flow bg-state-info-bg color-state-info-text"><div class=" flow"> This blog post was written by Ramona, with input and review from <a href="https://web.dev/authors/jecelynyeen/">Jecelyn Yeen</a> (<a href="https://twitter.com/jecfish">Twitter</a>), <a href="https://www.linkedin.com/in/michael-hablich-2128646/">Michael Hablich</a> (<a href="https://twitter.com/MHablich">Twitter</a>), <a href="https://web.dev/authors/rachelandrew/">Rachel Andrew</a>, and <a href="https://www.linkedin.com/in/sofia-yemelianova/">Sofia Emelianova</a>. </div></aside>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[定义测试用例和优先级]]></title>
             <link>https://web.dev/ta-test-cases/</link>
@@ -6107,171 +6431,6 @@ New viewport units like <code>svh</code> and <code>lvh</code> give web developer
 <p>Client-side HTML rendering introduces a number of potential performance issues that can be avoidable in many cases. Due to each individual website's requirements, however, it's not entirely avoidable 100% of the time. To mitigate the potential long tasks that can result from excessive client-site rendering, make sure you're sending as much of your website's HTML from the server whenever possible, keep your DOM sizes as small as possible for HTML that must be rendered on the client, and consider alternative architectures to speed the delivery of HTML to the client while also taking advantage of the incremental parsing and rendering the browser provides for HTML loaded from the server.</p>
 <p>If you can get your website's client-side rendering to be as minimal as possible, you'll improve not just your website's INP, but other metrics such as LCP, TBT, and possibly even your TTFB in some cases.</p>
 <p><em>Hero image from <a href="https://unsplash.com/" rel="noopener">Unsplash</a>, by <a href="https://unsplash.com/de/fotos/nZcMWOKAJrY" rel="noopener">Maik Jonietz</a>.</em></p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[使用 Web Vitals 扩展来调试 Core Web Vitals 问题]]></title>
-            <link>https://web.dev/debug-cwvs-with-web-vitals-extension/</link>
-            <guid>https://web.dev/debug-cwvs-with-web-vitals-extension/</guid>
-            <content:encoded><![CDATA[<div>
-    <h1>GPT总结</h1>
-    <summary>Web Vitals扩展提供了Core Web Vitals诊断信息，帮助开发人员测量和解决Core Web Vitals问题。它补充了Chrome团队提供的其他工具，帮助开发人员改进其网站的体验。
-
-更新后的扩展提供了额外的调试信息，使开发人员更容易理解和解决性能问题。
-
-在控制台中显示调试信息：
-Web Vitals扩展已经有了“控制台日志”调试选项。可以在选项屏幕中启用它。
-
-在最新的升级之前，它会将web-vitals库的输出记录在一个JSON对象中。
-
-这个对象可以展开以获取完整的详细信息，可以将鼠标悬停在其中的LCP图像上以在主面板中突出显示。
-
-为了提供更好的开发者体验，我们改进了扩展，使最重要的信息更加可见，同时仍然包含完整的对象供那些需要更多细节的人使用。
-
-每个指标的新调试信息：
-在新版本中，我们添加了更易读的调试信息，以帮助您找到和解决问题。对于每个指标，提供不同的信息，因为每个指标都是不同的。
-
-LCP调试信息：
-对于最大内容绘制（LCP），我们显示元素以及我们在优化LCP指南中详细介绍的4个阶段的细分。
-
-在</summary>
-    <div>
-    <div>OriginTitle: Using the Web Vitals extension to debug Core Web Vitals issues</div>
-
-    </div></div><p>这<a href="https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma" rel="noopener">Web Vitals 扩展</a>提供对 Core Web Vitals 诊断信息的轻松访问，以帮助开发人员衡量和解决 Core Web Vitals 问题。 它补充了 Chrome 团队提供的其他工具，以帮助开发人员改善其网站体验。</p>
-<p>我们更新了扩展，为开发人员提供额外的调试信息，使其更容易理解和解决他们的性能问题。</p>
-<h2 id="showing-debug-information-in-the-console">在控制台中显示调试信息<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#showing-debug-information-in-the-console">#</a></h2>
-<p>Web Vitals 扩展具有“控制台日志记录”调试选项已有一段时间了。 可以在选项屏幕中启用它：</p>
-<img alt="Web Vitals Extension Options screen" decoding="async" height="434" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=1600 1600w" width="800">
-<p>在最后一次升级之前，这记录了来自<a href="https://github.com/GoogleChrome/web-vitals" rel="noopener"><code>网络生命库</code></a>（支持扩展）在 JSON 对象中：</p>
-<img alt="Web Vitals Extension old console logging" decoding="async" height="458" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=1600 1600w" width="800">
-<p>然后可以展开该对象以获取完整的详细信息，并且可以将 LCP 图像等元素悬停在主面板中以突出显示它们：</p>
-<img alt="Web Vitals Extension old console logging with element highlighting" decoding="async" height="514" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=1600 1600w" width="800">
-<p>这很有帮助，但输出格式不是特别用户友好，我们认为我们可以提供更好的开发人员体验。 因此，我们改进了扩展，使最重要的信息更加可见，同时仍然为那些想要更多详细信息的人提供完整的对象。</p>
-<h2 id="new-debug-information-for-each-metric">每个指标的新调试信息<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#new-debug-information-for-each-metric">#</a></h2>
-<p>在新版本中，我们以更易读的格式添加了新的调试信息，以帮助您查找和解决问题。 由于每个指标都不同，因此为每个指标提供了不同的信息。</p>
-<h3 id="lcp-debug-information">LCP调试信息<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#lcp-debug-information">#</a></h3>
-<p>为了<a href="https://web.dev/lcp/">最大内容涂料 (LCP)</a>，我们展示了元素以及 4 个阶段的详细信息<a href="https://web.dev/optimize-lcp/#lcp-breakdown">优化LCP</a>指导：</p>
-<img alt="Web Vitals Extension new console logging showing LCP elements and sub-parts" decoding="async" height="535" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=1600 1600w" width="800">
-<p>LCP 时间（2,876 毫秒，或约 2.9 秒）以琥珀色突出显示，因为它位于“需要改进”类别中。</p>
-<p>在这个例子中，我们看到<code>资源加载时间</code>是最长的时间，因此为了缩短 LCP 时间，您需要对其进行优化 - 也许可以通过避免将它们托管在单独的域上，或者使用更小的图像或更有效的格式。 在本例中，这是由于为了演示输出而人为减慢了速度 - web.dev 是一个快速站点 😀</p>
-<p>还可以将鼠标悬停在该元素上以突出显示图像：</p>
-<img alt="Web Vitals Extension new console logging retains element highlighting on hover" decoding="async" height="535" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=1600 1600w" width="800">
-<p>右键单击元素还可以在元素面板中显示它。</p>
-<p>这里的 LCP 元素是一个图像，将鼠标悬停在右侧控制台中的该图像上，也会在左侧站点上突出显示该元素。</p>
-<h3 id="cls-debug-information">CLS 调试信息<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#cls-debug-information">#</a></h3>
-<p>转变有助于<a href="https://web.dev/cls/">累积布局偏移 (CLS)</a>现在也列出了，并且可以将鼠标悬停在上面以突出显示相关元素：</p>
-<img alt="Web Vitals Extension new console logging showing each CLS element shift" decoding="async" height="448" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=1600 1600w" width="800">
-<p>上面的屏幕截图显示了 2 个转变，第一个由两个元素组成（当加载横幅图像并且其下方的内容被转变下载时），第二个由 4 个元素组成（当加载动态广告并且页面的大部分内容被加载时）。向下移动）。</p>
-<p>这<code>小时2</code>在此屏幕截图中，元素悬停在右侧控制台中，您可以看到这突出显示了左侧网站上的元素。</p>
-<aside class="aside flow bg-tertiary-box-bg color-tertiary-box-text"><p class="cluster "><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Lightbulb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">   <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path> </svg></span><strong>重要的</strong></p><div class=" flow"> <p>注意，被移位的元素不是元素<em>引起</em>转变，但那些<em>受影响的</em>通过任何轮班。</p> <p>但是，根据上面的示例，这通常足以帮助您通过查看第一个移位元素上方的元素（对于插入的元素）或第一个元素本身（如果这是展开的）来识别移位的原因。并因此改变自身）。</p> </div></aside>
-<h3 id="fid-debug-information">FID调试信息<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#fid-debug-information">#</a></h3>
-<p>为了<a href="https://web.dev/fid/">首次输入延迟 (FID)</a>我们像往常一样显示受影响的元素（再次将其悬停在页面上以突出显示它）和交互类型，以及完整的 JSON 对象：</p>
-<img alt="Web Vitals Extension new console logging showing FID target and type" decoding="async" height="448" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=1600 1600w" width="800">
-<h3 id="inp-debug-information">INP调试信息<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#inp-debug-information">#</a></h3>
-<p>为了<a href="https://web.dev/inp/">与下一个油漆的相互作用 (INP)</a>，我们添加了两个新日志：</p>
-<ul>
-<li>INP-- 最长的相互作用</li>
-<li>交互 - 所有交互</li>
-</ul>
-<h4 id="inp-metric">INP指标<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#inp-metric">#</a></h4>
-<p>首先，我们在 INP 指标发生变化时突出显示：</p>
-<img alt="Web Vitals Extension new console logging showing INP target, event type, and breakdown" decoding="async" height="448" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=1600 1600w" width="800">
-<p>与 LCP 类似，该扩展将 INP 时间分解为三个阶段：</p>
-<ol>
-<li>输入延迟</li>
-<li>处理时间</li>
-<li>演示延迟</li>
-</ol>
-<p>这可以帮助您确定事件是否由于受到其他事件的阻碍而变慢（<strong>输入延迟</strong>），因为事件处理程序本身由于您的代码而很慢（<strong>处理时间</strong>），如果后处理渲染延迟是原因（<strong>呈现延迟</strong>)，或其中两个或多个的组合。</p>
-<h4 id="interactions">互动<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#interactions">#</a></h4>
-<p>由于先前的交互阻塞了主线程，INP 可能会很慢，从而导致较高的输入延迟。 因此，我们以与 INP 日志记录类似的格式列出所有交互：</p>
-<img alt="Web Vitals Extension new console logging showing all interactions" decoding="async" height="448" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=1600 1600w" width="800">
-<p>这允许您通过与网站交互并在控制台中查看哪些交互、哪些组合可能会导致 INP 问题来“实时跟踪”网站。</p>
-<p>这还允许您识别多个缓慢的交互，而不仅仅是最大的 INP 交互，以帮助您在提高响应能力时避免追尾的感觉。</p>
-<h2 id="filtering-the-console-logs">过滤控制台日志<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#filtering-the-console-logs">#</a></h2>
-<p>所有这些额外信息虽然有用，但如果您正在进行与 Core Web Vitals 无关的其他开发，或者当时仅对某一特定 Core Web Vitals 感兴趣，则可能会分散您的注意力。</p>
-<p>您可以使用<a href="https://developer.chrome.com/docs/devtools/console/reference/#filter" rel="noopener">DevTools 中的控制台过滤选项</a>过滤掉部分或全部消息：</p>
-<img alt="Using console filtering options" decoding="async" height="448" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=1600 1600w" width="800">
-<ul>
-<li>要删除所有扩展消息，您可以在选项中将其关闭或使用<code>-扩大</code>筛选。</li>
-<li>要仅查看 LCP，您可以使用<code>Web Vitals 扩展 LCP</code>筛选。</li>
-<li>要仅查看 INP 和交互作用，您可以使用<code>Web Vitals 扩展 -LCP -CLS -FID</code>筛选。</li>
-</ul>
-<p>我们正在努力减少此扩展的选项数量，但请通过提出问题让我们知道<a href="https://github.com/GoogleChrome/web-vitals-extension/issues" rel="noopener">GitHub问题</a>如果 DevTools 过滤不够，并且您更喜欢此处的选项。</p>
-<h2 id="conclusion">结论<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#conclusion">#</a></h2>
-<p>我们希望您发现最新版本的扩展中的新调试选项很有用，并且它们可以更轻松地识别和解决 Core Web Vitals 问题，从而改善您网站上的用户体验。</p>
-<p>请记住，您在开发人员计算机上的体验可能无法代表真实用户的体验。 看看我们的<a href="https://web.dev/field-data-in-the-web-vitals-extension/">上一篇博客文章介绍了如何在扩展中查看站点的 CrUX 字段数据</a>了解您的体验与用户的一致性。</p>
-<p>我们将很高兴听到有关这些改进的任何反馈，或有关我们的任何其他建议<a href="https://github.com/GoogleChrome/web-vitals-extension/issues" rel="noopener">GitHub 问题跟踪器</a>。</p>
-<h2 id="acknowledgements">致谢<a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#acknowledgements">#</a></h2>
-<p><em>英雄形象由<a href="https://unsplash.com/@euwars?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" rel="noopener">法尔扎德</a>在<a href="https://unsplash.com/photos/p-xSl33Wxyc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" rel="noopener">未飞溅</a></em></p>
-<hr><p>The <a href="https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma" rel="noopener">Web Vitals extension</a> provides easy access to Core Web Vitals diagnostic information to help developers measure, and address Core Web Vitals issues. It supplements the other tools provided by the Chrome team to aid developers in improving the experiences on their websites.</p>
-<p>We have updated the extension to provide additional debug information to developers to make it easier to understand and address their performance problems.</p>
-<h2 id="showing-debug-information-in-the-console">Showing debug information in the console <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#showing-debug-information-in-the-console">#</a></h2>
-<p>The Web Vitals extension has had a "Console Logging" debug option for some time now. It can be enabled in the Options screen:</p>
-<img alt="Web Vitals Extension Options screen" decoding="async" height="434" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/SjuszdY0PADWgETicJNl.png?auto=format&amp;w=1600 1600w" width="800">
-<p>Prior to the this last upgrade, this logged the outputs from the <a href="https://github.com/GoogleChrome/web-vitals" rel="noopener"><code>web-vitals library</code></a> (that underpins the extension) in a JSON object:</p>
-<img alt="Web Vitals Extension old console logging" decoding="async" height="458" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/iUoyoe41Ik4zNDNRPHKo.png?auto=format&amp;w=1600 1600w" width="800">
-<p>This object could then be expanded to get the full details, and elements such as the LCP image, could be hovered over to highlight them in the main panel:</p>
-<img alt="Web Vitals Extension old console logging with element highlighting" decoding="async" height="514" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/oNVOo321R5U3Lqg1xrH6.png?auto=format&amp;w=1600 1600w" width="800">
-<p>This was helpful, but the output format was not particularly user friendly, and we thought we could provide a better developer experience. So we have improved the extension to make the most important information more visible—while still including the full object for those wanting more details.</p>
-<h2 id="new-debug-information-for-each-metric">New debug information for each metric <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#new-debug-information-for-each-metric">#</a></h2>
-<p>With the new release, we have added new debug information in a more readable format to help you find and address issues. Different information is provided for each of the metrics, as each one is different.</p>
-<h3 id="lcp-debug-information">LCP debug information <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#lcp-debug-information">#</a></h3>
-<p>For <a href="https://web.dev/lcp/">Largest Contentful Paint (LCP)</a>, we show both the element, and the breakdown of the 4 phases detailed in our <a href="https://web.dev/optimize-lcp/#lcp-breakdown">Optimize LCP</a> guide:</p>
-<img alt="Web Vitals Extension new console logging showing LCP elements and sub-parts" decoding="async" height="535" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/HXzKcJORE2nRUI9Pl8Mw.png?auto=format&amp;w=1600 1600w" width="800">
-<p>The LCP time (2,876 milliseconds—or about 2.9 seconds) is highlighted in amber as it is in the "Needs Improvement" category.</p>
-<p>In this example, we see the <code>Resource load time</code> is the longest time, so to improve your LCP time you would look to optimize that - perhaps by avoiding hosting them on a separate domain, or by using smaller images or more efficient formats. In this case it's due to being artificially slowed down to demonstrate the output—web.dev is a fast site 😀</p>
-<p>The element can also be hovered over to highlight the image:</p>
-<img alt="Web Vitals Extension new console logging retains element highlighting on hover" decoding="async" height="535" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/8H8ZldOw8y953w7vTpuA.png?auto=format&amp;w=1600 1600w" width="800">
-<p>Right clicking on the element also allows you to reveal it in the elements panel.</p>
-<p>Here the LCP element is an image, and hovering over that in the console on the right, also highlights that element on the site on the left.</p>
-<h3 id="cls-debug-information">CLS debug information <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#cls-debug-information">#</a></h3>
-<p>Shifts contributing to <a href="https://web.dev/cls/">Cumulative Layout Shift (CLS)</a> are now also listed, and can be hovered over to highlight the relevant element:</p>
-<img alt="Web Vitals Extension new console logging showing each CLS element shift" decoding="async" height="448" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/v1kaVvcekk5oLWuGHAkd.png?auto=format&amp;w=1600 1600w" width="800">
-<p>The above screenshot shows 2 shifts, the first made up of two elements (when the banner image is loaded and the content beneath it is shifted downloaded), and the second of 4 elements (when the dynamic ad is loaded and most of the page is shifted downwards).</p>
-<p>The <code>h2</code> element is being hovered over in this screenshot in the console on the right, and you can see this highlights the element on the site on the left.</p>
-<aside class="aside flow bg-tertiary-box-bg color-tertiary-box-text"><p class="cluster "><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Lightbulb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">   <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path> </svg></span><strong>Important</strong></p><div class=" flow"> <p> Note that the shifted elements are not the elements <em>causing</em> the shift, but the ones that were <em>impacted</em> by any shifts. </p> <p> However, as per the above example, this should usually be enough to help you identify the cause of the shift by looking at the element which is either above the first shifted element (for inserted elements) or the first element itself (if this is expanded and so shifts itself). </p> </div></aside>
-<h3 id="fid-debug-information">FID debug information <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#fid-debug-information">#</a></h3>
-<p>For <a href="https://web.dev/fid/">First Input Delay (FID)</a> we show the affected element (which again, can be hovered over to highlight it on the page) and the interaction type, along with the full JSON object as usual:</p>
-<img alt="Web Vitals Extension new console logging showing FID target and type" decoding="async" height="448" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/f8JI8akIhiqfA7WHWfRz.png?auto=format&amp;w=1600 1600w" width="800">
-<h3 id="inp-debug-information">INP debug information <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#inp-debug-information">#</a></h3>
-<p>For <a href="https://web.dev/inp/">Interaction to Next Paint (INP)</a>, we have added two new logs:</p>
-<ul>
-<li>INP - the longest interaction</li>
-<li>Interactions - all interactions</li>
-</ul>
-<h4 id="inp-metric">INP metric <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#inp-metric">#</a></h4>
-<p>First up, we highlight the INP metric when it changes:</p>
-<img alt="Web Vitals Extension new console logging showing INP target, event type, and breakdown" decoding="async" height="448" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/kxh8TRS2585OJTZJmWmt.png?auto=format&amp;w=1600 1600w" width="800">
-<p>Similar to LCP, the extension breaks down the INP time to show three phases:</p>
-<ol>
-<li>Input delay</li>
-<li>Processing time</li>
-<li>Presentation delay</li>
-</ol>
-<p>This helps you identify if the event was slow due to being held up by other events (<strong>input delay</strong>), as the event handler itself was slow due to your code (<strong>processing time</strong>), if the post-processing render delay was the reason (<strong>presentation delay</strong>), or a combination of two or more of these.</p>
-<h4 id="interactions">Interactions <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#interactions">#</a></h4>
-<p>INP can be slow due to previous interactions blocking the main thread, and thus causing a high input delay. For this reason, we list all interactions in a similar format to the INP logging:</p>
-<img alt="Web Vitals Extension new console logging showing all interactions" decoding="async" height="448" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/k2uHWUQXoq5fWGOQ4yyF.png?auto=format&amp;w=1600 1600w" width="800">
-<p>This allows you to "live trace" a website by interacting with it and seeing in the console which interactions, in which combinations, are likely to cause an INP problem.</p>
-<p>This also allows you to identify multiple slow interactions, rather than just the largest INP interaction to help you avoid the feeling of chasing your tail when improving your responsiveness.</p>
-<h2 id="filtering-the-console-logs">Filtering the console logs <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#filtering-the-console-logs">#</a></h2>
-<p>All this extra information, while useful, can be distracting if you are doing other development unrelated to Core Web Vitals, or are only interested in one particular Core Web Vital at that time.</p>
-<p>You can use the <a href="https://developer.chrome.com/docs/devtools/console/reference/#filter" rel="noopener">Console filtering options in DevTools</a> to filter out some or all of the messages:</p>
-<img alt="Using console filtering options" decoding="async" height="448" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format" srcset="https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/W3z1f5ZkBJSgL1V1IfloTIctbIF3/NOA3kNu5rKMzkw7iAyW7.png?auto=format&amp;w=1600 1600w" width="800">
-<ul>
-<li>To remove all the extension messages, you can either turn this off in the options or use the <code>-Extension</code> filter.</li>
-<li>To look at just LCP you can use the <code>Web Vitals Extension LCP</code> filter.</li>
-<li>To look at just INP and interactions you can use the <code>Web Vitals Extension -LCP -CLS -FID</code> filter.</li>
-</ul>
-<p>We're trying to keep the number of options for this extension down, but do let us know by raising a <a href="https://github.com/GoogleChrome/web-vitals-extension/issues" rel="noopener">GitHub issue</a> if DevTools filtering is not sufficient and you would prefer options here.</p>
-<h2 id="conclusion">Conclusion <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#conclusion">#</a></h2>
-<p>We hope you find the new debug options in the latest version of the extension useful and that they make it easier to identify and resolve Core Web Vitals issues, improving the  user experiences on your website.</p>
-<p>Do remember that your experiences, on your developer computer, may not be representative of what your real users are experiencing. Check out our <a href="https://web.dev/field-data-in-the-web-vitals-extension/">previous blog post on how you can view the CrUX field data for your site in the extension</a> to get a sense of how aligned your experiences are with your users.</p>
-<p>We would be grateful to hear any feedback on these improvements, or any other suggestions on our <a href="https://github.com/GoogleChrome/web-vitals-extension/issues" rel="noopener">GitHub issues tracker</a>.</p>
-<h2 id="acknowledgements">Acknowledgements <a class="headline-link" href="https://web.dev/debug-cwvs-with-web-vitals-extension/#acknowledgements">#</a></h2>
-<p><em>Hero image by <a href="https://unsplash.com/@euwars?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" rel="noopener">Farzad</a> on <a href="https://unsplash.com/photos/p-xSl33Wxyc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" rel="noopener">Unsplash</a></em></p>
 ]]></content:encoded>
         </item>
     </channel>
