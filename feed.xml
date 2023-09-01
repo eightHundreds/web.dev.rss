@@ -4,9 +4,465 @@
         <title>web.dev</title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Sat, 26 Aug 2023 19:40:03 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 31 Aug 2023 17:40:27 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[八月份网络平台新功能]]></title>
+            <link>https://web.dev/web-platform-08-2023/</link>
+            <guid>https://web.dev/web-platform-08-2023/</guid>
+            <content:encoded><![CDATA[<div>
+    <h1>GPT总结</h1>
+    <summary>2023年8月，Firefox 116、Firefox 117、Safari 16.6和Chrome 116发布了稳定版本。这篇文章介绍了这些版本对Web平台的影响。
+
+Firefox 116在除Android外的所有平台上支持音频输出设备API。这个API允许Web应用程序将音频输出重定向到允许的蓝牙耳机、扬声器电话或其他设备，而不是使用浏览器或底层操作系统的默认设置。
+
+Chrome 116包括CSS Motion Path，允许开发人员将任何图形对象沿着指定的路径进行动画化。这使得可以使用极坐标（使用ray()函数）而不是translate()函数使用的标准矩形坐标来定位，或者沿着定义的路径动画化元素。这使得定义复杂而美丽的2D空间过渡更容易。路径可以指定为circle()、ellipse()、rect()、inset()、xywh()、polygon()、ray()和url()。
+
+Chrome 116还包括Document Picture-in-Picture API。这使得可以创建一个始终置顶的窗口，并可以在其中放置任意HTMLElements。这是对现有的HTMLVideoElement API的扩展，该API只允许将HTMLVideoElement放入画中画（PiP）窗口。
+
+Firefox 117支持CSS Nesting和&amp;嵌套选择器。这使得可以将一个样式规则嵌套在另一个样式规则</summary>
+    <div>
+    <div>OriginTitle: New to the web platform in August</div>
+
+    </div></div><h2 id="stable-browser-releases">稳定的浏览器版本<a class="headline-link" href="https://web.dev/web-platform-08-2023/#stable-browser-releases">#</a></h2>
+<p>2023年8月<a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/116" rel="noopener">火狐116</a>,<a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/117" rel="noopener">火狐117</a>,<a href="https://developer.apple.com/documentation/safari-release-notes/safari-16_6-release-notes" rel="noopener">Safari 16.6</a>， 和<a href="https://developer.chrome.com/blog/new-in-chrome-116/" rel="noopener">铬116</a>变得稳定。 这篇文章探讨了这对网络平台意味着什么。</p>
+<aside class="aside flow bg-state-bad-bg color-state-bad-text"><p class="cluster color-state-bad-text"><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Error sign">   <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-10v6h2V7h-2z"></path> </svg></span><strong>警告</strong></p><div class=" flow">我们在这些帖子中包含从 MDN 中提取的浏览器兼容性数据，这些数据对于最新的浏览器版本可能尚未更新。 该帖子一旦出现在帖子中，就会显示正确的信息<a href="https://github.com/mdn/browser-compat-data/releases">浏览器兼容数据发布</a>。</div></aside>
+<p>火狐 116 支持<a href="https://developer.mozilla.org/docs/Web/API/Audio_Output_Devices_API" rel="noopener">音频输出设备API</a>在除 Android 之外的所有平台上。 此 API 允许 Web 应用程序将音频输出重定向到允许的蓝牙耳机、扬声器或其他设备，而不必使用浏览器或底层操作系统默认设置。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">铬，不支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">火狐预览, 预览</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="preview" title="Preview" aria-label="Preview"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">边缘，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/API/MediaDevices/selectAudioOutput#browser_compatibility" target="_blank">来源</a>
+</div>
+<p>Chrome 116 包含 CSS 运动路径，允许任何图形对象沿着开发人员指定的路径进行动画处理。 这允许许多强大的新变换可能性，例如使用极坐标定位（使用<code>射线（）</code>函数）而不是使用的标准直角坐标<code>翻译（）</code>函数，或者沿着定义的路径对元素进行动画处理。 这使得定义复杂而美丽的二维空间过渡变得更加容易。 路径可以指定为<code>圆圈（）</code>,<code>椭圆（）</code>,<code>矩形（）</code>,<code>插图（）</code>,<code>xywh()</code>,<code>多边形（）</code>,<code>射线（）</code>和<code>网址（）</code>。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">铬，不支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">火狐浏览器，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">边缘，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<p>Chrome 116 中还有<a href="https://developer.chrome.com/docs/web-platform/document-picture-in-picture/" rel="noopener">文档画中画 API</a>。 这使得可以使用任意 HTMLElement 填充始终位于顶部的窗口。 这是对现有 HTMLVideoElement API 的扩展，仅允许将 HTMLVideoElement 放入画中画 (PiP) 窗口中。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">铬，不支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">火狐浏览器，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">边缘，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<p>火狐117支持<a href="https://developer.mozilla.org/docs/Web/CSS/CSS_nesting" rel="noopener">CSS 嵌套</a>和<a href="https://developer.mozilla.org/docs/Web/CSS/Nesting_selector" rel="noopener"><code>&amp;amp;</code>嵌套选择器</a>。 这使得一种样式规则可以嵌套在另一种样式规则中。 这使得 CSS 嵌套可以与警告互操作，Safari 和 Chrome 实现了旧版本的规范，该版本不允许嵌套<a href="https://developer.mozilla.org/docs/Web/CSS/Type_selectors" rel="noopener">类型选择器</a>。 Firefox 已经实现了新版本的规范，不需要<code>&amp;amp;</code>嵌套选择器。 您可以在以下位置查看两个版本的示例<a href="https://developer.mozilla.org/docs/Web/CSS/CSS_nesting/Using_CSS_nesting" rel="noopener">使用 CSS 嵌套</a>。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome 112，支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      112
+    </span>
+    </li><li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="firefox">
+      <span class="visually-hidden">火狐浏览器，不支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">边缘 112，支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+112
+</span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari 16.5，支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+16.5
+</span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/Nesting_selectors#browser_compatibility" target="_blank">来源</a>
+</div>
+<h2 id="beta-browser-releases">测试版浏览器发布<a class="headline-link" href="https://web.dev/web-platform-08-2023/#beta-browser-releases">#</a></h2>
+<p>Beta 浏览器版本可让您预览浏览器下一个稳定版本中的内容。 现在是测试新功能或删除的好时机，这些功能或删除可能会在发布该版本之前影响您的网站。 新的测试版是<a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/118" rel="noopener">火狐118</a>和<a href="https://developer.chrome.com/blog/chrome-117-beta/" rel="noopener">铬117</a>。 这<a href="https://developer.apple.com/documentation/safari-release-notes/safari-17-release-notes" rel="noopener">狩猎17</a>测试版仍在进行中。 这些版本为该平台带来了许多出色的功能。 查看发行说明以了解所有详细信息，这里仅列出一些亮点。</p>
+<p>目前还没有关于下一个 Firefox 版本的太多信息。 然而，Chrome 117 承诺提供一些令人兴奋的功能。 例如，一些新的 CSS 功能<a href="https://developer.chrome.com/blog/entry-exit-animations/" rel="noopener">启用进入和退出动画</a>。</p>
+<p>这<code>子网格</code>价值<code>网格模板列</code>和<code>网格模板行</code>包含在 Chrome 117 中，使得这一渴望的功能具有可互操作性。</p>
+<p>Chrome 117 中还支持 JavaScript 数组分组<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy" rel="noopener">对象.groupBy</a>和<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/groupBy" rel="noopener">映射.groupBy</a>静态方法。</p>
+<p>Safari 17 测试版包括<code>弹出窗口</code>属性，添加对<a href="https://developer.chrome.com/blog/introducing-popover-api/" rel="noopener">弹出框 API</a>。</p>
+<p><em>拍摄者<a href="https://unsplash.com/@courtneymcook" rel="noopener">考特尼·库克</a>。</em></p>
+<hr><h2 id="stable-browser-releases">Stable browser releases <a class="headline-link" href="https://web.dev/web-platform-08-2023/#stable-browser-releases">#</a></h2>
+<p>In August 2023 <a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/116" rel="noopener">Firefox 116</a>, <a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/117" rel="noopener">Firefox 117</a>, <a href="https://developer.apple.com/documentation/safari-release-notes/safari-16_6-release-notes" rel="noopener">Safari 16.6</a>, and <a href="https://developer.chrome.com/blog/new-in-chrome-116/" rel="noopener">Chrome 116</a> became stable. This post takes a look at what that means for the web platform.</p>
+<aside class="aside flow bg-state-bad-bg color-state-bad-text"><p class="cluster color-state-bad-text"><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Error sign">   <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-10v6h2V7h-2z"></path> </svg></span><strong>Caution</strong></p><div class=" flow"> We include browser compatibility data pulled from MDN in these posts which may not have been updated yet for very recent browser releases. The post will show the correct information as soon as it appears in the <a href="https://github.com/mdn/browser-compat-data/releases">browser-compat-data release</a>. </div></aside>
+<p>Firefox 116 supports the <a href="https://developer.mozilla.org/docs/Web/API/Audio_Output_Devices_API" rel="noopener">Audio Output Devices API</a> on all platforms except for Android. This API allows web applications to redirect audio output to a permitted Bluetooth headset, speakerphone, or other device, instead of having to use the browser or underlying OS default.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox preview, Preview</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="preview" title="Preview" aria-label="Preview"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/API/MediaDevices/selectAudioOutput#browser_compatibility" target="_blank">Source</a>
+</div>
+<p>Chrome 116 includes CSS Motion Path allowing any graphical object to be animated it along a path specified by the developer. This allows a number of powerful new transform possibilities, such as positioning using polar coordinates (with the <code>ray()</code> function) rather than the standard rectangular coordinates used by the <code>translate()</code> function, or animating an element along a defined path. This makes it easier to define complex and beautiful 2d spatial transitions. A path can be specified as <code>circle()</code>, <code>ellipse()</code>, <code>rect()</code>, <code>inset()</code>, <code>xywh()</code>, <code>polygon()</code>, <code>ray()</code> and <code>url()</code>.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<p>Also in Chrome 116 is the <a href="https://developer.chrome.com/docs/web-platform/document-picture-in-picture/" rel="noopener">Document Picture-in-Picture API</a>. This enables an always-on-top window that can be populated with arbitrary HTMLElements. This is an expansion upon the existing HTMLVideoElement API that only allows for an HTMLVideoElement to be put into a Picture-in-Picture (PiP) window.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<p>Firefox 117 supports <a href="https://developer.mozilla.org/docs/Web/CSS/CSS_nesting" rel="noopener">CSS Nesting</a> and the <a href="https://developer.mozilla.org/docs/Web/CSS/Nesting_selector" rel="noopener"><code>&amp;</code> nesting selector</a>. This enables the nesting of one style rule inside another. This makes CSS Nesting interoperable with a caveat, Safari and Chrome implemented an older version of the spec, which did not allow nesting of <a href="https://developer.mozilla.org/docs/Web/CSS/Type_selectors" rel="noopener">type selectors</a>. Firefox has implemented the new version of the spec which does not require the <code>&amp;</code> nesting selector. You can see examples of both versions in <a href="https://developer.mozilla.org/docs/Web/CSS/CSS_nesting/Using_CSS_nesting" rel="noopener">Using CSS Nesting</a>.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome 112, Supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      112
+    </span>
+    </li><li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="firefox">
+      <span class="visually-hidden">Firefox, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge 112, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+112
+</span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari 16.5, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+16.5
+</span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/Nesting_selectors#browser_compatibility" target="_blank">Source</a>
+</div>
+<h2 id="beta-browser-releases">Beta browser releases <a class="headline-link" href="https://web.dev/web-platform-08-2023/#beta-browser-releases">#</a></h2>
+<p>Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release. New betas are <a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/118" rel="noopener">Firefox 118</a> and <a href="https://developer.chrome.com/blog/chrome-117-beta/" rel="noopener">Chrome 117</a>. The <a href="https://developer.apple.com/documentation/safari-release-notes/safari-17-release-notes" rel="noopener">Safari 17</a> beta is still ongoing. These releases bring many great features to the platform. Check out the release notes for all of the details, here are just a few highlights.</p>
+<p>There's not a lot of information available as yet for the next Firefox release. However, Chrome 117 promises some exciting features. For example, some new CSS features that <a href="https://developer.chrome.com/blog/entry-exit-animations/" rel="noopener">enable entry and exit animations</a>.</p>
+<p>The <code>subgrid</code> value for <code>grid-template-columns</code> and <code>grid-template-rows</code> is included in Chrome 117, making this longed for feature interoperable.</p>
+<p>Also in Chrome 117 is JavaScript array grouping with the <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy" rel="noopener">Object.groupBy</a> and <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/groupBy" rel="noopener">Map.groupBy</a> static methods.</p>
+<p>Safari 17 beta includes the <code>popover</code> attribute, to add support for the <a href="https://developer.chrome.com/blog/introducing-popover-api/" rel="noopener">Popover API</a>.</p>
+<p><em>Photo by <a href="https://unsplash.com/@courtneymcook" rel="noopener">Courtney Cook</a>.</em></p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[预取如何帮助 Terra 将广告点击率提高 30% 并加快 Largest Contentful Paint 的速度。]]></title>
+            <link>https://web.dev/terra-prefetching-case-study/</link>
+            <guid>https://web.dev/terra-prefetching-case-study/</guid>
+            <content:encoded><![CDATA[<div>
+    <h1>GPT总结</h1>
+    <summary>这篇文章介绍了Terra使用预取技术来改善页面加载时间的案例研究。预取是一种通过下载可能在不久的将来需要的资源或整个页面来加快页面加载速度的技术。研究表明，更快的加载时间可以提高转化率和用户体验。
+
+Terra是巴西最大的内容门户之一，每月拥有超过6300万独立访问者。他们与Terra的工程团队合作，通过在网站的特定部分使用预取技术来改善文章的加载时间。
+
+预取策略是通过一些条件来确定是否预取文章。首先，需要检测到包含要预取的文章的部分的可见性。其次，需要满足一些有利于增加数据使用的条件，例如连接速度至少为3G，设备内存至少为4GB，或者设备运行的是iOS系统。最后，还需要检查CPU是否空闲，以便执行额外的工作。
+
+Terra通过遵循这些条件来确保只在必要时预取数据，从而节省带宽和电池寿命，并减少未使用的预取的影响。
+
+通过预取文章，Terra观察到广告指标的整体增加以及LCP和TTFB时间的减少。具体来说，在移动端，广告点击率增加了11%，在桌面端增加了30%；广告可见性分</summary>
+    <div>
+    <div>OriginTitle: How prefetching helped Terra increase ads click-through rate by 30% and speed up Largest Contentful Paint.</div>
+
+    </div></div><p>预取是一种通过下载近期可能需要的资源（甚至整个页面）来加速页面加载的技术。 研究表明<a href="https://wpostats.com/" rel="noopener">更快的加载时间带来更高的转化率</a>和更好的用户体验。</p>
+<p><a href="https://www.terra.com/" rel="noopener">泰拉</a>是巴西最大的内容门户网站之一，提供娱乐、新闻和体育内容，每月独立访问者超过 6300 万。 我们与 Terra 的工程团队合作，通过在其网站的某些部分使用预取技术来缩短文章的加载时间。</p>
+<p>此案例研究描述了 Terra 的旅程实施，该实施使移动设备上的广告点击率 (CTR) 提高了 11%，桌面上的广告点击率提高了 30%，并且广告点击率降低了 50%<a href="https://web.dev/lcp/">最大内容涂料 (LCP)</a>次。</p>
+<h2 id="prefetching-strategy">预取策略<a class="headline-link" href="https://web.dev/terra-prefetching-case-study/#prefetching-strategy">#</a></h2>
+<p>预取已经存在一段时间了，但谨慎使用它很重要，因为它会为并非立即需要的资源消耗额外的带宽。 应谨慎应用此技术，以避免不必要的数据使用。 对于 Terra，如果满足以下条件，则会预取文章：</p>
+<ul>
+<li><strong>预取文章链接的可见性：</strong>泰拉使用了<a href="https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API" rel="noopener">路口观察器 API</a>检测包含他们想要预取的文章的部分的可见性。</li>
+<li><strong>增加数据使用的有利条件：</strong>如前所述，预取是一种推测性性能改进，会消耗额外的数据，并且在每种情况下都可能不是理想的结果。 为了减少浪费带宽的可能性，Terra 使用<a href="https://wicg.github.io/netinfo/" rel="noopener">网络信息API</a>随着<a href="https://developer.chrome.com/blog/device-memory/" rel="noopener">设备内存API</a>判断是否获取下一篇文章。 Terra 仅在以下情况下获取下一篇文章： 
+<ul>
+<li>连接速度至少为3G，设备内存至少为4GB，</li>
+<li>或者如果设备运行的是 iOS。</li>
+</ul>
+</li>
+<li><strong>CPU空闲：</strong>最后，Terra 检查 CPU 是否空闲并且能够通过使用执行额外的工作<a href="https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback" rel="noopener"><code>请求空闲回调</code></a>，当主线程空闲时或在特定（可选）截止日期之前（以先到者为准），它需要处理回调。</li>
+</ul>
+<p>遵守这些条件可确保 Terra 仅在必要时获取数据，从而节省带宽和电池寿命，并最大限度地减少最终未使用的预取的影响。</p>
+<p>当满足这些条件时，Terra 会预取以下部分中存在的文章：“相关内容”和“为您推荐”，下面以蓝色突出显示。</p>
+<figure>
+  <img alt="A screenshot of the two sections on the Terra website in which links were prefetched. At left, the 'Related content' section is highlighted, whereas on the right, the 'Recommended for you' section is highlighted." decoding="async" height="494" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=1600 1600w" width="800">
+</figure>
+<h2 id="business-impact">商业冲击<a class="headline-link" href="https://web.dev/terra-prefetching-case-study/#business-impact">#</a></h2>
+<p>为了衡量这项技术的影响，Terra 首先在文章页面的“相关内容”部分推出了这项功能。 UTM 代码帮助他们区分预取的文章和非预取的文章以进行比较。 经过两周成功的 A/B 测试后，Terra 决定将预取功能添加到“为您推荐”部分。</p>
+<p>由于预取文章，广告指标总体增加，LCP 和<a href="https://web.dev/ttfb/">第一个字节的时间 (TTFB)</a>观察到的次数：</p>
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>公制</th>
+        <th>移动的</th>
+        <th>桌面</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>广告点击率</td>
+        <td>+11%</td>
+        <td>+30%</td>
+      </tr>
+      <tr>
+        <td>广告可见度</td>
+        <td>+10.5%</td>
+        <td>+6%</td>
+      </tr>
+      <tr>
+        <td>液晶聚合物</td>
+        <td>-51%</td>
+        <td>-73%</td>
+      </tr>
+      <tr>
+        <td>TTFB</td>
+        <td>-83%</td>
+        <td>-84%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>谨慎使用预取可以极大地缩短页面加载时间、增加广告指标并减少 LCP 时间。</p>
+<h2 id="technical-details">技术细节<a class="headline-link" href="https://web.dev/terra-prefetching-case-study/#technical-details">#</a></h2>
+<p>预取可以通过使用资源提示来实现，例如<a href="https://developer.mozilla.org/docs/Glossary/Prefetch" rel="noopener"><code>rel=预取</code></a>或者<a href="https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preload" rel="noopener"><code>相对=预载</code></a>，通过诸如<a href="https://github.com/GoogleChromeLabs/quicklink" rel="noopener">快速链接</a>或者<a href="https://github.com/guess-js" rel="noopener">猜猜看</a>，或使用较新的推测规则 API。 Terra 选择通过使用来实现这一点<a href="https://developer.mozilla.org/docs/Web/API/Fetch_API" rel="noopener">获取API</a>与一个<a href="https://developer.mozilla.org/docs/Web/API/fetch#:~:text=priority" rel="noopener">低优先级</a>与 Intersection Observer 实例结合使用。 Terra 做出了这个选择，因为它允许他们支持 Safari，而 Safari 还不支持其他预取方法，例如<code>rel=预取</code>或推测规则 API，并且功能齐全的 JavaScript 库对于 Terra 的需求来说并不是必需的。</p>
+<p>下面的 JavaScript 大致相当于 Terra 使用的代码：</p>
+<div><pre class="language-js"><code class="language-js"><span class="token keyword">功能</span> <span class="token function">预取</span><span class="token punctuation">（</span><span class="token parameter">节点列表</span><span class="token punctuation">）</span> <span class="token punctuation">{</span><br><br>    <span class="token comment">// 排除慢 ECT &amp;lt; 3g</span><br>  <span class="token keyword">如果</span> <span class="token punctuation">（</span>航海家<span class="token punctuation">。</span>联系<span class="token operator">&amp;amp;&amp;amp;</span><br>    <span class="token punctuation">（</span>航海家<span class="token punctuation">。</span>联系<span class="token punctuation">。</span>有效类型<span class="token operator">===</span> <span class="token string">'慢-2g'</span><br>      <span class="token operator">||</span>航海家<span class="token punctuation">。</span>联系<span class="token punctuation">。</span>有效类型<span class="token operator">===</span> <span class="token string">'2克'</span><span class="token punctuation">）</span><br>  <span class="token punctuation">）</span> <span class="token punctuation">{</span><br>    <span class="token keyword">返回</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><br>    <span class="token comment">// 排除内存 &amp;lt;= 2GB 的低端设备</span><br>  <span class="token keyword">如果</span> <span class="token punctuation">（</span>航海家<span class="token punctuation">。</span>设备内存<span class="token operator">&amp;amp;&amp;amp;</span>航海家<span class="token punctuation">。</span>设备内存<span class="token operator">&amp;lt;=</span> <span class="token number">2</span><span class="token punctuation">）</span> <span class="token punctuation">{</span><br>    <span class="token keyword">返回</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><br>  <span class="token keyword">常量</span>获取链接列表<span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>  <span class="token keyword">常量</span>观察者<span class="token operator">=</span> <span class="token keyword">新的</span> <span class="token class-name">路口观察者</span><span class="token punctuation">（</span><span class="token keyword">功能</span> <span class="token punctuation">（</span><span class="token parameter">条目</span><span class="token punctuation">）</span> <span class="token punctuation">{</span><br>条目<span class="token punctuation">。</span><span class="token function">对于每个</span><span class="token punctuation">（</span><span class="token keyword">功能</span> <span class="token punctuation">（</span><span class="token parameter">入口</span><span class="token punctuation">）</span> <span class="token punctuation">{</span><br>      <span class="token keyword">如果</span> <span class="token punctuation">（</span>入口<span class="token punctuation">。</span>相交<span class="token punctuation">）</span> <span class="token punctuation">{</span><br>        <span class="token keyword">如果</span> <span class="token punctuation">（</span><span class="token operator">！</span>获取链接列表<span class="token punctuation">[</span>入口<span class="token punctuation">。</span>目标<span class="token punctuation">。</span>链接地址<span class="token punctuation">]</span><span class="token punctuation">）</span> <span class="token punctuation">{</span><br>获取链接列表<span class="token punctuation">[</span>入口<span class="token punctuation">。</span>目标<span class="token punctuation">。</span>链接地址<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">真的</span><span class="token punctuation">;</span><br><br>          <span class="token function">拿来</span><span class="token punctuation">（</span>入口<span class="token punctuation">。</span>目标<span class="token punctuation">,</span> <span class="token punctuation">{</span><br>            <span class="token literal-property property">优先事项</span><span class="token operator">:</span> <span class="token string">'低的'</span><br>          <span class="token punctuation">}</span><span class="token punctuation">）</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><br>        <br>观察者<span class="token punctuation">。</span><span class="token function">不观察</span><span class="token punctuation">（</span>入口<span class="token operator">=</span>入口<span class="token punctuation">。</span>目标<span class="token punctuation">）</span><span class="token punctuation">;</span><br>      <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><span class="token punctuation">）</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">）</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">常量</span>空闲回调<span class="token operator">=</span>窗户<span class="token punctuation">。</span>请求空闲回调<span class="token operator">||</span> <span class="token keyword">功能</span> <span class="token punctuation">（</span><span class="token parameter">CB</span><span class="token punctuation">）</span> <span class="token punctuation">{</span><br>  <span class="token keyword">让</span>开始<span class="token operator">=</span>日期<span class="token punctuation">。</span><span class="token function">现在</span><span class="token punctuation">（</span><span class="token punctuation">）</span><span class="token punctuation">;</span><br><br>  <span class="token keyword">返回</span> <span class="token function">设置超时时间</span><span class="token punctuation">（</span><span class="token keyword">功能</span> <span class="token punctuation">（</span><span class="token punctuation">）</span> <span class="token punctuation">{</span><br>    <span class="token function">CB</span><span class="token punctuation">（</span><span class="token punctuation">{</span><br>      <span class="token literal-property property">超时</span><span class="token operator">:</span> <span class="token boolean">错误的</span><span class="token punctuation">,</span><br>      <span class="token function-variable function">剩余时间</span><span class="token operator">:</span> <span class="token keyword">功能</span> <span class="token punctuation">（</span><span class="token punctuation">）</span> <span class="token punctuation">{</span><br>        <span class="token keyword">返回</span>数学<span class="token punctuation">。</span><span class="token function">最大限度</span><span class="token punctuation">（</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">50</span> <span class="token operator">-</span> <span class="token punctuation">（</span>日期<span class="token punctuation">。</span><span class="token function">现在</span><span class="token punctuation">（</span><span class="token punctuation">）</span> <span class="token operator">-</span>开始<span class="token punctuation">）</span><span class="token punctuation">）</span><span class="token punctuation">;</span><br>      <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><span class="token punctuation">）</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">）</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token function">空闲回调</span><span class="token punctuation">（</span><span class="token keyword">功能</span> <span class="token punctuation">（</span><span class="token punctuation">）</span> <span class="token punctuation">{</span><br>  <span class="token function">预取</span><span class="token punctuation">（</span>节点列表<span class="token punctuation">）</span><br><span class="token punctuation">}</span><span class="token punctuation">）</span></code></pre>
+</div><ul>
+<li>这<code>预取</code>在启动预取之前，函数首先检查最低连接质量和设备内存。</li>
+<li>然后它使用一个<code>路口观察者</code>监视元素何时在视口中可见，然后将 URL 添加到列表中以进行预取。</li>
+<li>预取过程的安排是<code>请求空闲回调</code>，旨在执行<code>预取</code>当主线程空闲时运行。</li>
+</ul>
+<h2 id="conclusion">结论<a class="headline-link" href="https://web.dev/terra-prefetching-case-study/#conclusion">#</a></h2>
+<p>如果谨慎使用，预取可以显着减少未来导航请求的加载时间，从而减少用户旅程中的摩擦并提高参与度。 预取会导致加载可能不会使用的额外字节，因此 Terra 采取了额外的步骤，仅在良好的网络条件下和可用的设备上进行预取。</p>
+<p><em>特别感谢 Gilberto Cocchi、Harry Theodoulou、Miguel Carlos Martínez Díaz、Barry Pollard、Jeremy Wagner 和 Terra 的工程团队对这项工作的贡献。</em></p>
+<hr><p>Prefetching is a technique used to speed up page loading by downloading resources—or even entire pages—which are likely to be needed in the near future. Research has shown that <a href="https://wpostats.com/" rel="noopener">faster load times result in higher conversion rates</a> and better user experiences.</p>
+<p><a href="https://www.terra.com/" rel="noopener">Terra</a> is one of the largest content portals from Brazil, offering entertainment, news, and sports with more than 63 million unique visitors per month. We’ve collaborated with Terra’s engineering team to improve the loading time of articles by using prefetching techniques on certain sections of their website.</p>
+<p>This case study describes Terra’s journey implementation which resulted in a 11% ads click-through rate (CTR) increase on mobile, 30% ads CTR on desktop, and 50% reduction in the <a href="https://web.dev/lcp/">Largest Contentful Paint (LCP)</a> times.</p>
+<h2 id="prefetching-strategy">Prefetching strategy <a class="headline-link" href="https://web.dev/terra-prefetching-case-study/#prefetching-strategy">#</a></h2>
+<p>Prefetching has been around for a while, but it is important to use it carefully as it consumes extra bandwidth for resources that are not immediately necessary. This technique should be applied thoughtfully to avoid unnecessary data usage. In the case of Terra, articles are prefetched if the following conditions are met:</p>
+<ul>
+<li><strong>Visibility of links to prefetched articles:</strong> Terra used the <a href="https://developer.mozilla.org/docs/Web/API/Intersection_Observer_API" rel="noopener">Intersection Observer API</a> to detect viewability of the section containing the articles that they wanted to prefetch.</li>
+<li><strong>Favorable conditions for increased data usage:</strong> As mentioned previously, prefetching is a speculative performance improvement that consumes extra data, and that may not be a desirable outcome in every situation. To reduce the likelihood of wasting bandwidth, Terra uses the <a href="https://wicg.github.io/netinfo/" rel="noopener">Network Information API</a> along with the <a href="https://developer.chrome.com/blog/device-memory/" rel="noopener">Device Memory API</a> to determine whether to fetch the next article. Terra only fetches the next article when:
+<ul>
+<li>The connection speed is at least 3G and the device has at least 4GB of memory,</li>
+<li>or if the device is running iOS.</li>
+</ul>
+</li>
+<li><strong>CPU idle:</strong> Finally, Terra checks if the CPU is idle and able to perform extra work by using <a href="https://developer.mozilla.org/docs/Web/API/Window/requestIdleCallback" rel="noopener"><code>requestIdleCallback</code></a>, which takes a callback to be processed when the main thread is idle, or by a specific (optional) deadline—whichever comes first.</li>
+</ul>
+<p>Adhering to these conditions ensures that Terra only fetches data when necessary, which saves bandwidth and battery life, and minimizes the impact of prefetches that end up going unused.</p>
+<p>When these conditions are met, Terra prefetches the articles present in the sections: "Related Content" and "Recommended for you" highlighted in blue below.</p>
+<figure>
+  <img alt="A screenshot of the two sections on the Terra website in which links were prefetched. At left, the 'Related content' section is highlighted, whereas on the right, the 'Recommended for you' section is highlighted." decoding="async" height="494" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Z5yUqXEgRMMMUqXtYCw1.png?auto=format&amp;w=1600 1600w" width="800">
+</figure>
+<h2 id="business-impact">Business Impact <a class="headline-link" href="https://web.dev/terra-prefetching-case-study/#business-impact">#</a></h2>
+<p>In order to measure the impact of this technique, Terra first launched this feature in the "Related content" section of the article page. A UTM code helped them to differentiate between prefetched and non-prefetched articles for comparison purposes. After two weeks of successful A/B testing, Terra decided to add the prefetching functionality to the "Recommended for you" section.</p>
+<p>As a result of prefetching articles, an overall increase of ads metrics and a reduction of LCP and <a href="https://web.dev/ttfb/">Time to First Byte (TTFB)</a> times were observed:</p>
+<div class="table-wrapper scrollbar">
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Mobile</th>
+        <th>Desktop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ads CTR</td>
+        <td>+11%</td>
+        <td>+30%</td>
+      </tr>
+      <tr>
+        <td>Ads viewability</td>
+        <td>+10.5%</td>
+        <td>+6%</td>
+      </tr>
+      <tr>
+        <td>LCP</td>
+        <td>-51%</td>
+        <td>-73%</td>
+      </tr>
+      <tr>
+        <td>TTFB</td>
+        <td>-83%</td>
+        <td>-84%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Prefetching—when used with care—greatly improves page load time, increases ads metrics, and reduces LCP time.</p>
+<h2 id="technical-details">Technical details <a class="headline-link" href="https://web.dev/terra-prefetching-case-study/#technical-details">#</a></h2>
+<p>Prefetching can be achieved through the use of resource hints such as <a href="https://developer.mozilla.org/docs/Glossary/Prefetch" rel="noopener"><code>rel=prefetch</code></a> or <a href="https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preload" rel="noopener"><code>rel=preload</code></a>, via libraries such as <a href="https://github.com/GoogleChromeLabs/quicklink" rel="noopener">quicklink</a> or <a href="https://github.com/guess-js" rel="noopener">Guess.js</a>, or using the newer Speculation Rules API. Terra has chosen to implement this by using the <a href="https://developer.mozilla.org/docs/Web/API/Fetch_API" rel="noopener">fetch API</a> with a <a href="https://developer.mozilla.org/docs/Web/API/fetch#:~:text=priority" rel="noopener">low priority</a> in combination with an Intersection Observer instance. Terra made this choice as it allows them to support Safari, which doesn't yet support other prefetching methods like <code>rel=prefetch</code> or the Speculation Rules API, and a full-featured JavaScript library wasn't necessary for Terra's needs.</p>
+<p>The below JavaScript is approximately equivalent to the code used by Terra:</p>
+<div><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">prefetch</span><span class="token punctuation">(</span><span class="token parameter">nodeLists</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br><br>    <span class="token comment">// Exclude slow ECTs &lt; 3g</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>connection <span class="token operator">&amp;&amp;</span><br>    <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>connection<span class="token punctuation">.</span>effectiveType <span class="token operator">===</span> <span class="token string">'slow-2g'</span><br>      <span class="token operator">||</span> navigator<span class="token punctuation">.</span>connection<span class="token punctuation">.</span>effectiveType <span class="token operator">===</span> <span class="token string">'2g'</span><span class="token punctuation">)</span><br>  <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><br>    <span class="token comment">// Exclude low end device which is device with memory &lt;= 2GB</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>deviceMemory <span class="token operator">&amp;&amp;</span> navigator<span class="token punctuation">.</span>deviceMemory <span class="token operator">&lt;=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><br>  <span class="token keyword">const</span> fetchLinkList <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>  <span class="token keyword">const</span> observer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IntersectionObserver</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">entries</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    entries<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">entry</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">if</span> <span class="token punctuation">(</span>entry<span class="token punctuation">.</span>isIntersecting<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fetchLinkList<span class="token punctuation">[</span>entry<span class="token punctuation">.</span>target<span class="token punctuation">.</span>href<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>          fetchLinkList<span class="token punctuation">[</span>entry<span class="token punctuation">.</span>target<span class="token punctuation">.</span>href<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br><br>          <span class="token function">fetch</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>target<span class="token punctuation">,</span> <span class="token punctuation">{</span><br>            <span class="token literal-property property">priority</span><span class="token operator">:</span> <span class="token string">'low'</span><br>          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><br>        <br>        observer<span class="token punctuation">.</span><span class="token function">unobserve</span><span class="token punctuation">(</span>entry <span class="token operator">=</span> entry<span class="token punctuation">.</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span><br>      <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">const</span> idleCallback <span class="token operator">=</span> window<span class="token punctuation">.</span>requestIdleCallback <span class="token operator">||</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">cb</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">let</span> start <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>  <span class="token keyword">return</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">{</span><br>      <span class="token literal-property property">didTimeout</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>      <span class="token function-variable function">timeRemaining</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">50</span> <span class="token operator">-</span> <span class="token punctuation">(</span>Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>      <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token function">idleCallback</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token function">prefetch</span><span class="token punctuation">(</span>nodeLists<span class="token punctuation">)</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+</div><ul>
+<li>The <code>prefetch</code> function first checks for a minimum connection quality and device memory before initiating prefetching.</li>
+<li>Then it uses an <code>IntersectionObserver</code> to monitor when elements become visible in the viewport, and subsequently adds URLs to a list for prefetching.</li>
+<li>The prefetch process is scheduled with <code>requestIdleCallback</code>, aiming to execute the <code>prefetch</code> function when the main thread is idle.</li>
+</ul>
+<h2 id="conclusion">Conclusion <a class="headline-link" href="https://web.dev/terra-prefetching-case-study/#conclusion">#</a></h2>
+<p>When used with care, prefetching can significantly reduce load times for future navigation requests, thereby reducing friction in the user journey and increasing engagement. Prefetching results in loading of extra bytes that may not be used, so Terra took extra steps to only prefetch under good network conditions and on capable devices, where this information is available.</p>
+<p><em>Special thanks to Gilberto Cocchi, Harry Theodoulou, Miguel Carlos Martínez Díaz, Barry Pollard, Jeremy Wagner and Terra's Engineering team for their contribution to this work.</em></p>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[测试或不测试，技术角度]]></title>
             <link>https://web.dev/ta-what-to-test/</link>
@@ -5983,454 +6439,6 @@ New viewport units like <code>svh</code> and <code>lvh</code> give web developer
 <p>Reducing your DOM size to only what is strictly necessary is a good way to optimize your website's INP. By doing so, you can reduce the amount of time it takes for the browser to perform layout and rendering work when the DOM is updated. Even if you can't meaningfully reduce DOM size, there are some techniques you can use to isolate rendering work to a DOM subtree, such as CSS containment and the <code>content-visibility</code> CSS property.</p>
 <p>However you go about it, creating an environment where rendering work is minimized—as well as reducing the amount of rendering work your page does in response to interactions—the result will be that your website will feel more responsive to users when they interact with them. That means you'll have a lower INP for your website, and that translates to a better user experience.</p>
 <p><em>Hero image from <a href="https://unsplash.com/" rel="noopener">Unsplash</a>, by <a href="https://unsplash.com/@_louisreed" rel="noopener">Louis Reed</a>.</em></p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[诊断实验室中的缓慢交互]]></title>
-            <link>https://web.dev/diagnose-slow-interactions-in-the-lab/</link>
-            <guid>https://web.dev/diagnose-slow-interactions-in-the-lab/</guid>
-            <content:encoded><![CDATA[<div>
-    <h1>GPT总结</h1>
-    <summary>本文介绍了优化交互到下一次绘制（Interaction to Next Paint，INP）的挑战性方面。优化INP的困难之一在于确定导致INP不佳的原因。可能的原因有很多：在主线程上安排了许多任务的第三方脚本、大型DOM大小、昂贵的事件回调等等。
-
-要解决INP不佳的问题并不容易。首先，您必须知道哪些交互通常会导致页面的INP。如果您还不知道这一点，请先阅读《在现场找到慢交互》。一旦您获得了现场数据并知道要测试哪些交互，您可以使用实验室工具来找出为什么这些交互很慢。
-
-如果您没有现场数据怎么办？
-
-理想情况下，您会希望有现场数据，因为这样可以节省大量时间来确定哪些交互需要优化。但是，您可能处于没有现场数据的情况下。如果是这种情况，您仍然可以找到需要改进的交互，只是需要采取不同的方法。
-
-总阻塞时间（Total Blocking Time，TBT）是一种评估页面加载期间响应性的指标。它与INP非常相关，并且可以让您了解在页面加载期间可能存在的慢交互。
-
-您可以使用L</summary>
-    <div>
-    <div>OriginTitle: Diagnose slow interactions in the lab</div>
-
-    </div></div><p>优化的一个具有挑战性的方面<a href="https://web.dev/inp/">与下一个油漆的相互作用 (INP)</a>正在找出导致 INP 不佳的原因。 有多种潜在原因：在主线程上安排许多任务的第三方脚本、大型任务<a href="https://developer.mozilla.org/docs/Web/API/Document_Object_Model" rel="noopener">DOM</a>大小、昂贵的事件回调等等。</p>
-<p>寻找解决 INP 问题的方法可能很困难。 首先，您必须知道哪些交互往往会导致页面的 INP。 如果您还不知道，请先阅读<a href="https://web.dev/find-slow-interactions-in-the-field/">寻找现场缓慢的互动</a>。 一旦您掌握了现场数据并知道要测试哪些交互，您就可以在实验室工具中进行测试，以找出这些交互缓慢的原因。</p>
-<h2 id="what-if-you-dont-have-field-data">如果没有现场数据怎么办？<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#what-if-you-dont-have-field-data">#</a></h2>
-<p>理想情况下，您需要现场数据，因为它可以为您节省大量时间来尝试找出需要优化的交互。 不过，您可能没有现场数据。 如果这就是您的情况，您仍然可以找到改进的交互方式：您只需采取不同的方法即可。</p>
-<p><a href="https://web.dev/tbt/">总阻塞时间 (TBT)</a>是评估加载期间页面响应能力的指标。<a href="https://almanac.httparchive.org/en/2022/performance#inp-and-tbt" rel="noopener">与INP有很好的相关性</a>，并且可以让您了解在页面加载时是否可以分析交互。</p>
-<p>您可以使用<a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">灯塔</a>或者<a href="https://pagespeed.web.dev/" rel="noopener">PageSpeed 见解</a>衡量您网页的 TBT。 如果您的 TBT 很差或需要改进，则很有可能在页面加载期间存在交互速度缓慢的情况。</p>
-<p>要在页面加载后查找缓慢的交互，您可能需要依赖其他类型的数据，例如网站分析中可能已有的常见用户流。 例如，如果您在电子商务网站上工作，常见的用户流程就是用户在将商品添加到在线购物车或进行在线结账时所采取的操作。</p>
-<p>无论您是否拥有现场数据，下一步都涉及重现该交互，因为只有当您能够最终确定缓慢的交互时，您才能修复它。</p>
-<h2 id="reproducing-slow-interactions-in-the-lab">再现实验室中的缓慢交互<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#reproducing-slow-interactions-in-the-lab">#</a></h2>
-<p>一旦确定了缓慢的交互，下一步就是在实验室中对其进行测试，看看它是否确实很慢。</p>
-<h3 id="dont-reach-for-the-performance-profiler-right-away">不要立即使用性能分析器<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#dont-reach-for-the-performance-profiler-right-away">#</a></h3>
-<p>Chrome 性能分析器虽然非常宝贵，但在与页面交互时不提供实时视图。 首先以更快的方式测试交互延迟会更有效，因此您可以快速评估给定的交互是否确实缓慢，然后在需要更多信息时使用性能分析器。</p>
-<h4 id="use-the-web-vitals-chrome-extension">使用 Web Vitals Chrome 扩展程序<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#use-the-web-vitals-chrome-extension">#</a></h4>
-<p>这<a href="https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en" rel="noopener">Web Vitals Chrome 扩展程序</a>测试交互延迟所需的工作量最少。 安装后，如果您执行以下操作，扩展将在控制台中显示交互数据：</p>
-<ol>
-<li>在 Chrome 中，单击地址栏右侧的扩展程序图标。</li>
-<li>在下拉菜单中找到 Web Vitals 扩展。</li>
-<li>单击右侧的图标打开扩展程序的设置。</li>
-<li>点击<strong>选项</strong>。</li>
-<li>启用<strong>控制台日志记录</strong>出现的屏幕中的复选框，然后单击<strong>节省</strong>。</li>
-</ol>
-<p>完成此操作后，在 Chrome DevTools 中打开控制台，并开始在您的网站上测试所需的交互。 当您与页面交互时，您将收到有用的控制台日志，为您提供交互的详细诊断信息。</p>
-<figure>
-  <img alt="A screenshot of the console logging that the Web Vitals extension provides for interactions. The logging contains details such timings and other contextual information." decoding="async" height="264" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-     打开控制台日志记录时，来自 Web Vitals 扩展的控制台条目。 每个符合条件的交互都会将交互数据记录到控制台。 
-  </figcaption>
-</figure>
-<h4 id="use-a-javascript-snippet">使用 JavaScript 片段<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#use-a-javascript-snippet">#</a></h4>
-<p>由于多种原因，使用 Web Vitals 扩展可能不是一个可行的选择。 在某些情况下，扩展程序可能会被阻止，并且它们也无法安装在移动设备上。 如果你想在物理 Android 设备上进行测试，后者是有问题的<a href="https://developer.chrome.com/docs/devtools/remote-debugging/" rel="noopener">远程调试</a>。</p>
-<p>另一种方法是将一些 JavaScript 复制并粘贴到 Chrome DevTools 的控制台中。 以下代码为每次交互生成与 Web Vitals 扩展相同的控制台输出：</p>
-<div><pre class="language-js"><code class="language-js"><span class="token keyword">让</span>最坏的Inp<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br><br><span class="token keyword">常量</span>观察者<span class="token operator">=</span> <span class="token keyword">新的</span> <span class="token class-name">绩效观察者</span><span class="token punctuation">（</span><span class="token punctuation">（</span><span class="token parameter">列表<span class="token punctuation">,</span>观测值<span class="token punctuation">,</span>选项</span><span class="token punctuation">）</span> <span class="token operator">=&amp;gt;</span> <span class="token punctuation">{</span><br>  <span class="token keyword">为了</span> <span class="token punctuation">（</span><span class="token keyword">让</span>入口<span class="token keyword">的</span>列表<span class="token punctuation">。</span><span class="token function">获取条目</span><span class="token punctuation">（</span><span class="token punctuation">）</span><span class="token punctuation">）</span> <span class="token punctuation">{</span><br>    <span class="token keyword">如果</span> <span class="token punctuation">（</span><span class="token operator">！</span>入口<span class="token punctuation">。</span>交互ID<span class="token punctuation">）</span> <span class="token keyword">继续</span><span class="token punctuation">;</span><br><br>入口<span class="token punctuation">。</span>渲染时间<span class="token operator">=</span>入口<span class="token punctuation">。</span>开始时间<span class="token operator">+</span>入口<span class="token punctuation">。</span>期间<span class="token punctuation">;</span><br>最坏的Inp<span class="token operator">=</span>数学<span class="token punctuation">。</span><span class="token function">最大限度</span><span class="token punctuation">（</span>入口<span class="token punctuation">。</span>期间<span class="token punctuation">,</span>最坏的Inp<span class="token punctuation">）</span><span class="token punctuation">;</span><br>      <br>安慰<span class="token punctuation">。</span><span class="token function">日志</span><span class="token punctuation">（</span><span class="token string">'[相互作用]'</span><span class="token punctuation">,</span>入口<span class="token punctuation">。</span>期间<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">类型：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>入口<span class="token punctuation">。</span>姓名<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">互动次数：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>表现<span class="token punctuation">。</span>互动次数<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, 最差Inp:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>最坏的Inp<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>入口<span class="token punctuation">,</span>选项<span class="token punctuation">）</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">）</span><span class="token punctuation">;</span><br><br>观察者<span class="token punctuation">。</span><span class="token function">观察</span><span class="token punctuation">（</span><span class="token punctuation">{</span><br>  <span class="token literal-property property">类型</span><span class="token operator">:</span> <span class="token string">'事件'</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">持续时间阈值</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 按规格最少 16 个</span><br>  <span class="token literal-property property">缓冲的</span><span class="token operator">:</span> <span class="token boolean">真的</span><br><span class="token punctuation">}</span><span class="token punctuation">）</span><span class="token punctuation">;</span></code></pre>
-</div><aside class="aside flow bg-state-info-bg color-state-info-text"><div class=" flow">使用上述代码的更方便的方法是使用<a href="https://developer.chrome.com/docs/devtools/javascript/snippets/">Chrome DevTools 中的代码片段功能</a>。</div></aside>
-<p>一旦确定交互确实很慢，您就可以分析交互以获得更详细的信息<em>为什么</em>这种互动很慢。</p>
-<h4 id="what-if-you-cant-reproduce-a-slow-interaction">如果无法重现缓慢的交互怎么办？<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#what-if-you-cant-reproduce-a-slow-interaction">#</a></h4>
-<p>如果您设法在现场数据中找到一些表明特定交互速度较慢的内容，但无法在实验室中重现它，该怎么办？</p>
-<p>首先，这是解决任何类型的性能问题时的常见挑战。 您在测试时的观点完全是相对的，并且取决于您所使用的硬件。 毕竟，您可能使用的是具有快速互联网连接的快速设备，但这并不意味着您的用户也是如此。 对于这种情况，您可以执行以下三项操作之一：</p>
-<ol>
-<li>如果您有物理 Android 设备，请使用<a href="https://developer.chrome.com/docs/devtools/remote-debugging/" rel="noopener">远程调试</a>在主机上打开 Chrome DevTools 实例并尝试在那里重现缓慢的交互。</li>
-<li>如果您没有物理设备，<a href="https://umaar.com/dev-tips/88-cpu-throttling/" rel="noopener">在 Chrome DevTools 中启用 CPU 限制功能</a>。</li>
-<li>请同时执行步骤 1 和 2，因为您还可以在物理 Android 设备的 DevTools 实例上启用 CPU 限制。</li>
-</ol>
-<p>另一个原因可能是您在与页面交互之前正在等待页面加载，但您的用户却没有。 如果您的网络速度很快，请启用<a href="https://developer.chrome.com/docs/devtools/settings/throttling/" rel="noopener">网络节流</a>并在页面绘制后立即与其进行交互。 您应该这样做，因为主线程在启动期间通常最繁忙，此时进行测试可能有助于揭示用户的实际体验。</p>
-<h3 id="record-a-trace">记录踪迹<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#record-a-trace">#</a></h3>
-<p>要获取有关交互缓慢原因的更多信息，您需要通过以下方式将事情提升到一个新的水平：<a href="https://developer.chrome.com/docs/devtools/performance/" rel="noopener">使用 Chrome DevTools 中的性能分析器</a>。 要在 Chrome 的性能分析器中分析交互，请执行以下操作：</p>
-<ol>
-<li>加载需要配置文件并准备好进行交互的页面后，打开 Chrome DevTools 并转到<strong>表现</strong>控制板。</li>
-<li>点击<strong>记录</strong>面板左上角的按钮开始追踪。</li>
-<li>执行所需的交互。</li>
-<li>点击<strong>记录</strong>再次按钮停止追踪。</li>
-</ol>
-<p>填充配置文件时，首先查看的位置应该是分析器顶部的活动摘要。 活动摘要将在记录中发生长任务的顶部显示红色条。 这使您可以快速放大问题区域。</p>
-<figure>
-  <img alt="A screenshot of the activity summary in the performance panel of Chrome DevTools. The activity displayed is mostly from JavaScript that causes a long task, which is highlighted in red above the flame chart." decoding="async" height="126" loading="lazy" sizes="(min-width: 674px) 674px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=1348 1348w" width="674">
-  <figcaption>
-     Chrome 性能分析器顶部的活动摘要。 长任务在活动火焰图上方以红色突出显示。 在这种情况下，重要的脚本编写工作负责了长任务中的大部分工作。 
-  </figcaption>
-</figure>
-<p>您可以通过拖动并选择活动摘要中的区域来快速关注问题区域。 一旦您关注交互发生的位置，<strong>互动</strong>track 将帮助您将交互和在其下方的主线程轨道中发生的活动排列起来：</p>
-<figure>
-  <img alt="A screenshot of an interaction as visualized in the performance panel of Chrome DevTools. An interactions track above the main thread track shows the duration of an interaction, which can be lined up with main thread activity." decoding="async" height="325" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-     Chrome 开发工具的性能分析器中分析的交互。 这<strong>互动</strong>track 显示了一系列相当于点击交互的事件。 交互跟踪条目跨越负责驱动交互的任务。 
-  </figcaption>
-</figure>
-<p>从这里开始，需要观察交互可能存在的问题。 有很多因素会导致高交互延迟，所以让我们来看看一些可能的罪魁祸首是什么。</p>
-<h3 id="use-lighthouse-timespans-as-an-alternative-to-tracing">使用 Lighthouse 时间跨度作为追踪的替代方案<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#use-lighthouse-timespans-as-an-alternative-to-tracing">#</a></h3>
-<p>Chrome 的性能分析器虽然包含丰富的诊断信息，但对于新手来说可能有点令人生畏。 性能分析器的一种替代方法是 Lighthouse 的时间跨度模式。 要使用此模式，请执行以下操作：</p>
-<ol>
-<li>打开 DevTools 后，转到<strong>灯塔</strong>DevTools 中的选项卡。</li>
-<li>在标记的部分下<strong>模式</strong>，选择<strong>时间跨度</strong>选项。</li>
-<li>在标记的部分下选择所需的设备类型<strong>设备</strong>。</li>
-<li>确保至少标记为复选框<strong>表现</strong>被选择在<strong>类别</strong>标签。</li>
-<li>点击<strong>开始时间跨度</strong>按钮。</li>
-<li>测试页面上所需的交互。</li>
-<li>点击<strong>结束时间跨度</strong>按钮并等待审核出现</li>
-<li>一旦审核填充到 Lighthouse 选项卡中，您可以通过单击<strong>内啡肽</strong>标签旁边的链接写着<strong>显示相关审核</strong>。</li>
-</ol>
-<p>此时，您将看到已失败或通过的审核的下拉列表。 当您展开该下拉列表时，您可能会看到交互过程中所花费时间的细分。</p>
-<figure>
-  <img alt="A screenshot of a Lighthouse audit provided by its timespan mode. The audit is specific to INP, and shows details for an interaction, including a screenshot of the element that triggered it, and a table beneath detailing where time was spent processing the interaction." decoding="async" height="662" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-     以 Lighthouse 的时间跨度模式描述的交互。 当与页面进行交互时，Lighthouse 会提供详细的审计，详细说明交互期间的时间花费情况，并按输入延迟、处理延迟和呈现延迟进行细分。 
-  </figcaption>
-</figure>
-<aside class="aside flow bg-state-info-bg color-state-info-text"><div class=" flow">如果您想进一步调查交互缓慢的原因，可以通过单击<strong>查看轨迹</strong>幻灯片上方的按钮。 这将带您进入性能分析器，其中显示您在时间跨度模式下测试的交互的交互详细信息。</div></aside>
-<h2 id="how-to-identify-long-input-delays">如何识别长输入延迟<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#how-to-identify-long-input-delays">#</a></h2>
-<p>可能导致高交互延迟的一件事是输入延迟。 这<em>输入延迟</em>是交互的第一阶段。 这是从操作系统首次接收到用户操作到浏览器能够开始处理由该输入触发的第一个事件的时间段。 当交互的事件回调开始运行时，输入延迟立即结束。</p>
-<p>通过在交互面板中查找交互的开始，然后查找该交互的事件回调开始运行的时间，可以识别 Chrome 性能分析器中的输入延迟。</p>
-<p>您总是会至少产生一些输入延迟，因为操作系统需要一些时间才能将输入事件传递到浏览器，但您确实可以控制输入延迟的时间。<strong>关键是要弄清楚主线程上是否正在运行阻止回调运行的工作。</strong></p>
-<figure>
-  <img alt="A depiction of input delay in Chrome's performance panel. The start of the interaction comes significantly before the event callbacks because of increased input delay due to a timer firing from a third-party script." decoding="async" height="291" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-    由第三方脚本的计时器触发的任务导致的输入延迟。
-  </figcaption>
-</figure>
-<p>在上图中，当用户尝试与页面交互时，来自第三方脚本的任务正在运行，因此延长了输入延迟。 延长的输入延迟会影响交互的延迟，因此可能会影响页面的 INP。</p>
-<p>有关如何解决长时间输入延迟的更多信息，请阅读如何解决<a href="https://web.dev/optimize-input-delay/">识别并减少输入延迟</a>。</p>
-<h2 id="how-to-identify-expensive-event-callbacks">如何识别昂贵的事件回调<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#how-to-identify-expensive-event-callbacks">#</a></h2>
-<p>事件回调在输入延迟后立即发生。 如果事件回调运行时间过长，则会延迟浏览器呈现下一帧，并可能显着增加交互的总延迟。 事件回调通常会运行太长时间，无论它们是作为第一方还是第三方 JavaScript 的结果运行，在某些情况下，两者都是如此。</p>
-<figure>
-  <img alt="A depiction of event callback tasks in Chrome's performance panel. The event callbacks occur for the pointerdown and click events, which occur in a long task." decoding="async" height="291" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-     响应点击交互而运行的事件回调，如 Chrome DevTools 中的性能分析器中所示。 注意右上角的红色三角形<strong>事件：指针向下</strong>和<strong>事件：点击</strong>条目，它标识昂贵的事件回调。
-  </figcaption>
-</figure>
-<p>可以通过观察特定交互的跟踪中的以下内容来查找昂贵的事件回调：</p>
-<ol>
-<li>确定与事件回调关联的任务是否是<a href="https://web.dev/long-tasks-devtools/#what-are-long-tasks">长期任务</a>。 为了更可靠地揭示实验室环境中的长任务，您可能需要<a href="https://developer.chrome.com/blog/new-in-devtools-61/#throttling" rel="noopener">启用CPU节流</a>在性能面板中，或连接中低端 Android 设备并使用<a href="https://developer.chrome.com/docs/devtools/remote-debugging/" rel="noopener">远程调试</a>。</li>
-<li>如果运行事件回调的任务是一个长任务，请查找事件处理程序条目（名称如<strong>事件：点击</strong>，例如）在调用堆栈中，条目的右上角有一个红色三角形。 这些是昂贵的事件回调。</li>
-</ol>
-<p>要解决昂贵的事件回调问题，请尝试以下策略之一：</p>
-<ol>
-<li><strong>尽可能少做工作。</strong>昂贵的事件回调中发生的所有事情都是严格必要的吗？ 如果没有，请考虑完全删除该代码（如果可以的话），或者如果不能的话，将其执行推迟到稍后的时间点。 您还可以利用框架功能来提供帮助。 例如，React 的<a href="https://beta.reactjs.org/reference/react/PureComponent" rel="noopener"><code>纯组件</code>班级</a>和<a href="https://react.dev/reference/react/memo" rel="noopener">记忆功能</a>当组件的 props 和 state 没有改变时，可以跳过不必要的渲染工作。</li>
-<li><strong>将事件回调中的非渲染工作推迟到稍后的时间点。</strong>长任务可以通过以下方式分解<a href="https://web.dev/optimize-long-tasks/#use-asyncawait-to-create-yield-points">屈服于主线​​程</a>。 每当您屈服于主线​​程时，您都会结束当前任务的执行，并将剩余的工作分解为一个单独的任务。 这使渲染器有机会处理先前在事件回调中处理的用户界面的更新。 如果你碰巧在 React 中进行开发，那么<a href="https://react.dev/reference/react/useTransition" rel="noopener">过渡功能</a>将为您做这件事。</li>
-</ol>
-<p>通过采用这些策略，您应该能够将事件回调放在可以更快地响应用户输入的位置。</p>
-<h2 id="how-to-identify-presentation-delays">如何识别演示延迟<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#how-to-identify-presentation-delays">#</a></h2>
-<p>长输入延迟和昂贵的事件回调并不是 INP 不佳的唯一可能原因。 有时，即使是响应少量事件回调代码而发生的渲染更新也可能代价高昂。 浏览器向用户界面呈现视觉更新以反映交互结果所需的时间称为<em>呈现延迟</em>。</p>
-<aside class="aside flow bg-tertiary-box-bg color-tertiary-box-text"><p class="cluster "><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Lightbulb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">   <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path> </svg></span><strong>重要的</strong></p><div class=" flow">这<a href="https://web.dev/rendering-performance/">渲染性能指南</a>是了解浏览器如何呈现页面的一个很好的入门读物。<a href="https://www.youtube.com/watch?v=K2QHdgAKP-s">像素的寿命</a>进一步深入了解基于 Chromium 的浏览器中渲染的工作原理。</div></aside>
-<figure>
-  <img alt="Rendering work as visualized in the performance panel of Chrome DevTools. The rendering work occurs after the event callback in order to paint the next frame." decoding="async" height="229" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-     Chrome 性能分析器中显示的渲染任务。 渲染工作以紫色显示，油漆工作以绿色显示。 
-  </figcaption>
-</figure>
-<aside class="aside flow bg-tertiary-box-bg color-tertiary-box-text"><p class="cluster "><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Lightbulb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">   <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path> </svg></span><strong>重要的</strong></p><div class=" flow">当分析由于昂贵的渲染工作而导致交互缓慢时，您应该启用<strong>截图</strong>性能分析器顶部的复选框。 这将帮助您将用户界面更新与主线程上相应的渲染工作对齐。</div></aside>
-<p>在导致高交互延迟的所有可能原因中，渲染工作可能是最难排除故障和修复的，但结果是值得付出努力的。 过多的渲染工作可能是由以下任一原因引起的：</p>
-<ul>
-<li><strong>大 DOM 尺寸。</strong>渲染工作通常随着页面 DOM 的大小而增加。 欲了解更多信息，请阅读<a href="https://web.dev/dom-size-and-interactivity/">DOM 大小对交互性的影响有多大——以及您可以采取哪些措施</a>。</li>
-<li><strong>强制回流焊。</strong>当您将样式更改应用于 JavaScript 中的元素时，就会发生这种情况，并且<em>然后</em>查询该工作的结果。 结果是浏览器必须在执行其他操作之前执行布局工作，以便浏览器可以返回更新后的样式。 有关避免强制回流的更多信息和提示，请阅读<a href="https://web.dev/avoid-large-complex-layouts-and-layout-thrashing/">避免大型、复杂的布局和布局颠簸</a>。</li>
-<li><strong>过多或不必要的工作<a href="https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame" rel="noopener"><code>请求动画帧</code></a>回调。</strong> <code>请求动画帧()</code>回调在事件循环的渲染阶段运行，并且必须在呈现下一帧之前完成。 如果您正在使用<code>请求动画帧()</code>要完成不涉及更改用户界面的工作，请了解您可能会延迟下一帧。</li>
-<li><strong><a href="https://developer.mozilla.org/docs/Web/API/ResizeObserver" rel="noopener"><code>调整大小观察者</code></a>回调。</strong>此类回调在渲染之前运行，如果其中的工作成本很高，则可能会延迟下一帧的呈现。 与事件回调一样，推迟下一帧不需要的任何逻辑。</li>
-</ul>
-<aside class="aside flow bg-tertiary-box-bg color-tertiary-box-text"><p class="cluster "><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Lightbulb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">   <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path> </svg></span><strong>重要的</strong></p><div class=" flow">通过启用<strong>时间轴：事件发起者</strong>在 Chrome DevTools 中进行实验。 启用此实验将绘制一个从任何样式重新计算任务到启动它的 JavaScript 任务的箭头。 要启用此实验，请进入 Chrome DevTools 设置，单击<strong>实验</strong>在左侧菜单中，单击标记为的复选框<strong>时间轴：事件发起者</strong>，然后重新启动 DevTools。</div></aside>
-<h2 id="troubleshooting-inp-is-an-iterative-process">INP 故障排除是一个迭代过程<a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#troubleshooting-inp-is-an-iterative-process">#</a></h2>
-<p>找出导致 INP 较差的高交互延迟的原因需要做大量工作，但如果您能查明原因，那么您就成功了一半。 通过遵循有条不紊的方法对不良 INP 进行故障排除，您可以可靠地查明导致问题的原因，并更快地找到正确的解决方案。 回顾：</p>
-<ul>
-<li><a href="https://web.dev/find-slow-interactions-in-the-field/">依靠现场数据来查找缓慢的交互</a>。</li>
-<li>在实验室中测试有问题的现场交互，看看它们是否可重现。</li>
-<li>确定原因是否是由于较长的输入延迟、昂贵的事件回调或昂贵的渲染工作造成的。</li>
-<li>重复。</li>
-</ul>
-<p>其中最后一个是最重要的。 与提高页面性能必须做的大多数其他工作一样，故障排除和改进 INP 是一个循环过程。 当你修复一个缓慢的交互时，你需要转向下一个，并继续这样做，直到你开始看到结果。 保持警惕！</p>
-<p><em>英雄形象来自<a href="https://unsplash.com/" rel="noopener">未飞溅</a>， 经过<a href="https://unsplash.com/@_louisreed" rel="noopener">路易斯·里德</a>。</em></p>
-<hr><p>One challenging aspect of optimizing <a href="https://web.dev/inp/">Interaction to Next Paint (INP)</a> is figuring out what's causing poor INP. There's a large variety of potential causes: third-party scripts that schedule many tasks on the main thread, large <a href="https://developer.mozilla.org/docs/Web/API/Document_Object_Model" rel="noopener">DOM</a> sizes, expensive event callbacks, and so on.</p>
-<p>Finding ways to fix poor INP can be difficult. To start, you have to know which interactions tend to be responsible for a page's INP. If you don't know this already, start by reading <a href="https://web.dev/find-slow-interactions-in-the-field/">Find slow interactions in the field</a>. Once you have that field data and know what interactions to test, you can do so in lab tools to work out why those interactions are slow.</p>
-<h2 id="what-if-you-dont-have-field-data">What if you don't have field data? <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#what-if-you-dont-have-field-data">#</a></h2>
-<p>Ideally, you'll want field data, as it saves you a lot of time trying to figure out which interactions need to be optimized. You might be in a position where you don't have field data, though. If that's your situation, you can still find interactions to improve: you'll just have to take a different approach.</p>
-<p><a href="https://web.dev/tbt/">Total Blocking Time (TBT)</a> is a metric that assesses page responsiveness during load. <a href="https://almanac.httparchive.org/en/2022/performance#inp-and-tbt" rel="noopener">It correlates very well with INP</a>, and can give you an idea if there might be interactions you can profile while the page is loading.</p>
-<p>You can use either <a href="https://developer.chrome.com/docs/lighthouse/overview/" rel="noopener">Lighthouse</a> or <a href="https://pagespeed.web.dev/" rel="noopener">PageSpeed Insights</a> to measure your page's TBT. If your TBT is either poor or needs improvement, there's a good chance there are interactions that might be slow during page load.</p>
-<p>To find slow interactions after the page has loaded, you might need to rely on other types of data, such as common user flows that you may already have in your website's analytics. If you work on an ecommerce website, for example, a common user flow would be the actions users take when they're adding items to an online shopping cart or going through an online checkout.</p>
-<p>Whether or not you have field data, the next step involves reproducing that interaction—because it's only when you're able to conclusively identify a slow interaction that you'll be able to fix it.</p>
-<h2 id="reproducing-slow-interactions-in-the-lab">Reproducing slow interactions in the lab <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#reproducing-slow-interactions-in-the-lab">#</a></h2>
-<p>Once you've identified a slow interaction, the next step is to test it in the lab to see if it's reliably slow.</p>
-<h3 id="dont-reach-for-the-performance-profiler-right-away">Don't reach for the performance profiler right away <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#dont-reach-for-the-performance-profiler-right-away">#</a></h3>
-<p>Chrome performance profiler—while invaluable—doesn't provide a live view while interacting with the page. It's more efficient to test interaction latency in a much faster way first, so you can quickly assess whether a given interaction is reliably slow, and then reach for the performance profiler when you need more information.</p>
-<h4 id="use-the-web-vitals-chrome-extension">Use the Web Vitals Chrome Extension <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#use-the-web-vitals-chrome-extension">#</a></h4>
-<p>The <a href="https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en" rel="noopener">Web Vitals Chrome Extension</a> involves the lowest amount of effort in testing interaction latency. Once installed, the extension will display interaction data in the console if you do the following:</p>
-<ol>
-<li>In Chrome, click the extensions icon to the right of the address bar.</li>
-<li>Locate the Web Vitals extension in the drop-down menu.</li>
-<li>Click the icon at the right to open the extension's settings.</li>
-<li>Click <strong>Options</strong>.</li>
-<li>Enable the <strong>Console logging</strong> checkbox in the resulting screen, and then click <strong>Save</strong>.</li>
-</ol>
-<p>Once this has been done, open the console in Chrome DevTools, and begin testing the desired interactions on your website. As you interact with the page, you'll receive useful console logs giving you detailed diagnostic information for the interaction.</p>
-<figure>
-  <img alt="A screenshot of the console logging that the Web Vitals extension provides for interactions. The logging contains details such timings and other contextual information." decoding="async" height="264" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/aVIMXrpfirRew3rTM2PM.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-    A console entry from the Web Vitals extension when console logging is turned on. Each qualifying interaction will log interaction data to the console.
-  </figcaption>
-</figure>
-<h4 id="use-a-javascript-snippet">Use a JavaScript snippet <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#use-a-javascript-snippet">#</a></h4>
-<p>Using the Web Vitals extension may not be a viable option for a number of reasons. Extensions can be blocked in some cases, and they also can't be installed on mobile devices. The latter is problematic if you want to test on a physical Android device with <a href="https://developer.chrome.com/docs/devtools/remote-debugging/" rel="noopener">remote debugging</a>.</p>
-<p>An alternate method involves copying and pasting some JavaScript into the console of Chrome DevTools. The following code yields the same console output as the Web Vitals extension for every interaction:</p>
-<div><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> worstInp <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br><br><span class="token keyword">const</span> observer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PerformanceObserver</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">list<span class="token punctuation">,</span> obs<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><br>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> entry <span class="token keyword">of</span> list<span class="token punctuation">.</span><span class="token function">getEntries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>entry<span class="token punctuation">.</span>interactionId<span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span><br><br>    entry<span class="token punctuation">.</span>renderTime <span class="token operator">=</span> entry<span class="token punctuation">.</span>startTime <span class="token operator">+</span> entry<span class="token punctuation">.</span>duration<span class="token punctuation">;</span><br>    worstInp <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>duration<span class="token punctuation">,</span> worstInp<span class="token punctuation">)</span><span class="token punctuation">;</span><br>      <br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'[Interaction]'</span><span class="token punctuation">,</span> entry<span class="token punctuation">.</span>duration<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">type: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>entry<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> interactionCount: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>performance<span class="token punctuation">.</span>interactionCount<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, worstInp: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>worstInp<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> entry<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span><span class="token punctuation">{</span><br>  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'event'</span><span class="token punctuation">,</span><br>  <span class="token literal-property property">durationThreshold</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 16 minimum by spec</span><br>  <span class="token literal-property property">buffered</span><span class="token operator">:</span> <span class="token boolean">true</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-</div><aside class="aside flow bg-state-info-bg color-state-info-text"><div class=" flow"> A more convenient way of using the preceding code is to use the <a href="https://developer.chrome.com/docs/devtools/javascript/snippets/">snippets feature in Chrome DevTools</a>. </div></aside>
-<p>Once you have determined that the interaction is reliably slow, you can then profile the interaction to get more detailed information on <em>why</em> that interaction is slow.</p>
-<h4 id="what-if-you-cant-reproduce-a-slow-interaction">What if you can't reproduce a slow interaction? <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#what-if-you-cant-reproduce-a-slow-interaction">#</a></h4>
-<p>What if you've managed to find something in your field data that suggests a particular interaction is slow, but you can't reproduce it in the lab?</p>
-<p>For one, this is a common challenge in troubleshooting performance issues of any kind. Your point of view when testing is entirely relative and dependent on the hardware you're using. After all, you may be on a fast device with a fast internet connection—but that doesn't mean your users are too. For this situation you can do one of three things:</p>
-<ol>
-<li>If you have a physical Android device, use <a href="https://developer.chrome.com/docs/devtools/remote-debugging/" rel="noopener">remote debugging</a> to open a Chrome DevTools instance on your host machine and try to reproduce slow interactions there.</li>
-<li>If you don't have a physical device, <a href="https://umaar.com/dev-tips/88-cpu-throttling/" rel="noopener">enable the CPU throttling feature in Chrome DevTools</a>.</li>
-<li>Follow both steps 1 and 2, as you can also enable CPU throttling on the DevTools instance for a physical Android device.</li>
-</ol>
-<p>Another cause could be that you're waiting for a page to load before you interact with it, but your users are not. If you're on a fast network, enable <a href="https://developer.chrome.com/docs/devtools/settings/throttling/" rel="noopener">network throttling</a> and interact with the page as soon as it paints. You should do this because the main thread is often busiest during startup, and testing at that time might help reveal what your users are actually experiencing.</p>
-<h3 id="record-a-trace">Record a trace <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#record-a-trace">#</a></h3>
-<p>To get more information on why an interaction is slow, you'll need to take things to the next level by <a href="https://developer.chrome.com/docs/devtools/performance/" rel="noopener">using the performance profiler in Chrome DevTools</a>. To profile an interaction in Chrome's performance profiler, do the following:</p>
-<ol>
-<li>With the page you need to profile loaded and ready for interactions, open Chrome DevTools and go to the <strong>Performance</strong> panel.</li>
-<li>Click the <strong>Record</strong> button at the upper left of the panel to start tracing.</li>
-<li>Perform the desired interaction.</li>
-<li>Click the <strong>Record</strong> button again to stop tracing.</li>
-</ol>
-<p>When the profile populates, the first place to look should be the activity summary at the top of the profiler. The activity summary will show red bars at the top where long tasks occurred in the recording. This allows you to quickly zoom in on problem areas.</p>
-<figure>
-  <img alt="A screenshot of the activity summary in the performance panel of Chrome DevTools. The activity displayed is mostly from JavaScript that causes a long task, which is highlighted in red above the flame chart." decoding="async" height="126" loading="lazy" sizes="(min-width: 674px) 674px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UcSCVSfw65rg6u1YkqmY.png?auto=format&amp;w=1348 1348w" width="674">
-  <figcaption>
-    The activity summary at the top of Chrome's performance profiler. Long tasks are highlighted in red above the activity flame chart. In this case, significant scripting work was responsible for most of the work in the long task.
-  </figcaption>
-</figure>
-<p>You can quickly focus on the problem area by dragging and selecting a region in the activity summary. Once you've focused to where the interaction occurred, the <strong>Interactions</strong> track will help you line up the interaction and the activity that occurred in the main thread track below it:</p>
-<figure>
-  <img alt="A screenshot of an interaction as visualized in the performance panel of Chrome DevTools. An interactions track above the main thread track shows the duration of an interaction, which can be lined up with main thread activity." decoding="async" height="325" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/YKYLTuog3110ynQyXDdM.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-    An interaction profiled in the performance profiler in Chrome's DevTools. The <strong>Interactions</strong> track shows a series of events that amount to a click interaction. The Interactions track entries span across the tasks responsible for driving the interaction.
-  </figcaption>
-</figure>
-<p>From here, it's a matter of observing what the problem with the interaction might be. There are many things that can contribute to high interaction latency, so let's go through what some of the culprits could be.</p>
-<h3 id="use-lighthouse-timespans-as-an-alternative-to-tracing">Use Lighthouse timespans as an alternative to tracing <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#use-lighthouse-timespans-as-an-alternative-to-tracing">#</a></h3>
-<p>Chrome's performance profiler—while rich with diagnostic information—can be a bit intimidating to the uninitiated. One alternative to the performance profiler is Lighthouse's timespan mode. To use this mode, do the following:</p>
-<ol>
-<li>With DevTools open, go to the <strong>Lighthouse</strong> tab in DevTools.</li>
-<li>Under the section labeled <strong>Mode</strong>, select the <strong>Timespan</strong> option.</li>
-<li>Select the desired device type under the section labeled <strong>Device</strong>.</li>
-<li>Ensure at least the checkbox labeled <strong>Performance</strong> is selected under the <strong>Categories</strong> label.</li>
-<li>Click the <strong>Start timespan</strong> button.</li>
-<li>Test the desired interaction(s) on the page.</li>
-<li>Click the <strong>End timespan</strong> button and wait for the audit to appear</li>
-<li>Once the audit populates in the Lighthouse tab, you can filter the audits by INP by clicking the <strong>INP</strong> link next to the label which reads <strong>Show audits relevant to</strong>.</li>
-</ol>
-<p>At this point, you'll see a drop-down list for audits that have failed or passed. When you expand that drop-down, you'll probably see a breakdown of time spent during the interaction.</p>
-<figure>
-  <img alt="A screenshot of a Lighthouse audit provided by its timespan mode. The audit is specific to INP, and shows details for an interaction, including a screenshot of the element that triggered it, and a table beneath detailing where time was spent processing the interaction." decoding="async" height="662" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/F3fWEdo61KDoAE1OQx9X.jpg?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-    An interaction profiled in Lighthouse's timespan mode. When interactions are made with the page, Lighthouse provides an audit detailing where the time during an interaction was spent, and breaks it down by input delay, processing delay, and presentation delay.
-  </figcaption>
-</figure>
-<aside class="aside flow bg-state-info-bg color-state-info-text"><div class=" flow"> If you want to further investigate the cause behind a slow interaction, you can do so by clicking the <strong>View Trace</strong> button just above the filmstrip. This will take you to the performance profiler that shows interactions details for the interactions that you tested in the timespan mode. </div></aside>
-<h2 id="how-to-identify-long-input-delays">How to identify long input delays <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#how-to-identify-long-input-delays">#</a></h2>
-<p>One thing that could be contributing to high interaction latency is input delay. The <em>input delay</em> is the first phase of an interaction. This is the period of time from when the user action is first received by the operating system until the browser is able to start processing the first event triggered by that input. The input delay ends right as the event callbacks for the interaction begin to run.</p>
-<p>Identifying input delay in Chrome's performance profiler can be done by finding the start of an interaction in the interactions panel, and then finding the beginning of when the event callbacks for that interaction start to run.</p>
-<p>You'll always incur at least some input delay, as it takes some time for the operating system to pass the input event to the browser—but you do have some control over how long the input delay is. <strong>The key is to figure out if there is work running on the main thread that's preventing your callbacks from running.</strong></p>
-<figure>
-  <img alt="A depiction of input delay in Chrome's performance panel. The start of the interaction comes significantly before the event callbacks because of increased input delay due to a timer firing from a third-party script." decoding="async" height="291" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/UrkbAOpDSW2ABcG5ZHE3.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-    Input delay caused by a task fired by a timer from a third-party script.
-  </figcaption>
-</figure>
-<p>In the previous figure, a task from a third-party script is running as the user attempts to interact with the page, and therefore extends the input delay. The extended input delay affects the interaction's latency, and could therefore affect the page's INP.</p>
-<p>For more information on how you can resolve long input delays, read about how you can <a href="https://web.dev/optimize-input-delay/">identify and reduce input delay</a>.</p>
-<h2 id="how-to-identify-expensive-event-callbacks">How to identify expensive event callbacks <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#how-to-identify-expensive-event-callbacks">#</a></h2>
-<p>Event callbacks occur immediately after the input delay. If an event callback runs too long, it delays the browser from presenting the next frame, and can add significantly to an interaction's total latency. Event callbacks can often run for too long, whether they run as the result of first-party or third-party JavaScript—and in some cases, both.</p>
-<figure>
-  <img alt="A depiction of event callback tasks in Chrome's performance panel. The event callbacks occur for the pointerdown and click events, which occur in a long task." decoding="async" height="291" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/h0UKtDuUBvWxd10vjrsn.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-    The event callbacks that run in response to a click interaction, as shown in the performance profiler in Chrome DevTools. Note the red triangle in the upper right corner of both the <strong>Event: pointerdown</strong> and <strong>Event: click</strong> entries, which identifies expensive event callbacks.
-  </figcaption>
-</figure>
-<p>Finding expensive event callbacks can be done by observing the following in a trace for a specific interaction:</p>
-<ol>
-<li>Determine whether the task associated with the event callbacks is a <a href="https://web.dev/long-tasks-devtools/#what-are-long-tasks">long task</a>. To reveal long tasks in a lab setting more reliably, you may need to <a href="https://developer.chrome.com/blog/new-in-devtools-61/#throttling" rel="noopener">enable CPU throttling</a> in the performance panel, or connect a low to mid-tier Android device and use <a href="https://developer.chrome.com/docs/devtools/remote-debugging/" rel="noopener">remote debugging</a>.</li>
-<li>If the task that runs the event callbacks is a long task, look for event handler entries (entries with names such as <strong>Event: click</strong>, for example) in the call stack that have a red triangle at the upper right corner of the entry. These are expensive event callbacks.</li>
-</ol>
-<p>To address expensive event callbacks, try one of the following strategies:</p>
-<ol>
-<li><strong>Do as little work as possible.</strong> Is everything that happens in an expensive event callback strictly necessary? If not, consider removing that code altogether if you can, or deferring its execution to a later point in time if you can't. You can also take advantage of framework features to help. For example, React's <a href="https://beta.reactjs.org/reference/react/PureComponent" rel="noopener"><code>PureComponent</code> class</a> and <a href="https://react.dev/reference/react/memo" rel="noopener">memoization feature</a> can skip unnecessary rendering work when props and state haven't changed for a component.</li>
-<li><strong>Defer non-rendering work in the event callback to a later point in time.</strong> Long tasks can be broken up by <a href="https://web.dev/optimize-long-tasks/#use-asyncawait-to-create-yield-points">yielding to the main thread</a>. Whenever you yield to the main thread, you're ending execution of the current task and breaking up the remainder of the work into a separate task. This gives the renderer a chance to process updates to the user interface that were processed earlier in the event callback. If you happen to be developing in React, its <a href="https://react.dev/reference/react/useTransition" rel="noopener">transitions feature</a> will do this for you.</li>
-</ol>
-<p>By employing these strategies, you should be able to get your event callbacks in a place where they're responding more quickly to user input.</p>
-<h2 id="how-to-identify-presentation-delays">How to identify presentation delays <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#how-to-identify-presentation-delays">#</a></h2>
-<p>Long input delays and expensive event callbacks aren't the only possible culprits of poor INP. Sometimes the rendering updates that occur in response to even small amounts of event callback code can be expensive. The time it takes for the browser to render visual updates to the user interface to reflect the result of an interaction is known as <em>presentation delay</em>.</p>
-<aside class="aside flow bg-tertiary-box-bg color-tertiary-box-text"><p class="cluster "><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Lightbulb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">   <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path> </svg></span><strong>Important</strong></p><div class=" flow"> The <a href="https://web.dev/rendering-performance/">rendering performance guide</a> is a good primer on understanding how the browser renders a page. <a href="https://www.youtube.com/watch?v=K2QHdgAKP-s">Life of a pixel</a> goes further in depth on how rendering works in Chromium-based browsers. </div></aside>
-<figure>
-  <img alt="Rendering work as visualized in the performance panel of Chrome DevTools. The rendering work occurs after the event callback in order to paint the next frame." decoding="async" height="229" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/pFmaZMXrlbugrC9WPoHM.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-    Rendering tasks as shown in Chrome's performance profiler. The rendering work is shown in purple, with paint work in green.
-  </figcaption>
-</figure>
-<aside class="aside flow bg-tertiary-box-bg color-tertiary-box-text"><p class="cluster "><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Lightbulb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">   <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path> </svg></span><strong>Important</strong></p><div class=" flow"> When profiling slow interactions due to expensive rendering work, you should enable the <strong>Screenshots</strong> checkbox at the top of the performance profiler. This will help you to line up user interface updates with the corresponding rendering work on the main thread. </div></aside>
-<p>Of all the possible causes of high interaction latency, rendering work can be the most difficult to troubleshoot and fix, but the result is worth the effort. Excessive rendering work could be caused by any of the following:</p>
-<ul>
-<li><strong>Large DOM sizes.</strong> Rendering work often increases along with the size of the page's DOM. For more information, read <a href="https://web.dev/dom-size-and-interactivity/">How large DOM sizes affect interactivity—and what you can do about it</a>.</li>
-<li><strong>Forced reflows.</strong> This happens when you apply style changes to elements in JavaScript, and <em>then</em> query the results of that work. The result is that the browser has to perform the layout work before doing anything else, so that the browser can return the updated styles. For more information and tips on avoiding forced reflows, read <a href="https://web.dev/avoid-large-complex-layouts-and-layout-thrashing/">Avoid large, complex layouts and layout thrashing</a>.</li>
-<li><strong>Excessive or unnecessary work in <a href="https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame" rel="noopener"><code>requestAnimationFrame</code></a> callbacks.</strong> <code>requestAnimationFrame()</code> callbacks are run during the rendering phase of the event loop, and must complete before the next frame can be presented. If you're using <code>requestAnimationFrame()</code> to do work that doesn't involve changes to the user interface, understand that you could be delaying the next frame.</li>
-<li><strong><a href="https://developer.mozilla.org/docs/Web/API/ResizeObserver" rel="noopener"><code>ResizeObserver</code></a> callbacks.</strong> Such callbacks run prior to rendering, and may delay presentation of the next frame if the work in them is expensive. As with event callbacks, defer any logic not needed for the next frame.</li>
-</ul>
-<aside class="aside flow bg-tertiary-box-bg color-tertiary-box-text"><p class="cluster "><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Lightbulb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">   <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path> </svg></span><strong>Important</strong></p><div class=" flow"> Troubleshooting might be made easier by enabling the <strong>Timeline: event initiators</strong> experiment in Chrome DevTools. Enabling this experiment will draw an arrow from any style recalculation task to the JavaScript task that kicked it off. To enable this experiment, go into the Chrome DevTools settings, click on <strong>Experiments</strong> in the left hand menu, the click the checkbox labeled <strong>Timeline: event initiators</strong>, and restart DevTools. </div></aside>
-<h2 id="troubleshooting-inp-is-an-iterative-process">Troubleshooting INP is an iterative process <a class="headline-link" href="https://web.dev/diagnose-slow-interactions-in-the-lab/#troubleshooting-inp-is-an-iterative-process">#</a></h2>
-<p>Finding out what's causing high interaction latency that contributes to poor INP takes a lot of work—but if you can pin down the causes, you're halfway there. By following a methodical approach to troubleshooting poor INP, you can reliably pin down what's causing a problem, and arrive more quickly to the right fix. To review:</p>
-<ul>
-<li><a href="https://web.dev/find-slow-interactions-in-the-field/">Rely on field data to find slow interactions</a>.</li>
-<li>Test problematic field interactions in the lab to see if they're reproducible.</li>
-<li>Identify whether the cause is due to long input delay, expensive event callbacks, or expensive rendering work.</li>
-<li>Repeat.</li>
-</ul>
-<p>The last of these is the most important. Like most other work you must do to improve page performance, troubleshooting and improving INP is a cyclical process. When you fix one slow interaction, you'll need to move onto the next, and continue to do so until you start to see results. Stay vigilant!</p>
-<p><em>Hero image from <a href="https://unsplash.com/" rel="noopener">Unsplash</a>, by <a href="https://unsplash.com/@_louisreed" rel="noopener">Louis Reed</a>.</em></p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[HTML 的客户端呈现和交互性]]></title>
-            <link>https://web.dev/client-side-rendering-of-html-and-interactivity/</link>
-            <guid>https://web.dev/client-side-rendering-of-html-and-interactivity/</guid>
-            <content:encoded><![CDATA[<div>
-    <h1>GPT总结</h1>
-    <summary>本文讨论了服务器提供的HTML和客户端JavaScript创建的HTML之间的性能差异。传统页面加载模式下，浏览器可以通过流式传输HTML来实现增量解析和渲染，从而提高页面的交互性能。然而，使用单页面应用（SPA）模式或在客户端使用JavaScript动态创建HTML时，会导致交互延迟增加。客户端渲染的HTML任务无法自动分块，可能导致长时间的主线程阻塞，影响页面的交互性能和关键时刻的渲染。为了解决客户端渲染带来的性能问题，可以尽量从服务器端提供HTML，减少客户端渲染的工作量；同时，限制在客户端创建的DOM节点数量，以减少渲染所需的处理时间；还可以考虑使用流式服务工作线程架构，通过缓存和流式传输HTML来提高页面加载速度。通过减少客户端渲染的工作量，可以改善页面的交互性能和其他指标。</summary>
-    <div>
-    <div>OriginTitle: Client-side rendering of HTML and interactivity</div>
-
-    </div></div><p>对于使用浏览器内置导航逻辑（有时称为“传统页面加载”或“硬导航”）的网站，浏览器默认会很好地解析和呈现 HTML。 此类网站有时称为多页面应用程序 (MPA)。</p>
-<p>但是，开发人员可以解决浏览器默认设置以满足他们的应用程序需求。 对于使用<a href="https://en.wikipedia.org/wiki/Single-page_application" rel="noopener">单页应用程序 (SPA) 模式</a>，它使用 JavaScript 在客户端动态创建大部分 HTML/DOM。 客户端渲染是这种设计模式的名称，它可以对您的网站产生影响<a href="https://web.dev/inp/">与下一个油漆的相互作用 (INP)</a>如果涉及的工作量过多。</p>
-<p>本指南将帮助您权衡使用服务器发送到浏览器的 HTML 与使用 JavaScript 在客户端创建 HTML 之间的区别，以及后者如何在关键时刻导致较高的交互延迟。</p>
-<h2 id="how-the-browser-renders-html-provided-by-the-server">浏览器如何呈现服务器提供的 HTML<a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#how-the-browser-renders-html-provided-by-the-server">#</a></h2>
-<p>传统页面加载中使用的导航模式涉及在每次导航时从服务器接收 HTML。 如果您在浏览器地址栏中输入 URL 或单击 MPA 中的链接，则会发生以下一系列事件：</p>
-<ol>
-<li>浏览器发送针对所提供的 URL 的导航请求。</li>
-<li>服务器以块的形式响应 HTML。</li>
-</ol>
-<p>其中最后一步是关键。 它也是服务器/浏览器交换中最基本的性能优化之一，被称为<em>流媒体</em>。 如果服务器可以尽快开始发送 HTML，并且浏览器不等待整个响应到达，则浏览器可以在 HTML 到达时分块处理它。</p>
-<figure>
-  <img alt="A screenshot of parsing of HTML sent by the server visualized in the performance panel of Chrome DevTools. As the HTML streams in, chunks of it are processed across multiple shorter tasks, and rendering is incremental." decoding="async" height="379" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-     解析和呈现服务器提供的 HTML，如 Chrome DevTools 的性能面板中所示。 解析 HTML 和渲染 HTML 所涉及的任务被分成多个块。 
-  </figcaption>
-</figure>
-<p>与浏览器中发生的大多数事情一样，解析 HTML 发生在任务中。 当 HTML 从服务器流式传输到浏览器时，浏览器会在该流的位以块的形式到达时，一次一点地执行此操作，从而优化对该 HTML 的解析。 结果是浏览器在处理完每个块后会定期让步给主线程，从而避免<a href="https://web.dev/long-tasks-devtools/#what-are-long-tasks">长期任务</a>。 这意味着在解析 HTML 时可能会发生其他工作，包括向用户呈现页面所需的增量渲染工作，以及处理页面关键启动期间可能发生的用户交互。 这种方法转化为更好的<a href="https://web.dev/inp/">与下一个油漆的相互作用 (INP)</a>该页面的得分。</p>
-<p>外卖？ 当您从服务器流式传输 HTML 时，<strong>您可以免费获得 HTML 的增量解析和渲染以及自动生成主线程。</strong>客户端渲染无法实现这一点。</p>
-<h2 id="how-the-browser-renders-html-provided-by-javascript">浏览器如何呈现 JavaScript 提供的 HTML<a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#how-the-browser-renders-html-provided-by-javascript">#</a></h2>
-<p>虽然对页面的每个导航请求都需要服务器提供一定量的 HTML，但某些网站将使用 SPA 模式。 这种方法通常涉及服务器提供的最小初始 HTML 负载，但随后客户端将使用从服务器获取的数据组装的 HTML 填充页面的主要内容区域。 后续导航（在本例中有时称为“软导航”）完全由 JavaScript 处理，以使用新的 HTML 填充页面。</p>
-<p>在更有限的情况下，客户端渲染也可能发生在非 SPA 中，其中 HTML 通过 JavaScript 动态添加到 DOM。</p>
-<p>通过 JavaScript 创建 HTML 或添加到 DOM 有几种常见方法：</p>
-<ol>
-<li>这<a href="https://developer.mozilla.org/docs/Web/API/Element/innerHTML" rel="noopener"><code>内部HTML</code>财产</a>允许您通过字符串设置现有元素的内容，浏览器将其解析为 DOM。</li>
-<li>这<a href="https://developer.mozilla.org/docs/Web/API/Document/createElement" rel="noopener"><code>文档.createElement</code>方法</a>允许您创建要添加到 DOM 的新元素，而无需使用任何浏览器 HTML 解析。</li>
-<li>这<a href="https://developer.mozilla.org/docs/Web/API/Document/write" rel="noopener"><code>文档.写入</code>方法</a>允许您将 HTML 写入文档（浏览器会解析它，就像方法 #1 一样）。 由于<a href="https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()" rel="noopener">有很多原因</a>， 然而，<strong>的用法<code>文档.写入</code>强烈劝阻。</strong></li>
-</ol>
-<figure>
-  <img alt="A screenshot of parsing of HTML rendered via JavaScript visualized in the performance panel of Chrome DevTools. The work occurs in a single, long task that blocks the main thread." decoding="async" height="141" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-     在客户端通过 JavaScript 解析和渲染 HTML，如 Chrome DevTools 的性能面板中所示。 解析和渲染它所涉及的任务没有被分块，导致任务很长，阻塞主线程。 
-  </figcaption>
-</figure>
-<p>通过客户端 JavaScript 创建 HTML/DOM 的后果可能非常严重：</p>
-<ul>
-<li>与服务器响应导航请求而流式传输的 HTML 不同，客户端上的 JavaScript 任务不会自动分块，这可能会导致长任务阻塞主线程。 这意味着如果您在客户端上一次创建过多的 HTML/DOM，则页面的 INP 可能会受到负面影响。</li>
-<li>如果在启动期间在客户端上创建 HTML，则其中引用的资源<a href="https://web.dev/preload-scanner/#rendering-markup-with-client-side-javascript">将要<em>不是</em>被浏览器预加载扫描程序发现</a>。 这肯定会对页面的浏览量产生负面影响<a href="https://web.dev/lcp/">最大内容涂料 (LCP)</a>。 虽然这不是运行时性能问题（而是获取重要资源时的网络延迟问题），但您不希望您的网站的 LCP 由于回避这一基本的浏览器性能优化而受到影响。</li>
-</ul>
-<h2 id="what-you-can-do-about-the-performance-impact-of-client-side-rendering">针对客户端渲染的性能影响，您可以采取哪些措施<a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#what-you-can-do-about-the-performance-impact-of-client-side-rendering">#</a></h2>
-<p>如果您的网站严重依赖客户端渲染并且您已经观察到<a href="https://web.dev/find-slow-interactions-in-the-field/">现场数据中的 INP 值较差</a>，您可能想知道客户端渲染是否与该问题有关。 例如，如果您的网站是 SPA，您的现场数据可能会揭示负责大量渲染工作的交互。</p>
-<p>无论原因是什么，您都可以探索以下一些潜在原因，以帮助事情重回正轨。</p>
-<h3 id="provide-as-much-html-from-the-server-as-possible">尽可能多地从服务器提供 HTML<a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#provide-as-much-html-from-the-server-as-possible">#</a></h3>
-<p>如前所述，浏览器默认以非常高效的方式处理来自服务器的 HTML。 它将以一种避免长时间任务的方式分解 HTML 的解析和渲染，并优化总主线程时间。 这导致较低的<a href="https://web.dev/tbt/">总阻塞时间 (TBT)</a>，TBT 是<a href="https://almanac.httparchive.org/en/2022/performance#inp-and-tbt" rel="noopener">与INP强相关</a>。</p>
-<p>您可能依赖前端框架来构建您的网站。 如果是这样，您需要确保在服务器上呈现组件 HTML。 这将限制您的网站所需的初始客户端渲染量，并且应该会带来更好的体验。</p>
-<ul>
-<li>对于 React，您需要使用<a href="https://react.dev/reference/react-dom/server" rel="noopener">服务器 DOM API</a>在服务器上呈现 HTML。 但要注意：服务器端渲染的传统方法使用<a href="https://react.dev/reference/react-dom/server#server-apis-for-non-streaming-environments" rel="noopener">同步方法</a>，这可能会导致更长的<a href="https://web.dev/ttfb/">第一个字节的时间 (TTFB)</a>，以及后续指标，例如<a href="https://web.dev/fcp/">首次内容绘制 (FCP)</a>和LCP。 如果可能，请确保您使用流式 API<a href="https://react.dev/reference/react-dom/server#server-apis-for-nodejs-streams" rel="noopener">Node.js</a>或者<a href="https://react.dev/reference/react-dom/server#server-apis-for-web-streams" rel="noopener">其他 JavaScript 运行时</a>以便服务器可以尽快开始将 HTML 流式传输到浏览器。 Next.js（一个基于 React 的框架）默认提供了许多最佳实践。 除了在服务器上自动渲染 HTML 之外，它还可以静态生成不根据用户上下文（例如身份验证）而更改的页面的 HTML。</li>
-<li>Vue 默认也执行客户端渲染。 然而，与 React 一样，Vue 也可以<a href="https://vuejs.org/guide/scaling-up/ssr.html" rel="noopener">在服务器上渲染您的组件 HTML</a>。 要么尽可能利用这些服务器端 API，要么考虑<a href="https://vuejs.org/guide/scaling-up/ssr.html#higher-level-solutions" rel="noopener">更高层次的抽象</a>使您的 Vue 项目的最佳实践更容易实现。</li>
-<li>斯韦尔特<a href="https://learn.svelte.dev/tutorial/ssr" rel="noopener">在服务器上呈现 HTML</a>默认情况下，尽管如果您的组件代码需要访问浏览器独占的命名空间（<code>窗户</code>，例如），您可能无法在服务器上呈现该组件的 HTML。 尽可能探索替代方法，以免造成不必要的客户端渲染。<a href="https://kit.svelte.dev/" rel="noopener">苗条套件</a>——对于 Svelte 就像 Next.js 之于 React ——将许多最佳实践尽可能嵌入到您的 Svelte 项目中，这样您就可以避免单独使用 Svelte 的项目中的潜在陷阱。</li>
-</ul>
-<aside class="aside flow bg-tertiary-box-bg color-tertiary-box-text"><p class="cluster "><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Lightbulb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">   <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path> </svg></span><strong>重要的</strong></p><div class=" flow">如果您的应用程序使用这些框架中的任何一个并且需要客户端上的交互性，您仍然需要<a href="https://web.dev/rendering-on-the-web/#combining-server-rendering-and-csr-via-rehydration">在客户端上水化你的组件</a>以便他们能够互动。 要对渲染 HTML 的不同方法进行全面评估，以及有关如何在考虑到性能的情况下在客户端处理组件水合作用的一些建议，请阅读<a href="https://web.dev/rendering-on-the-web/">在网络上渲染</a>。</div></aside>
-<h3 id="limit-the-amount-of-dom-nodes-created-on-the-client">限制客户端创建的 DOM 节点数量<a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#limit-the-amount-of-dom-nodes-created-on-the-client">#</a></h3>
-<p>当 DOM 很大时，渲染它们所需的处理时间往往会增加。 无论您的网站是成熟的 SPA，还是由于 MPA 交互而将新节点注入到现有 DOM 中，请考虑使这些 DOM 尽可能小。 这将有助于减少客户端呈现期间显示 HTML 所需的工作，有望有助于降低网站的 INP。</p>
-<aside class="aside flow bg-state-good-bg color-state-good-text"><p class="cluster "><span class="aside__icon box-block "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" fill="currentColor" role="img" aria-label="Check">   <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"></path> </svg></span><strong>客观的</strong></p><div class=" flow"> <strong>阅读以了解更多信息：</strong>&nbsp;<a href="https://web.dev/dom-size-and-interactivity/">DOM 大小和交互性</a>。</div></aside>
-<h3 id="consider-a-streaming-service-worker-architecture">考虑一个流服务工作者架构<a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#consider-a-streaming-service-worker-architecture">#</a></h3>
-<p>这是一项先进的技术，可能无法轻松地适用于所有用例，但它可以将您的 MPA 变成一个网站，当用户从一个页面导航到下一个页面时，感觉就像立即加载一样。 您可以使用 Service Worker 将网站的静态部分预先缓存在<a href="https://developer.mozilla.org/docs/Web/API/CacheStorage" rel="noopener"><code>缓存存储</code></a>在使用时<a href="https://developer.mozilla.org/docs/Web/API/ReadableStream" rel="noopener"><code>可读流</code>应用程序编程接口</a>从服务器获取页面 HTML 的其余部分。</p>
-<p>当您成功使用此技术时，您不会在客户端上创建 HTML，但从缓存中即时加载部分内容会给人留下您的网站正在快速加载的印象。 使用这种方法的网站几乎就像一个 SPA，但没有客户端渲染的缺点。 它也是<a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/" rel="noopener">减少您从服务器请求的 HTML 数量</a>。</p>
-<p>简而言之，流服务工作线程架构并不<em>代替</em>浏览器的内置导航逻辑——它<em>添加</em>到它。 有关如何实现此目标的更多信息<a href="https://developer.chrome.com/docs/workbox/" rel="noopener">工作箱</a>， 读<a href="https://developer.chrome.com/docs/workbox/faster-multipage-applications-with-streams/" rel="noopener">使用流更快的多页应用程序</a>。</p>
-<h2 id="conclusion">结论<a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#conclusion">#</a></h2>
-<p>您的网站接收和呈现 HTML 的方式会对性能产生影响。 当您依靠服务器发送网站运行所需的全部（或大部分）HTML 时，您将免费获得很多：增量解析和渲染，以及自动屈服于主线​​程以避免长时间的任务。</p>
-<p>客户端 HTML 渲染引入了许多潜在的性能问题，这些问题在许多情况下是可以避免的。 然而，由于每个网站的要求不同，这并不是 100% 完全可以避免的。 为了减轻因客户端站点渲染过多而可能导致的潜在长时间任务，请确保尽可能多地从服务器发送网站的 HTML，对于必须在客户端上渲染的 HTML，保持 DOM 大小尽可能小客户端，并考虑替代架构来加速 HTML 到客户端的交付，同时还利用浏览器为从服务器加载的 HTML 提供的增量解析和呈现。</p>
-<p>如果您可以尽可能减少网站的客户端渲染，那么您不仅可以改善网站的 INP，还可以改善其他指标，例如 LCP、TBT，在某些情况下甚至可能改善 TTFB。</p>
-<p><em>英雄形象来自<a href="https://unsplash.com/" rel="noopener">未飞溅</a>， 经过<a href="https://unsplash.com/de/fotos/nZcMWOKAJrY" rel="noopener">麦克乔尼茨</a>。</em></p>
-<hr><p>Parsing and rendering of HTML is something that browsers do very well by default for websites that use the browser's built-in navigation logic—sometimes called "traditional page loads" or "hard navigations". Such websites are sometimes called multi-page applications (MPAs).</p>
-<p>However, developers may work around browser defaults to suit their application needs. This is certainly the case for websites using the <a href="https://en.wikipedia.org/wiki/Single-page_application" rel="noopener">single page application (SPA) pattern</a>, which dynamically creates large parts of the HTML/DOM on the client with JavaScript. Client-side rendering is the name for this design pattern, and it can have effects on your website's <a href="https://web.dev/inp/">Interaction to Next Paint (INP)</a> if the work involved is excessive.</p>
-<p>This guide will help you weigh the difference between using HTML sent by the server to the browser versus creating it on the client with JavaScript, and how the latter can result in high interaction latency at crucial moments.</p>
-<h2 id="how-the-browser-renders-html-provided-by-the-server">How the browser renders HTML provided by the server <a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#how-the-browser-renders-html-provided-by-the-server">#</a></h2>
-<p>The navigation pattern used in traditional page loads involves receiving HTML from the server on every navigation. If you enter a URL in the address bar of your browser or click on a link in an MPA, the following series of events occurs:</p>
-<ol>
-<li>The browser sends a navigation request for the URL provided.</li>
-<li>The server responds with HTML in chunks.</li>
-</ol>
-<p>The last step of these is key. It's also one of the most fundamental performance optimizations in the server/browser exchange, and is known as <em>streaming</em>. If the server can begin sending HTML as soon as possible, and the browser doesn't wait for the entire response to arrive, the browser can process HTML in chunks as it arrives.</p>
-<figure>
-  <img alt="A screenshot of parsing of HTML sent by the server visualized in the performance panel of Chrome DevTools. As the HTML streams in, chunks of it are processed across multiple shorter tasks, and rendering is incremental." decoding="async" height="379" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/8ZgdJRdWzvk5L72XKv2Z.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-    Parsing and rendering of HTML provided by the server as visualized in the performance panel of Chrome DevTools. The tasks involved in parsing HTML and rendering it are split into chunks.
-  </figcaption>
-</figure>
-<p>Like most things that happen in the browser, parsing HTML occurs within tasks. When HTML is streamed from the server to the browser, the browser optimizes parsing of that HTML by doing so a bit at a time as bits of that stream arrive in chunks. The consequence is that the browser yields to the main thread periodically after processing each chunk, which avoids <a href="https://web.dev/long-tasks-devtools/#what-are-long-tasks">long tasks</a>. This means that other work can occur while HTML is being parsed, including the incremental rendering work necessary to present a page to the user, as well as processing user interactions that may occur during the page's crucial startup period. This approach translates to a better <a href="https://web.dev/inp/">Interaction to Next Paint (INP)</a> score for the page.</p>
-<p>The takeaway? When you stream HTML from the server, <strong>you get incremental parsing and rendering of HTML and automatic yielding to the main thread for free.</strong> You don't get that with client-side rendering.</p>
-<h2 id="how-the-browser-renders-html-provided-by-javascript">How the browser renders HTML provided by JavaScript <a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#how-the-browser-renders-html-provided-by-javascript">#</a></h2>
-<p>While every navigation request to a page requires some amount of HTML to be provided by the server, some websites will use the SPA pattern. This approach often involves a minimal initial payload of HTML is provided by the server, but then the client will populate the main content area of a page with HTML assembled from data fetched from the server. Subsequent navigations—sometimes referred to as "soft navigations" in this case—are handled entirely by JavaScript to populate the page with new HTML.</p>
-<p>Client-side rendering may also occur in non-SPAs in more limited cases where HTML is dynamically added to the DOM through JavaScript.</p>
-<p>There are a few common ways of creating HTML or adding to the DOM through JavaScript:</p>
-<ol>
-<li>The <a href="https://developer.mozilla.org/docs/Web/API/Element/innerHTML" rel="noopener"><code>innerHTML</code> property</a> allows you to set the content on an existing element via a string, which the browser parses into DOM.</li>
-<li>The <a href="https://developer.mozilla.org/docs/Web/API/Document/createElement" rel="noopener"><code>document.createElement</code> method</a> allows you to create new elements to be added to the DOM without using any browser HTML parsing.</li>
-<li>The <a href="https://developer.mozilla.org/docs/Web/API/Document/write" rel="noopener"><code>document.write</code> method</a> allows you to write HTML to the document (and the browser parses it, just like in approach #1). Due to <a href="https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()" rel="noopener">a number of reasons</a>, however, <strong>usage of <code>document.write</code> is strongly discouraged.</strong></li>
-</ol>
-<figure>
-  <img alt="A screenshot of parsing of HTML rendered via JavaScript visualized in the performance panel of Chrome DevTools. The work occurs in a single, long task that blocks the main thread." decoding="async" height="141" loading="lazy" sizes="(min-width: 800px) 800px, calc(100vw - 48px)" src="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format" srcset="https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=200 200w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=228 228w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=260 260w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=296 296w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=338 338w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=385 385w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=439 439w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=500 500w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=571 571w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=650 650w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=741 741w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=845 845w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=964 964w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=1098 1098w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=1252 1252w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=1428 1428w, https://web-dev.imgix.net/image/jL3OLOhcWUQDnR4XjewLBx4e3PC3/Xam8fQoVZBmDPET1dVQ1.png?auto=format&amp;w=1600 1600w" width="800">
-  <figcaption>
-    Parsing and rendering of HTML through JavaScript on the client as visualized in the performance panel of Chrome DevTools. The tasks involved in parsing and rendering it are not chunked up, resulting in a long task that blocks the main thread.
-  </figcaption>
-</figure>
-<p>The consequences of creating HTML/DOM through client-side JavaScript can be significant:</p>
-<ul>
-<li>Unlike HTML streamed by the server in response to a navigation request, JavaScript tasks on the client are not automatically chunked up, which may result in long tasks that block the main thread. This means that your page's INP can be negatively affected if you're creating too much HTML/DOM at a time on the client.</li>
-<li>If HTML is created on the client during startup, resources referenced within it <a href="https://web.dev/preload-scanner/#rendering-markup-with-client-side-javascript">will <em>not</em> be discovered by the browser preload scanner</a>. This will certainly have a negative effect on a page's <a href="https://web.dev/lcp/">Largest Contentful Paint (LCP)</a>. While this is not a runtime performance issue (instead it's an issue of network delay in fetching important resources), you don't want your website's LCP to be affected by sidestepping this fundamental browser performance optimization.</li>
-</ul>
-<h2 id="what-you-can-do-about-the-performance-impact-of-client-side-rendering">What you can do about the performance impact of client-side rendering <a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#what-you-can-do-about-the-performance-impact-of-client-side-rendering">#</a></h2>
-<p>If your website depends heavily on client-side rendering and you've observed <a href="https://web.dev/find-slow-interactions-in-the-field/">poor INP values in your field data</a>, you might be wondering if client-side rendering has anything to do with the problem. For example, if your website is an SPA, your field data may reveal interactions responsible for considerable rendering work.</p>
-<p>Whatever the cause, here are some potential causes you can explore to help get things back on track.</p>
-<h3 id="provide-as-much-html-from-the-server-as-possible">Provide as much HTML from the server as possible <a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#provide-as-much-html-from-the-server-as-possible">#</a></h3>
-<p>As mentioned earlier, the browser handles HTML from the server in a very performant way by default. It will break up parsing and rendering of HTML in a way that avoids long tasks, and optimizes the amount of total main thread time. This leads to a lower <a href="https://web.dev/tbt/">Total Blocking Time (TBT)</a>, and TBT is <a href="https://almanac.httparchive.org/en/2022/performance#inp-and-tbt" rel="noopener">strongly correlated with INP</a>.</p>
-<p>You may be relying on a frontend framework to build your website. If so, you'll want to make sure you're rendering component HTML on the server. This will limit the amount of initial client-side rendering your website will require, and should result in a better experience.</p>
-<ul>
-<li>For React, you'll want to make use of the <a href="https://react.dev/reference/react-dom/server" rel="noopener">Server DOM API</a> to render HTML on the server. But be aware: the traditional method of server-side rendering uses <a href="https://react.dev/reference/react-dom/server#server-apis-for-non-streaming-environments" rel="noopener">a synchronous approach</a>, which can lead to a longer <a href="https://web.dev/ttfb/">Time to First Byte (TTFB)</a>, as well as subsequent metrics such as <a href="https://web.dev/fcp/">First Contentful Paint (FCP)</a> and LCP. Where possible, make sure you're using the streaming APIs for <a href="https://react.dev/reference/react-dom/server#server-apis-for-nodejs-streams" rel="noopener">Node.js</a> or <a href="https://react.dev/reference/react-dom/server#server-apis-for-web-streams" rel="noopener">other JavaScript runtimes</a> so that the server can begin streaming HTML to the browser as soon as possible. Next.js—a React-based framework—provides many best practices by default. In addition to automatically rendering HTML on the server, it can also statically generate HTML for pages that don't change based on user context (such as authentication).</li>
-<li>Vue also performs client-side rendering by default. However, like React, Vue can also <a href="https://vuejs.org/guide/scaling-up/ssr.html" rel="noopener">render your component HTML on the server</a>. Either take advantage of these server-side APIs where possible, or consider a <a href="https://vuejs.org/guide/scaling-up/ssr.html#higher-level-solutions" rel="noopener">higher-level abstraction</a> for your Vue project to make the best practices easier to implement.</li>
-<li>Svelte <a href="https://learn.svelte.dev/tutorial/ssr" rel="noopener">renders HTML on the server</a> by default—although if your component code needs access to browser-exclusive namespaces (<code>window</code>, for example), you may not be able to render that component's HTML on the server. Explore alternative approaches wherever possible so that you're not causing unnecessary client-side rendering. <a href="https://kit.svelte.dev/" rel="noopener">SvelteKit</a>—which is to Svelte as Next.js is to React—embeds many best practices into your Svelte projects as possible, so you can avoid potential pitfalls in projects that use Svelte alone.</li>
-</ul>
-<aside class="aside flow bg-tertiary-box-bg color-tertiary-box-text"><p class="cluster "><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Lightbulb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">   <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path> </svg></span><strong>Important</strong></p><div class=" flow"> If your application uses either of these frameworks and requires interactivity on the client, you'll still need to <a href="https://web.dev/rendering-on-the-web/#combining-server-rendering-and-csr-via-rehydration">hydrate your components on the client</a> so that they'll be interactive. For a comprehensive evaluation of the different approaches to rendering HTML, and for some advice on how to handle component hydration on the client with performance in mind, read <a href="https://web.dev/rendering-on-the-web/">Rendering on the web</a>. </div></aside>
-<h3 id="limit-the-amount-of-dom-nodes-created-on-the-client">Limit the amount of DOM nodes created on the client <a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#limit-the-amount-of-dom-nodes-created-on-the-client">#</a></h3>
-<p>When DOMs are large, the amount of processing time required to render them tends to increase. Whether your website is a full-fledged SPA, or is injecting new nodes into an existing DOM as the result of an interaction for an MPA, consider keeping those DOMs as small as possible. This will help reduce the work required during client-side rendering to display that HTML, hopefully helping to keep your website's INP lower.</p>
-<aside class="aside flow bg-state-good-bg color-state-good-text"><p class="cluster "><span class="aside__icon box-block "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" fill="currentColor" role="img" aria-label="Check">   <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"></path> </svg></span><strong>Objective</strong></p><div class=" flow"> <strong>Read to learn more:</strong>&nbsp;<a href="https://web.dev/dom-size-and-interactivity/">DOM size and interactivity</a>. </div></aside>
-<h3 id="consider-a-streaming-service-worker-architecture">Consider a streaming service worker architecture <a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#consider-a-streaming-service-worker-architecture">#</a></h3>
-<p>This is an advanced technique—one that may not work easily with every use case—but it's one that can turn your MPA into a website that feels like it's loading instantly when users navigate from one page to the next. You can use a service worker to precache the static parts of your website in <a href="https://developer.mozilla.org/docs/Web/API/CacheStorage" rel="noopener"><code>CacheStorage</code></a> while using the <a href="https://developer.mozilla.org/docs/Web/API/ReadableStream" rel="noopener"><code>ReadableStream</code> API</a> to fetch the rest of a page's HTML from the server.</p>
-<p>When you use this technique successfully, you aren't creating HTML on the client, but the instant loading of content partials from the cache will give the impression that your site is loading quickly. Websites using this approach can feel almost like an SPA, but without the downfalls of client-side rendering. It also <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/" rel="noopener">reduces the amount of HTML you're requesting from the server</a>.</p>
-<p>In short, a streaming service worker architecture doesn't <em>replace</em> the browser's built-in navigation logic—it <em>adds</em> to it. For more information on how to achieve this with <a href="https://developer.chrome.com/docs/workbox/" rel="noopener">Workbox</a>, read <a href="https://developer.chrome.com/docs/workbox/faster-multipage-applications-with-streams/" rel="noopener">Faster multipage applications with streams</a>.</p>
-<h2 id="conclusion">Conclusion <a class="headline-link" href="https://web.dev/client-side-rendering-of-html-and-interactivity/#conclusion">#</a></h2>
-<p>How your website receives and renders HTML has an impact on performance. When you rely on the server to send all (or the bulk of) the HTML required for your website to function, you're getting a lot for free: incremental parsing and rendering, and automatic yielding to the main thread to avoid long tasks.</p>
-<p>Client-side HTML rendering introduces a number of potential performance issues that can be avoidable in many cases. Due to each individual website's requirements, however, it's not entirely avoidable 100% of the time. To mitigate the potential long tasks that can result from excessive client-site rendering, make sure you're sending as much of your website's HTML from the server whenever possible, keep your DOM sizes as small as possible for HTML that must be rendered on the client, and consider alternative architectures to speed the delivery of HTML to the client while also taking advantage of the incremental parsing and rendering the browser provides for HTML loaded from the server.</p>
-<p>If you can get your website's client-side rendering to be as minimal as possible, you'll improve not just your website's INP, but other metrics such as LCP, TBT, and possibly even your TTFB in some cases.</p>
-<p><em>Hero image from <a href="https://unsplash.com/" rel="noopener">Unsplash</a>, by <a href="https://unsplash.com/de/fotos/nZcMWOKAJrY" rel="noopener">Maik Jonietz</a>.</em></p>
 ]]></content:encoded>
         </item>
     </channel>
