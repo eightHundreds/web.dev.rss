@@ -34,7 +34,7 @@ const main = async () => {
         ...exist,
         content: exist["content:encoded"],
       });
-      console.log("进度", index, "/", webDevFeed.items.length);
+      console.log("进度(复用缓存)", index, "/", webDevFeed.items.length);
       continue;
     }
     const result = await googleTranslate2(item.title!, "zh");
