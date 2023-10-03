@@ -4,9 +4,515 @@
         <title>web.dev</title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Fri, 29 Sep 2023 17:40:24 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Oct 2023 17:10:44 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[九月新增网络平台]]></title>
+            <link>https://web.dev/web-platform-09-2023/</link>
+            <guid>https://web.dev/web-platform-09-2023/</guid>
+            <content:encoded><![CDATA[<div>
+    <h1>GPT总结</h1>
+    <summary>2023年9月，Firefox 118、Safari 17和Chrome 117发布了稳定版本。这篇文章介绍了这些版本对Web平台的影响。
+
+Chrome 117中包含了grid-template-columns和grid-template-rows的subgrid值，使得这个期待已久的功能可以互操作。你可以在CSS subgrid的文章中了解更多关于subgrid的信息。
+
+Chrome 117还包括了三个新的CSS特性，可以轻松地添加入场和出场动画，并平滑地动画化顶层可消除元素（如对话框和弹出窗口）。你可以在Four new CSS features for entry and exit animations的文章中了解transition-behavior属性、@starting-style规则和overlay属性。
+
+Chrome 117还包括了使用Object.groupBy和Map.groupBy静态方法对JavaScript数组进行分组的功能。
+
+Safari 17包括了popover属性，以支持Popover API。
+
+Safari 17和Firefox 118包括了HTML <search>元素。这个元素表示页面或应用程序中包含搜索或过滤内容功能的部分。
+
+Safari 17中还包括了许多新的CSS特性，包括@counter-style。这个规则允许你定义在预定义样式列表之外的计数器样式。这个功能现在在所有三个引擎中都可用。
+
+Firefox 118包括了几个额外的CSS数学函数：abs()、sign()、round()、mod()、rem()、pow()、sqrt()、hypot()、log()和exp()</search></summary>
+    <div>
+    <div>OriginTitle: New to the web platform in September</div>
+
+    </div></div><h2 id="stable-browser-releases">稳定的浏览器版本<a class="headline-link" href="https://web.dev/web-platform-09-2023/#stable-browser-releases">#</a></h2>
+<p>2023年9月<a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/118" rel="noopener">火狐118</a>,<a href="https://developer.apple.com/documentation/safari-release-notes/safari-17-release-notes" rel="noopener">狩猎17</a>， 和<a href="https://developer.chrome.com/blog/new-in-chrome-117/" rel="noopener">铬117</a>变得稳定。 这篇文章探讨了这对网络平台意味着什么。</p>
+<aside class="aside flow bg-state-bad-bg color-state-bad-text"><p class="cluster color-state-bad-text"><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Error sign">   <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-10v6h2V7h-2z"></path> </svg></span><strong>警告</strong></p><div class=" flow">我们在这些帖子中包含从 MDN 中提取的浏览器兼容性数据，这些数据对于最新的浏览器版本可能尚未更新。 该帖子一旦出现在帖子中，就会显示正确的信息<a href="https://github.com/mdn/browser-compat-data/releases">浏览器兼容数据发布</a>。</div></aside>
+<p>这<code>子网格</code>价值<code>网格模板列</code>和<code>网格模板行</code>包含在 Chrome 117 中，使得这一渴望的功能具有可互操作性。 您可以在文章中了解有关子网格的更多信息<a href="https://web.dev/css-subgrid/">CSS子网格</a>。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome 114，旗帜后面</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="flag" title="Behind a flag" aria-label="Behind a flag">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">火狐 71，支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+71
+</span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">边缘 114，旗帜后面</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="flag" title="Behind a flag" aria-label="Behind a flag"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari 16，支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+16
+</span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid#browser_compatibility" target="_blank">来源</a>
+</div>
+<p>Chrome 还包含三个新的 CSS 功能，可以轻松添加进入和退出动画，并平滑地在顶层可关闭元素（例如对话框和弹出窗口）之间添加动画。 您可以了解有关<code>过渡行为</code>财产，<code>@起始风格</code>规则，并且<code>覆盖</code>文章中的属性<a href="https://developer.chrome.com/blog/entry-exit-animations/" rel="noopener">用于进入和退出动画的四个新 CSS 功能</a>。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">铬，不支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">火狐浏览器，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">边缘，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<p>Chrome 117 中还支持 JavaScript 数组分组<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy" rel="noopener">对象.groupBy</a>和<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/groupBy" rel="noopener">映射.groupBy</a>静态方法。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">铬，不支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">火狐浏览器，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">边缘，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<p>Safari 17 包括<code>弹出窗口</code>属性，添加对<a href="https://developer.chrome.com/blog/introducing-popover-api/" rel="noopener">弹出框 API</a>。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">铬，不支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">火狐浏览器，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">边缘，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<p>Safari 17 和 Firefox 118 包含 HTML<a href="https://developer.mozilla.org/docs/Web/HTML/Element/search" rel="noopener"><code></code></a>元素。 此元素表示页面或应用程序中包含搜索或过滤内容功能的部分。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">铬，不支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">火狐浏览器，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">边缘，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/HTML/Element/search#browser_compatibility" target="_blank">来源</a>
+</div>
+<p>Safari 17 中包含许多新的 CSS 功能，包括<a href="https://developer.mozilla.org/docs/Web/CSS/@counter-style" rel="noopener"><code>@计数器风格</code></a>。 此规则允许您定义预定义样式列表之外的计数器样式。 此功能现已在所有三个引擎中提供。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome 91，支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      91
+    </span>
+    </li><li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="firefox">
+      <span class="visually-hidden">火狐 33，支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      33
+    </span>
+    </li><li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="edge">
+      <span class="visually-hidden">边缘 91，支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      91
+    </span>
+    </li><li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="safari">
+      <span class="visually-hidden">Safari 17，支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      17 号
+    </span>
+    </li>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/@counter-style#browser_compatibility" target="_blank">来源</a>
+</div>
+<p>Firefox 118 包含几个额外的 CSS 数学函数：<code>绝对值()</code>,<code>符号（）</code>,<code>圆形的（）</code>,<code>模()</code>,<code>雷姆（）</code>,<code>战俘（）</code>,<code>开方（）</code>,<code>假设（）</code>,<code>日志（）</code>， 和<code>指数（）</code>。</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">浏览器支持</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">铬，不支持</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">火狐 112，支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+112
+</span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">边缘，不支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari 15.4，支持</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+15.4
+</span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/exp#browser_compatibility" target="_blank">来源</a>
+</div>
+<p>Safari 17 还支持 HEIC/HEIF 图像和 JPEG XL。</p>
+<h2 id="beta-browser-releases">测试版浏览器发布<a class="headline-link" href="https://web.dev/web-platform-09-2023/#beta-browser-releases">#</a></h2>
+<p>Beta 浏览器版本可让您预览浏览器下一个稳定版本中的内容。 现在是测试新功能或删除的好时机，这些功能或删除可能会在发布该版本之前影响您的网站。 新的测试版是<a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/119" rel="noopener">火狐119</a>,<a href="https://developer.apple.com/documentation/safari-release-notes/safari-17_1-release-notes" rel="noopener">Safari 17.1</a>， 和<a href="https://developer.chrome.com/blog/chrome-118-beta/" rel="noopener">铬118</a>。 这些版本为该平台带来了许多出色的功能。 查看发行说明以了解所有详细信息，这里仅列出一些亮点。</p>
+<p>这<code></code>本月在 Firefox 和 Safari 中发布的 element 已包含在 Chrome 118 中，这意味着该功能将快速登陆所有三个引擎。</p>
+<p>这<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy" rel="noopener">对象.groupBy</a>和<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/groupBy" rel="noopener">映射.groupBy</a>静态方法是 Firefox 119 的一部分。</p>
+<p>Chrome 118 包括<a href="https://drafts.csswg.org/css-cascade-6/#scoped-styles" rel="noopener">CSS 范围样式</a>与<code>@范围</code>规则和新媒体特征<code>偏好降低透明度</code>和<code>脚本编写</code>。</p>
+<p>Safari 17.1 当前版本修复了整个平台的一系列问题。</p>
+<p><em>拍摄者<a href="https://unsplash.com/@charlesdeluvio" rel="noopener">查尔斯·德鲁维奥</a>。</em></p>
+<hr><h2 id="stable-browser-releases">Stable browser releases <a class="headline-link" href="https://web.dev/web-platform-09-2023/#stable-browser-releases">#</a></h2>
+<p>In September 2023 <a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/118" rel="noopener">Firefox 118</a>, <a href="https://developer.apple.com/documentation/safari-release-notes/safari-17-release-notes" rel="noopener">Safari 17</a>, and <a href="https://developer.chrome.com/blog/new-in-chrome-117/" rel="noopener">Chrome 117</a> became stable. This post takes a look at what that means for the web platform.</p>
+<aside class="aside flow bg-state-bad-bg color-state-bad-text"><p class="cluster color-state-bad-text"><span class="aside__icon box-block "><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Error sign">   <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-10v6h2V7h-2z"></path> </svg></span><strong>Caution</strong></p><div class=" flow"> We include browser compatibility data pulled from MDN in these posts which may not have been updated yet for very recent browser releases. The post will show the correct information as soon as it appears in the <a href="https://github.com/mdn/browser-compat-data/releases">browser-compat-data release</a>. </div></aside>
+<p>The <code>subgrid</code> value for <code>grid-template-columns</code> and <code>grid-template-rows</code> is included in Chrome 117, making this longed for feature interoperable. You can learn more about subgrid in the article <a href="https://web.dev/css-subgrid/">CSS subgrid</a>.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome 114, Behind a flag</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="flag" title="Behind a flag" aria-label="Behind a flag">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox 71, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+71
+</span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge 114, Behind a flag</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="flag" title="Behind a flag" aria-label="Behind a flag"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari 16, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+16
+</span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid#browser_compatibility" target="_blank">Source</a>
+</div>
+<p>Chrome also includes three new CSS features to easily add entry and exit animations, and smoothly animate to and from the top layer dismissible elements such as dialogs and popovers. You can learn about the <code>transition-behavior</code> property, <code>@starting-style</code> rule, and <code>overlay</code> property in the article <a href="https://developer.chrome.com/blog/entry-exit-animations/" rel="noopener">Four new CSS features for entry and exit animations</a>.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<p>Also in Chrome 117 is JavaScript array grouping with the <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy" rel="noopener">Object.groupBy</a> and <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/groupBy" rel="noopener">Map.groupBy</a> static methods.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<p>Safari 17 includes the <code>popover</code> attribute, to add support for the <a href="https://developer.chrome.com/blog/introducing-popover-api/" rel="noopener">Popover API</a>.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+</div>
+<p>Safari 17 and Firefox 118 include the HTML <a href="https://developer.mozilla.org/docs/Web/HTML/Element/search" rel="noopener"><code>&lt;search&gt;</code></a> element. This element represents the parts of the page or application that contain funtionality for search or filtering content.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/HTML/Element/search#browser_compatibility" target="_blank">Source</a>
+</div>
+<p>There are lots of new CSS features included in Safari 17, including <a href="https://developer.mozilla.org/docs/Web/CSS/@counter-style" rel="noopener"><code>@counter-style</code></a>. This rule lets you define counter styles that are outside the predefined list of style. This feature is now available in all three engines.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome 91, Supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      91
+    </span>
+    </li><li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="firefox">
+      <span class="visually-hidden">Firefox 33, Supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      33
+    </span>
+    </li><li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="edge">
+      <span class="visually-hidden">Edge 91, Supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      91
+    </span>
+    </li><li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="safari">
+      <span class="visually-hidden">Safari 17, Supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+      17
+    </span>
+    </li>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/@counter-style#browser_compatibility" target="_blank">Source</a>
+</div>
+<p>Firefox 118 includes several additional CSS math functions: <code>abs()</code>, <code>sign()</code>, <code>round()</code>, <code>mod()</code>, <code>rem()</code>, <code>pow()</code>, <code>sqrt()</code>, <code>hypot()</code>, <code>log()</code>, and <code>exp()</code>.</p>
+<div class="wdi-browser-compat">
+  <span class="wdi-browser-compat__label">Browser support</span>
+  <ul class="wdi-browser-compat__items">
+    <li class="wdi-browser-compat__item">
+    <span class="wdi-browser-compat__icon" data-browser="chrome">
+      <span class="visually-hidden">Chrome, Not supported</span>
+    </span>
+    <span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported">
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="firefox">
+<span class="visually-hidden">Firefox 112, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+112
+</span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="edge">
+<span class="visually-hidden">Edge, Not supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="no" title="Not supported" aria-label="Not supported"><p></p>
+<p></p></span>
+</li><li class="wdi-browser-compat__item">
+<span class="wdi-browser-compat__icon" data-browser="safari">
+<span class="visually-hidden">Safari 15.4, Supported</span>
+</span>
+<span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
+15.4
+</span>
+</li><p></p>
+  </ul>
+  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/exp#browser_compatibility" target="_blank">Source</a>
+</div>
+<p>Safari 17 also includes support for HEIC/HEIF images, and JPEG XL.</p>
+<h2 id="beta-browser-releases">Beta browser releases <a class="headline-link" href="https://web.dev/web-platform-09-2023/#beta-browser-releases">#</a></h2>
+<p>Beta browser versions give you a preview of things that will be in the next stable version of the browser. It's a great time to test new features, or removals, that could impact your site before the world gets that release. New betas are <a href="https://developer.mozilla.org/docs/Mozilla/Firefox/Releases/119" rel="noopener">Firefox 119</a>, <a href="https://developer.apple.com/documentation/safari-release-notes/safari-17_1-release-notes" rel="noopener">Safari 17.1</a>, and <a href="https://developer.chrome.com/blog/chrome-118-beta/" rel="noopener">Chrome 118</a>. These releases bring many great features to the platform. Check out the release notes for all of the details, here are just a few highlights.</p>
+<p>The <code>&lt;search&gt;</code> element, shipping in Firefox and Safari this month is included in Chrome 118, meaning this feature is quickly landing across all three engines.</p>
+<p>The <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy" rel="noopener">Object.groupBy</a> and <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/groupBy" rel="noopener">Map.groupBy</a> static methods are part of Firefox 119.</p>
+<p>Chrome 118 includes <a href="https://drafts.csswg.org/css-cascade-6/#scoped-styles" rel="noopener">CSS scoped styles</a> with the <code>@scope</code> rule and new media features with <code>prefers-reduced-transparency</code> and <code>scripting</code>.</p>
+<p>Safari 17.1 is currently a release that fixes a range of issues across the platform.</p>
+<p><em>Photo by <a href="https://unsplash.com/@charlesdeluvio" rel="noopener">Charles Deluvio</a>.</em></p>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[有效加载广告而不影响页面速度]]></title>
             <link>https://web.dev/loading-ads-page-speed/</link>
@@ -6215,510 +6721,6 @@ AVIF生态系统的最新情况是什么？
 </figure>
 <h2 id="conclusion">Conclusion <a class="headline-link" href="https://web.dev/economic-times-inp/#conclusion">#</a></h2>
 <p>To summarize, INP extensively helped to determine runtime performance issues on parts of the Economic Times website. It has proven to be one of the most effective metrics to positively impact business outcomes. Due to the very encouraging numbers we've observed as the result of this effort, we are motivated to scale our optimization efforts to other areas of our website and reap additional benefits.</p>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[您现在可以使用的基线功能]]></title>
-            <link>https://web.dev/baseline-features/</link>
-            <guid>https://web.dev/baseline-features/</guid>
-            <content:encoded><![CDATA[<div>
-    <h1>GPT总结</h1>
-    <summary>这篇文章介绍了一些最新的Web平台功能，这些功能已经在主要的浏览器引擎中得到支持。其中包括新的HTML元素<dialog>用于创建对话框，CSS变换属性的细化控制，新的视口单位用于移动端设计，JavaScript中的深拷贝操作，可见焦点的伪类选择器以及流API中的TransformStream接口。文章还提到了Chrome团队与其他浏览器引擎和Web社区的合作，以提供更多的清晰度和支持。同时，文章还提到了WebDX社区组织的工作，以帮助开发者更好地了解和使用这些功能。</dialog></summary>
-    <div>
-    <div>OriginTitle: Baseline features you can use today</div>
-
-    </div></div><div class="youtube">  <lite-youtube videoid="x9rh0Du4Czg">  </lite-youtube></div>
-<p>网络始终在发展，浏览器也在不断更新，为开发人员提供了在平台上进行创新的新工具。 以前需要帮助程序库的东西成为网络平台的一部分，并在所有浏览器上受支持，同时还提供了更短或更简单的设计元素编码方法。</p>
-<p>虽然这种不断的演变和适应是有帮助的，但它也可能带来混乱。 浏览所有这些更新可能很困难。 作为开发人员，我们有这样的问题：“什么时候所有浏览器引擎都支持这个新功能？” “我什么时候可以真正开始在我的生产代码中使用这些功能？” “我们应该支持旧版浏览器多久？”</p>
-<p>真正的答案是“这取决于”。 需要什么和可用什么实际上取决于您的用户群、技术堆栈、团队结构和支持的设备。 但是，我们都同意的一件事是，当前的网络格局可能使做出这些决定变得困难。</p>
-<p>Chrome 团队正在与其他浏览器引擎和网络社区合作，以提高清晰度。 这包括我们在以下项目上的工作<a href="https://wpt.fyi/interop-2023" rel="noopener">互操作 2023</a>这有助于提高一组关键功能的互操作性。 但过去几年推出的功能又如何呢？ 我们两年前学到的实验性功能是否可以使用？</p>
-<p>在这篇文章中，我想重点介绍过去两个主要版本的所有主要浏览器引擎现在都可以使用的一些功能。 这是我们认为大多数开发人员会觉得某个功能可以安全使用的分界点，也是我们称之为基线的功能集。 更多内容请查看公告<a href="https://web.dev/baseline">此处的基线</a>。</p>
-<h2 id="the-dialog-element">对话框元素<a class="headline-link" href="https://web.dev/baseline-features/#the-dialog-element">#</a></h2>
-<p>这<code></code>element 是一个新的 HTML 元素，用于创建对话框提示，例如弹出窗口和模式。</p>
-<div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">浏览器支持</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 37，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      37
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">火狐98，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      98
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">边缘 79，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      79
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 15.4，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      15.4
-    </span>
-    </li>
-  </ul>
-  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/HTML/Element/dialog#browser_compatibility" target="_blank">来源</a>
-</div>
-<p>要使用它，请定义模态元素，然后通过调用打开对话框<code>显示模态()</code>对话框元素上的方法。</p>
-<div><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&amp;lt;</span>对话</span> <span class="token attr-name">ID</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">”</span>d<span class="token punctuation">”</span></span><span class="token punctuation">&amp;gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&amp;lt;</span>形式</span> <span class="token attr-name">方法</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">”</span>对话<span class="token punctuation">”</span></span><span class="token punctuation">&amp;gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&amp;lt;</span>p</span><span class="token punctuation">&amp;gt;</span></span>大家好，我是对话者。<span class="token tag"><span class="token tag"><span class="token punctuation"></span>p</span><span class="token punctuation">&amp;gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&amp;lt;</span>按钮</span><span class="token punctuation">&amp;gt;</span></span>好的<span class="token tag"><span class="token tag"><span class="token punctuation"></span>按钮</span><span class="token punctuation">&amp;gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation"></span>形式</span><span class="token punctuation">&amp;gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation"></span>对话</span><span class="token punctuation">&amp;gt;</span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&amp;lt;</span>按钮</span> <span class="token special-attr"><span class="token attr-name">单击时</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">”</span><span class="token value javascript language-javascript">d<span class="token punctuation">。</span><span class="token function">显示模态</span><span class="token punctuation">（</span><span class="token punctuation">）</span></span><span class="token punctuation">”</span></span></span><span class="token punctuation">&amp;gt;</span></span><br>打开对话框<br><span class="token tag"><span class="token tag"><span class="token punctuation"></span>按钮</span><span class="token punctuation">&amp;gt;</span></span></code></pre>
-</div><p>作为原生 HTML 元素，内置了焦点管理、选项卡跟踪和保持堆叠上下文等功能。有关更多信息，请阅读<a href="https://web.dev/building-a-dialog-component/">构建对话框组件</a>。</p>
-<h2 id="individual-css-transform-properties">单独的 CSS 转换属性<a class="headline-link" href="https://web.dev/baseline-features/#individual-css-transform-properties">#</a></h2>
-<p>使用 CSS 变换是向网站添加运动的一种高效方法。<br>
-您可能熟悉在一行中编写具有三个属性的 CSS 转换。<br>
- 通过单独的变换属性，您现在可以单独指定变换属性。 当您编写复杂的关键帧动画时，这会派上用场。</p>
-<div><pre class="language-css"><code class="language-css"><span class="token selector">。目标</span> <span class="token punctuation">{</span><br>  <span class="token property">翻译</span><span class="token punctuation">:</span>50% 0<span class="token punctuation">;</span><br>  <span class="token property">旋转</span><span class="token punctuation">:</span>30度<span class="token punctuation">;</span><br>  <span class="token property">规模</span><span class="token punctuation">:</span>1.2<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-</div><div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">浏览器支持</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 104，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      104
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">火狐 72，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      72
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">边缘 104，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      104
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 14.1，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      14.1
-    </span>
-    </li>
-  </ul>
-  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/scale#browser_compatibility" target="_blank">来源</a>
-</div>
-<p>有关此更改的深入说明，请阅读<a href="https://web.dev/css-individual-transform-properties/">通过单独的变换属性对 CSS 变换进行更细粒度的控制</a>。</p>
-<h2 id="new-viewport-units">新视口单位<a class="headline-link" href="https://web.dev/baseline-features/#new-viewport-units">#</a></h2>
-<p>在移动设备上，视口大小受动态工具栏是否存在的影响。<br>
-有时您会看到 URL 栏和导航工具栏，但有时这些工具栏会完全缩回。<br>
-根据工具栏是否可见，视口的实际大小会有所不同。<br>
-新的视口单位如<code>SVH</code>和<code>左室厚度</code>在为移动设备进行设计时，让 Web 开发人员能够更好地控制。 您可以在文章中了解更多信息<a href="https://web.dev/viewport-units/">大、小和动态视口单元</a>。</p>
-<div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">浏览器支持</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 108，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      108
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">火狐 101，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      101
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">边缘 108，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      108
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 15.4，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      15.4
-    </span>
-    </li>
-  </ul>
-</div>
-<h2 id="deep-copy-in-javascript">JavaScript 中的深拷贝<a class="headline-link" href="https://web.dev/baseline-features/#deep-copy-in-javascript">#</a></h2>
-<p>过去，要创建不引用原始对象的对象的深层副本，一种流行的技巧是<code>JSON.stringify</code>结合<code>JSON解析</code>。 这是一种非常常见的黑客行为，以至于 V8（Chrome 的 JavaScript 引擎）积极改进了这一技巧的性能。 但是，你不再需要这个技巧了<code>结构化克隆</code>。</p>
-<div><pre class="language-js"><code class="language-js"><span class="token keyword">常量</span>原来的<span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">ID</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token literal-property property">支柱</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token literal-property property">姓名</span><span class="token operator">:</span> <span class="token string">“汤姆”</span><span class="token punctuation">}</span><span class="token punctuation">}</span><br><br><span class="token comment">/* 老黑客 */</span> <br><span class="token keyword">常量</span>深复制<span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">。</span><span class="token function">解析</span><span class="token punctuation">（</span><span class="token constant">JSON</span><span class="token punctuation">。</span><span class="token function">字符串化</span><span class="token punctuation">（</span>原来的<span class="token punctuation">）</span><span class="token punctuation">）</span><span class="token punctuation">;</span><br><br><span class="token comment">/* 新方法 */</span><br><span class="token keyword">常量</span>深复制<span class="token operator">=</span> <span class="token function">结构化克隆</span><span class="token punctuation">（</span>原来的<span class="token punctuation">）</span><span class="token punctuation">;</span></code></pre>
-</div><div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">浏览器支持</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 98，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      98
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">火狐94，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      94
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">边缘 98，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      98
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 15.4，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      15.4
-    </span>
-    </li>
-  </ul>
-  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/API/structuredClone#browser_compatibility" target="_blank">来源</a>
-</div>
-<p>请参阅<a href="https://web.dev/structured-clone/">使用 StructuredClone 在 JavaScript 中进行深度复制</a>更多细节。</p>
-<h2 id="the-focus-visible-pseudo-class">这<code>:焦点-可见</code>伪类<a class="headline-link" href="https://web.dev/baseline-features/#the-focus-visible-pseudo-class">#</a></h2>
-<p>作为网络开发人员，我们都熟悉当您使用键盘导航页面或单击输入元素时出现的“焦点环”。 这是可访问性的必要功能，但有时它会妨碍不同用户的视觉设计。 这<code>:焦点-可见</code>CSS 伪类检查浏览器是否认为焦点应该可见。 您现在可以仅在焦点可见时指定样式。</p>
-<div><pre class="language-css"><code class="language-css"><span class="token comment">/* 使用 Tab 键聚焦 */</span><br><span class="token selector">:焦点-可见</span> <span class="token punctuation">{</span><br>    <span class="token property">大纲</span><span class="token punctuation">:</span>5px 纯粉色<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">/* 鼠标点击 */</span><br><span class="token selector">:焦点:不(:焦点可见)</span> <span class="token punctuation">{</span><br>    <span class="token property">大纲</span><span class="token punctuation">:</span>没有任何<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-</div><div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">浏览器支持</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 86，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      86
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">火狐 85，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      85
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">边缘 86，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      86
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 15.4，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      15.4
-    </span>
-    </li>
-  </ul>
-  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/:focus-visible#browser_compatibility" target="_blank">来源</a>
-</div>
-<p>查看<a href="https://web.dev/learn/css/focus/">关于学习 CSS 的焦点部分</a>了解更多信息。</p>
-<h2 id="the-transformstream-interface">转换流接口<a class="headline-link" href="https://web.dev/baseline-features/#the-transformstream-interface">#</a></h2>
-<p>Streams API 的 TransformStream 接口使得通过管道将流相互连接成为可能。</p>
-<p>例如，您可以从一个位置流式传输数据，然后在数据传递时将数据流压缩到另一个位置。 文章<a href="https://developer.chrome.com/articles/fetch-streaming-requests/" rel="noopener">使用 fetch API 传输请求</a>引导您完成此示例用例。</p>
-<div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">浏览器支持</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 67，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      67
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">火狐 102，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      102
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">边缘 79，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      79
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 14.1，支持</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      14.1
-    </span>
-    </li>
-  </ul>
-  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/API/TransformStream#browser_compatibility" target="_blank">来源</a>
-</div>
-<h2 id="wrap-up">包起来<a class="headline-link" href="https://web.dev/baseline-features/#wrap-up">#</a></h2>
-<p>最近，还有更多功能在 Web 平台上变得可互操作且稳定使用。 展望未来，我们将与<a href="https://www.w3.org/community/webdx/" rel="noopener">WebDX 社区组</a>使这些基线功能集更加清晰。 请查看<a href="https://web.dev/baseline/">web.dev/基线</a>以获得持续的详细信息。</p>
-<p>如果您想了解最新动态，我们的团队正在发布文章<a href="https://web.dev/tags/newly-interoperable/">当某个功能变得可互操作时</a>，并发布<a href="https://web.dev/tags/new-to-the-web/">每月更新网络平台上的动态</a>从实验性功能到新的可互操作性。</p>
-<p>我们总是很好奇我们所做的事情是否对您有帮助，或者您是否需要不同类型的支持，因此请通过以下方式与我们联系：<a href="https://www.w3.org/community/webdx/" rel="noopener">WebDX 社区组</a>。</p>
-<hr><div class="youtube">  <lite-youtube videoid="x9rh0Du4Czg">  </lite-youtube></div>
-<p>The web is always evolving and browsers update constantly to give developers new tools to innovate on the platform. Things that previously required helper libraries become part of the web platform and supported on all browsers, along with shorter or easier ways to code design elements.</p>
-<p>While this constant evolution and adaptation is helpful, it can also bring confusion. It can be difficult to navigate all these updates. As developers, we have questions like, "When will all browser engines support this new feature?" "When can I actually start using those features in my production code?" "For how long should we support older browsers?"</p>
-<p>The true answer is "it depends". What is needed and what is usable really depends on your user base, tech stack, your team structure, and supported devices. But, one thing we all agree, is that the current landscape of the web can make it difficult to make those decisions.</p>
-<p>The Chrome team is collaborating with other browser engines and the web community to bring more clarity. This includes our work on projects like <a href="https://wpt.fyi/interop-2023" rel="noopener">Interop 2023</a> which helps to improve interoperability of a set of key features. But what about features landed in the past few years? Are experimental features we learned about two years ago ready to use?</p>
-<p>In this post, I want to highlight some features that are now available to all major browser engines for the past two major versions. This is the cut-off point where we feel that the majority of developers will feel a feature is safe to use, and is the feature set we're calling Baseline. For more, please see the announcement <a href="https://web.dev/baseline">of Baseline here</a>.</p>
-<h2 id="the-dialog-element">The dialog element <a class="headline-link" href="https://web.dev/baseline-features/#the-dialog-element">#</a></h2>
-<p>The <code>&lt;dialog&gt;</code> element is a new HTML element to create dialog prompts such as popups and modals.</p>
-<div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">Browser support</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 37, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      37
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">Firefox 98, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      98
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">Edge 79, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      79
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 15.4, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      15.4
-    </span>
-    </li>
-  </ul>
-  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/HTML/Element/dialog#browser_compatibility" target="_blank">Source</a>
-</div>
-<p>To use it, define the modal element, then open the dialog by calling the <code>showModal()</code> method on the dialog element.</p>
-<div><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dialog</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>d<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dialog<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Hi, I'm a dialog.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>ok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dialog</span><span class="token punctuation">&gt;</span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript">d<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><br>  Open Dialog<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span></code></pre>
-</div><p>As a native HTML element, features like focus management, tab tracking, and keeping the stacking context are built in.  For more, read <a href="https://web.dev/building-a-dialog-component/">Building a dialog component</a>.</p>
-<h2 id="individual-css-transform-properties">Individual CSS transform properties <a class="headline-link" href="https://web.dev/baseline-features/#individual-css-transform-properties">#</a></h2>
-<p>Using CSS transforms is a performant way to add a movement to your site.<br>
-You might be familiar with writing CSS transforms with three properties in one line.<br>
-With individual transform properties you can now specify transform properties individually. This comes in handy when you are writing complex keyframe animations.</p>
-<div><pre class="language-css"><code class="language-css"><span class="token selector">.target</span> <span class="token punctuation">{</span><br>  <span class="token property">translate</span><span class="token punctuation">:</span> 50% 0<span class="token punctuation">;</span><br>  <span class="token property">rotate</span><span class="token punctuation">:</span> 30deg<span class="token punctuation">;</span><br>  <span class="token property">scale</span><span class="token punctuation">:</span> 1.2<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-</div><div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">Browser support</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 104, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      104
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">Firefox 72, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      72
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">Edge 104, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      104
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 14.1, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      14.1
-    </span>
-    </li>
-  </ul>
-  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/scale#browser_compatibility" target="_blank">Source</a>
-</div>
-<p>For an in-depth explanation of this change, read <a href="https://web.dev/css-individual-transform-properties/">Finer grained control over CSS transforms with individual transform properties</a>.</p>
-<h2 id="new-viewport-units">New viewport units <a class="headline-link" href="https://web.dev/baseline-features/#new-viewport-units">#</a></h2>
-<p>On mobile, viewport size is influenced by the presence or absence of dynamic toolbars.<br>
-Sometimes you have a URL bar and navigation toolbar visible, but sometimes those toolbars are completely retracted.<br>
-The actual size of viewport will be different depending on whether the toolbars are visible or not.<br>
-New viewport units like <code>svh</code> and <code>lvh</code> give web developers finer control when designing for the mobile. You can learn more in the article <a href="https://web.dev/viewport-units/">The large, small, and dynamic viewport units</a>.</p>
-<div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">Browser support</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 108, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      108
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">Firefox 101, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      101
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">Edge 108, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      108
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 15.4, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      15.4
-    </span>
-    </li>
-  </ul>
-</div>
-<h2 id="deep-copy-in-javascript">Deep copy in JavaScript <a class="headline-link" href="https://web.dev/baseline-features/#deep-copy-in-javascript">#</a></h2>
-<p>In the past, to create a deep copy of an object with no reference to the original object, a popular hack was <code>JSON.stringify</code> combined with <code>JSON.parse</code>. This was such a common hack that V8 (Chrome's javascript engine) aggressively improved the performance of this trick. But, you don't need this hack anymore with <code>structuredClone</code>.</p>
-<div><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> original <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token literal-property property">prop</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Tom"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><br><br><span class="token comment">/* Old hack */</span> <br><span class="token keyword">const</span> deepCopy <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>original<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">/* New way */</span><br><span class="token keyword">const</span> deepCopy <span class="token operator">=</span> <span class="token function">structuredClone</span><span class="token punctuation">(</span>original<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-</div><div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">Browser support</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 98, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      98
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">Firefox 94, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      94
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">Edge 98, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      98
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 15.4, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      15.4
-    </span>
-    </li>
-  </ul>
-  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/API/structuredClone#browser_compatibility" target="_blank">Source</a>
-</div>
-<p>Please refer to <a href="https://web.dev/structured-clone/">Deep-copying in JavaScript using structuredClone</a> for more details.</p>
-<h2 id="the-focus-visible-pseudo-class">The <code>:focus-visible</code> pseudo-class <a class="headline-link" href="https://web.dev/baseline-features/#the-focus-visible-pseudo-class">#</a></h2>
-<p>As web developers, we all are familiar with that "focus ring" that shows up when you are navigating a page with a keyboard or clicking on input elements. It is a necessary feature for accessibility but sometimes it gets in the way of the visual design for different users. The <code>:focus-visible</code> CSS pseudo-class checks if the browser believes that the focus should be visible.  You can now specify styles for only when focus should be visible.</p>
-<div><pre class="language-css"><code class="language-css"><span class="token comment">/* focus with tab key */</span><br><span class="token selector">:focus-visible</span> <span class="token punctuation">{</span><br>    <span class="token property">outline</span><span class="token punctuation">:</span> 5px solid pink<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">/* mouse click */</span><br><span class="token selector">:focus:not(:focus-visible)</span> <span class="token punctuation">{</span><br>    <span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-</div><div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">Browser support</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 86, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      86
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">Firefox 85, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      85
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">Edge 86, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      86
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 15.4, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      15.4
-    </span>
-    </li>
-  </ul>
-  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/CSS/:focus-visible#browser_compatibility" target="_blank">Source</a>
-</div>
-<p>Check out the <a href="https://web.dev/learn/css/focus/">Focus section on Learn CSS</a> for more information.</p>
-<h2 id="the-transformstream-interface">The TransformStream interface <a class="headline-link" href="https://web.dev/baseline-features/#the-transformstream-interface">#</a></h2>
-<p>The TransformStream interface of the Streams API makes it possible to pipe streams into one another.</p>
-<p>For example you can stream data from one place, then compress the data stream to another location as the data gets passed. The article <a href="https://developer.chrome.com/articles/fetch-streaming-requests/" rel="noopener">Streaming requests with the fetch API</a> walks you through this sample use case.</p>
-<div class="wdi-browser-compat">
-  <span class="wdi-browser-compat__label">Browser support</span>
-  <ul class="wdi-browser-compat__items">
-    <li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="chrome">
-      <span class="visually-hidden">Chrome 67, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      67
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="firefox">
-      <span class="visually-hidden">Firefox 102, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      102
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="edge">
-      <span class="visually-hidden">Edge 79, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      79
-    </span>
-    </li><li class="wdi-browser-compat__item">
-    <span class="wdi-browser-compat__icon" data-browser="safari">
-      <span class="visually-hidden">Safari 14.1, Supported</span>
-    </span>
-    <span class="wdi-browser-compat__version" data-compat="yes" title="Supported" aria-label="Supported">
-      14.1
-    </span>
-    </li>
-  </ul>
-  <a class="wdi-browser-compat__link" href="https://developer.mozilla.org/docs/Web/API/TransformStream#browser_compatibility" target="_blank">Source</a>
-</div>
-<h2 id="wrap-up">Wrap up <a class="headline-link" href="https://web.dev/baseline-features/#wrap-up">#</a></h2>
-<p>There are many more features that recently became interoperable and stable to use on the web platform. Going forward we will work with the <a href="https://www.w3.org/community/webdx/" rel="noopener">WebDX Community Group</a> to bring more clarity to these Baseline feature sets. Please check out <a href="https://web.dev/baseline/">web.dev/baseline</a> for ongoing details.</p>
-<p>If you want to stay up-to-date, our team is publishing articles <a href="https://web.dev/tags/newly-interoperable/">when a feature becomes interoperable</a>, and publish <a href="https://web.dev/tags/new-to-the-web/">monthly updates on what's going on the web platform</a> from experimental features to newly interoperable.</p>
-<p>We are always curious if what we are doing helps you, or if you need different kinds of support, so please reach out to us at <a href="https://www.w3.org/community/webdx/" rel="noopener">WebDX Community Group</a>.</p>
 ]]></content:encoded>
         </item>
     </channel>
