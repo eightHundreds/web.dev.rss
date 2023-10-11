@@ -8,6 +8,150 @@
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
+            <title><![CDATA[web.dev 基础设施的更改]]></title>
+            <link>https://web.dev/blog/webdev-migration</link>
+            <guid>https://web.dev/blog/webdev-migration</guid>
+            <content:encoded><![CDATA[<div>
+    <h1>GPT总结</h1>
+    <summary>这篇文章是关于web.dev基础设施的变化。作者决定将网站的基础设施从GitHub迁移到Google的其他团队共享的基础设施上。这个决定将对人们如何为网站做出贡献产生影响。最初，网站的目标是成为“您的Web开发书架”，提供我们认为您的网站需要关注的内容，并构建了使用Lighthouse和11ty的自定义基础设施。然而，随着我们了解到人们希望如何使用我们的网站，我们意识到人们希望能够选择他们认为权威的内容路径。因此，我们转变了重心，为Web开发人员提供现代的Web开发视角，并将/measure页面移至pagespeed.web.dev。
+
+随着我们的重心转变，网站变成了一个仅提供内容的体验，我们维护自己的基础设施的需求变得不那么重要。因此，我最近决定改变网站的基础设施。我希望我们的团队更多地专注于创建Web开发人员所需的指导和工具，而基础设施的维护可以由现有的内部工具来处理。
+
+还有许多其他次要因素，其中之一是能够连接到本地化基础设施，以便为那些主要语言不是</summary>
+    <div>
+    <div>OriginTitle: Changes to the web.dev infrastructure</div>
+
+    </div></div><h1 class="devsite-page-title">网络的变化。<wbr>开发基础设施</h1>
+
+      <p>你好，保罗在这里。</p>
+
+      <p>我想与您分享一些有关该网站的新闻。</p>
+
+      <p>我已决定从 CMS 的 GitHub 托管版本迁移到 
+       Google 中多个不同团队共享的基础架构。 这 
+       将会影响人们如何为网站做出贡献，我希望 
+       再解释一下。</p>
+
+      <p>当我们第一次创建这个网站时，我们的目的是创建“你的书架 
+       网站开发”。仅提供我们认为您的网站需要关注的内容的网站 
+       我们构建了使用 Lighthouse 与 11ty 混合的定制基础设施 
+       概念非常酷。 当我们了解人们想要如何使用我们的网站时，我们 
+       认识到人们希望通过自己的感受选择自己的道路 
+       是权威内容。 因此，我们转向为网络开发人员提供现代化的 
+       对网络开发的看法并推动了<code translate="no" dir="ltr">/措施</code>页至
+      <a href="https://pagespeed.web.dev/">pagespeed.web.dev</a>。</p>
+
+      <p>随着我们的重点发生变化，我们的网站变成了纯内容体验，因此需要 
+       维护我们自己的基础设施变得不再那么重要。 因此，我最近做了 
+       更改本网站基础设施的决定。 我想要更多我们的团队 
+       专注于创建 Web 开发人员所需的指南和工具，同时 
+       我们的基础设施的维护可以通过现有的内部工具来处理。</p>
+
+      <p>还有许多其他次要因素，其中之一是能够挂钩 
+       本地化基础设施，以便我们能够为开发者提供服务 
+       主要语言不是英语。</p>
+
+      <p>我们的目标是保持许多功能相同，我们将消除任何问题 
+       未来几周的迁移会出现一些问题。 这一变化将意味着有一个 
+       我们的开放贡献模式发生变化。 不只是在 GitHub 上创建 PR， 
+       要贡献修复或添加一些新内容，您需要通过我们的提交 
+      <a href="https://issuetracker.google.com/issues/new?component=1400680&amp;pli=1&amp;template=1857359">开放问题 
+       追踪器</a>。 
+       我们仍然很高兴接受捐款，但我想指出并 
+       认识到人们做出贡献将变得更加复杂 
+       简单的改变。 也就是说，在实践中，我们要么创造了巨大的 
+       大部分内容我们自己或委托内容（例如我们的 
+      <a href="http://web.dev/learn">web.dev/学习</a>系列课程）由知名专家 
+       生态系统。</p>
+
+      <p>我们将保留当前站点基础设施的档案并<a href="https://github.com/googlechrome/web.dev">内容于 
+       吉图布</a>，所以如果你想看看我们如何 
+       建立了该网站并可以访问其历史记录，您仍然可以。</p>
+
+      <p>我们还将继续确保内容具有<a href="https://creativecommons.org/licenses/by/4.0/">相同的知识共享 
+       执照</a>适用于所有材料 
+       （已存在但尚未创建），以便如果有人想要使用它，请修改 
+       并可以自己托管（注明出处。）</p>
+
+      <p>我的目的是我可以付出更多努力使这个网站成为最好的网站之一 
+       网络上提供的网络开发资源。</p>
+
+      <p>最后，我要感谢所有为这个网站做出贡献的人 
+       这些年。 你们投入的时间和精力对我和团队来说意义重大 
+       努力支持本网站。</p>
+
+      <p><small>1Iv4N，神秘日期，aleventhal，aashutoshrathi，armujahid，01abhishekjain，AdamDemirel，adamlacombe，lpmi-13，adamsilverstein，lol768，ooade，adzo261，代码Adrian，adrianholovaty，ahmadawais，gssakash，matobaa，akshayagarwal，flyinprogrammer，albajarazeth , AleksandrHovhannisyan, adueppen, agaripian,亚历山大，YozhEzhi，dieulot，iampava，littleli，banaag，ameer1234567890，andrealeardini，achou11，Myndex，recvfrom，AndrewKGuan，pathliving，andys8，gunayanil，AnilSeervi，anirudhganwal06，helloankit，agcolom，antoinebisch，atjn，kulakowka，肛门米塔雷、左奥源、阿纳布森、 yuvrajmahalle、tonystark93、itsashutoshhans、avisionx、AymenLoukil、azat-io、morsssss、benschwarz、thebengeu、benmcm1994、Bidfca、b2m9、BogdanCerovac、PendalF89、bslassey、cgbarros、Steffan153、ctesniere、hanselfmu、chargao , chiamakaikeanyi, cjdell, chrisdwheatley, xylo04, ChristianEdwardPadilla、connor-baer、csabapalfi、extra808、sourcediz、DamianMullins、dandclark、dfabulich、dstop75、danieltxok、Daniel-Kolev、danoc、d2s、altruity、darahak、bathos、geddski、maxolasersquad、ddworken、davidvancleve、djabif、deepansh96、Dennis2 73、 derekherman、DharmenderRajput、diekus、Dimas-e63s、ApplY3D、krutoo、dmh、domenic、drott、beauxq、vezwork、e111077、emiliogarza、ericvera、emartini、EtherNoteWorld、32teeth、evantd、Krutsch、piuccio、fahad19、Faisal50x、Fiszc z，消防地毯， FMJansen、franktopel、xfq、mvsde、gavin667、kuhel、Guilospanck、devsnek、gernberg、Haroenv、charisTheo、harsh1868-zz、hashimaziz1、Hatlen、drakang4、agentofuser、limhenry、HolgerJeromin、hoch、hdf1986、Hydrophobefireman、idorenyinudoh、IsaacLK , 亚马库洛夫, IvanFLeon、Ivaylo-Kirov、jtangelder、kurtextrem、sairion、runjak、JakubKus、jgentes、beutnagel、JayHoltslander、freakles、halans、logut、jyasskin、jespertheend、jihchi、jimmynyny、jimmywarting、jimoong、jodydonetti、lencioni、joemcgill、jschaf、Jo埃尔格里特, josephharhar、johannes-weber、johnapost、Scoutan、jimper、justjonty、jordanbertasso、joseearias、jgutix、konojunya、Schweinepriester、kailash360、Prokos、kasra-pak、kyliau、KenjiBaheux、dosentmatter、lozandier、kidonng、klyok、koto、irori、dbar上， lakbychance、DawnGate、legilioli、leonardomerlin、lionralfs、luciomartinez、mahozad、houkanshan、majido、maxymczech、mnjit20、mbeaudru、valse、mdecorte、markpalfreeman、mvogelgesang、GameRuiner、ultrox、martenrichter、ybiquitous、Wilto、mtsgeneroso、mf阿尔肯, mattschlosser, 毛里西亚巴德,彭德鲁克、maxlgu、mayankkt9、starkblaze01、mebinrobin、meduzen、mderazon、micnem、sevignator、mgifford、exploitmik、minseoksuh、mohamedfasil、mudssrali、gitmibrahim、laranhee、budavariam、nancymic2、nairnandu、I82Much、NielsKersic、olegsorokin、oliverdunk、奥利维尔塔西纳里、奥姆隆德、 OmarShehata、osvaldoM、Nullpo、pnavarrc、pankajmouriya、pborreli、Pascalmh、thepassle、pmeenan、paul-hph、abraham、NOtherDev、Armanio、arskama、cljazouli、ChezFre、coliff、clemenshelm、djpowers、buondevid、denisstasyev、demershov、dipash、ek阿菲伊, twerske、ecarlisle、felixarntz、gilbertococchi、j2kenton、josevarghese、joycetoh8、kevinfarrugia、thinkverse、leettaylor、Leland、lucalves、nondebug、MattiasBuelens、knenkne、justmarkup、mmocny、mbarker84、miguelfdezc、rottina、MoosaSaadat、charpeni、patrickhlau ke, meistudioli, gangsthub, psalaets、gurtt、prajwalpoojary、richardcarrigan、rishi-raj-jain、caaatisgood、Snugug、zarahzachz、scottaohara、maliMirkec、lacolaco、tcoustil、tonypconway、travisricks、mrtuvn、Twaha-Rahman、bercly0b、shapkarin、gswetha、ilyaspir伊多诺夫, mdiblasio, meggynw, nimajafari, raminjafary, sl1673495, sxyazi, jonchenn, aardrian, NegiAkash890, aleksandr-kiliushin, Alex61NN5, asheerrizvi, cehfisher, chrishtr, davelab6, dangdennis, guiseek, junaga, hchiam, adactio, Theiaz, 卡拉, kaycebas ques, Equinusocio, theneekz, phulengo, robnyman、RoelN、imteekay、ulan、anniesullie、kjue25、simevidas、jeremyroman、kyarik、dalmaer、verlok、卡姆登、dwsmart、ericlaw1979、JackJey、Blazzike、jzern、j9t、kevinkiklee、NiedziolkaMichal、miketaylr、processprocess、foolip、Malvoz、pe佩尔斯贝,</small></p>
+
+      <p>谢谢你！</p>
+
+      <p>保罗·金兰.</p>
+    <hr><h1 class="devsite-page-title">Changes to the web.<wbr>dev infrastructure</h1>
+
+      <p>Hello, Paul here.</p>
+
+      <p>I wanted to share some news with you about this site.</p>
+
+      <p>I've taken the decision to move from a GitHub hosted version of the CMS to
+      infrastructure that's shared across a number of different teams in Google. This
+      will have an impact on how people contribute to the site, which I would like to
+      explain a little more.</p>
+
+      <p>When we first created this site we had the intent to create "your bookshelf of
+      web development". A site serving only what we thought your site needed to focus
+      on, and we built custom infrastructure that used Lighthouse mixed with 11ty—the
+      concept was very cool. As we learned how people wanted to use our site, we
+      recognized that people wanted to choose their own path through what they felt
+      was authoritative content. Therefore, we shifted to give web developers a modern
+      perspective on web development and moved the <code translate="no" dir="ltr">/measure</code> page to
+      <a href="https://pagespeed.web.dev/">pagespeed.web.dev</a>.</p>
+
+      <p>As our focus changed and our site became a content-only experience the need to
+      maintain our own infrastructure grew less important. Therefore, I recently made
+      the decision to change this site's infrastructure. I want more of our team
+      focusing on creating the guidance and tools that web developers need, while the
+      maintenance of our infrastructure can be handled by existing internal tools.</p>
+
+      <p>There are many other secondary factors, one of which is being able to hook into
+      the localization infrastructure so that we can serve the developers whose
+      primary language is not English.</p>
+
+      <p>We aim to keep a lot of the functionality the same and we will iron out any
+      kinks in the migration over the coming weeks. This change will mean there is a
+      change in our open contribution model. Instead of just opening a PR on GitHub,
+      to contribute a fix or add some new content you'll need to submit it through our
+      <a href="https://issuetracker.google.com/issues/new?component=1400680&amp;pli=1&amp;template=1857359">open issue
+      tracker</a>.
+      We are still very happy to accept contributions, but I wanted to name and
+      recognize that it will be significantly more complex for people to contribute
+      simple changes. That said, in practice, we've been either creating the vast
+      majority of content ourselves, or commissioning content (for example our
+      <a href="http://web.dev/learn">web.dev/learn</a> series of courses) from known experts in
+      the ecosystem.</p>
+
+      <p>We will keep an archive of the current site infrastructure and <a href="https://github.com/googlechrome/web.dev">content on
+      Github</a>, so if you want to see how we
+      built the site and have access to its history, you still can.</p>
+
+      <p>We will also continue to ensure that content has the <a href="https://creativecommons.org/licenses/by/4.0/">same Creative Commons
+      license</a> for all materials
+      (existing and yet to be created) so that if anyone would like to take it, modify
+      and host it themselves they can (with attribution.)</p>
+
+      <p>My intent is that I can put more effort into making this site one of the best
+      web development resources available on the web.</p>
+
+      <p>Finally, I would like to thank everyone who has contributed to this site over
+      the years. It has meant a lot to me and the team that you have put time and
+      effort into supporting this site.</p>
+
+      <p><small>1Iv4N, mysteryDate, aleventhal, aashutoshrathi, armujahid, 01abhishekjain, AdamDemirel, adamlacombe, lpmi-13, adamsilverstein, lol768, ooade, adzo261, codeAdrian, adrianholovaty, ahmadawais, gssakash, matobaa, akshayagarwal, flyinprogrammer, albajarazeth, AleksandrHovhannisyan, adueppen, agaripian, alexandersandberg, YozhEzhi, dieulot, iampava, littleli, banaag, ameer1234567890, andrealeardini, achou11, Myndex, recvfrom, AndrewKGuan, pathliving, andys8, gunayanil, AnilSeervi, anirudhganwal06, helloankit, agcolom, antoinebisch, atjn, kulakowka, anusmitaray, zuoaoyuan, arnabsen, yuvrajmahalle, tonystark93, itsashutoshhans, avisionx, AymenLoukil, azat-io, morsssss, benschwarz, thebengeu, benmcm1994, Bidfca, b2m9, BogdanCerovac, PendalF89, bslassey, cgbarros, Steffan153, ctesniere, hanselfmu, chargao, chiamakaikeanyi, cjdell, chrisdwheatley, xylo04, ChristianEdwardPadilla, connor-baer, csabapalfi, extra808, sourcediz, DamianMullins, dandclark, dfabulich, dstop75, danieltxok, Daniel-Kolev, danoc, d2s, altruity, darahak, bathos, geddski, maxolasersquad, ddworken, davidvancleve, djabif, deepansh96, Dennis273, derekherman, DharmenderRajput, diekus, Dimas-e63s, ApplY3D, krutoo, dmh, domenic, drott, beauxq, vezwork, e111077, emiliogarza, ericvera, emartini, EtherNoteWorld, 32teeth, evantd, Krutsch, piuccio, fahad19, Faisal50x, Fiszcz, Firerug, FMJansen, franktopel, xfq, mvsde, gavin667, kuhel, Guilospanck, devsnek, gernberg, Haroenv, charisTheo, harsh1868-zz, hashimaziz1, Hatlen, drakang4, agentofuser, limhenry, HolgerJeromin, hoch, hdf1986, Hydrophobefireman, idorenyinudoh, IsaacLK, iamakulov, IvanFLeon, Ivaylo-Kirov, jtangelder, kurtextrem, sairion, runjak, JakubKus, jgentes, beutnagel, JayHoltslander, freakles, halans, logut, jyasskin, jespertheend, jihchi, jimmynyny, jimmywarting, jimoong, jodydonetti, lencioni, joemcgill, jschaf, JoelGritter, josepharhar, johannes-weber, johnapost, Scoutan, jimper, justjonty, jordanbertasso, joseearias, jgutix, konojunya, Schweinepriester, kailash360, Prokos, kasra-pak, kyliau, KenjiBaheux, dosentmatter, lozandier, kidonng, klyok, koto, irori, dbaron, lakbychance, DawnGate, legilioli, leonardomerlin, lionralfs, luciomartinez, mahozad, houkanshan, majido, maxymczech, mnjit20, mbeaudru, valse, mdecorte, markpalfreeman, mvogelgesang, GameRuiner, ultrox, martenrichter, ybiquitous, Wilto, mtsgeneroso, mfalken, mattschlosser, mauriciabad, penderuk, maxlgu, mayankkt9, starkblaze01, mebinrobin, meduzen, mderazon, micnem, sevignator, mgifford, exploitmik, minseoksuh, mohamedfasil, mudssrali, gitmibrahim, laranhee, budavariam, nancymic2, nairnandu, I82Much, NielsKersic, olegsorokin, oliverdunk, oliviertassinari, omlondhe, OmarShehata, osvaldoM, Nullpo, pnavarrc, pankajmouriya, pborreli, Pascalmh, thepassle, pmeenan, paul-hph, abraham, NOtherDev, Armanio, arskama, cljazouli, ChezFre, coliff, clemenshelm, djpowers, buondevid, denisstasyev, demershov, dipiash, ekafyi, twerske, ecarlisle, felixarntz, gilbertococchi, j2kenton, josevarghese, joycetoh8, kevinfarrugia, thinkverse, leettaylor, Leland, lucalves, nondebug, MattiasBuelens, knenkne, justmarkup, mmocny, mbarker84, miguelfdezc, rottina, MoosaSaadat, charpeni, patrickhlauke, meistudioli, gangsthub, psalaets, gurtt, prajwalpoojary, richardcarrigan, rishi-raj-jain, caaatisgood, Snugug, zarahzachz, scottaohara, maliMirkec, lacolaco, tcoustil, tonypconway, travisricks, mrtuvn, Twaha-Rahman, bercly0b, shapkarin, gswetha, ilyaspiridonov, mdiblasio, meggynw, nimajafari, raminjafary, sl1673495, sxyazi, jonchenn, aardrian, NegiAkash890, aleksandr-kiliushin, Alex61NN5, asheerrizvi, cehfisher, chrishtr, davelab6, dangdennis, guiseek, junaga, hchiam, adactio, Theiaz, kara, kaycebasques, equinusocio, theneekz, phulengo, robnyman, RoelN, imteekay, ulan, anniesullie, kjue25, simevidas, jeremyroman, kyarik, dalmaer, verlok, camden, dwsmart, ericlaw1979, JackJey, Blazzike, jzern, j9t, kevinkiklee, NiedziolkaMichal, miketaylr, processprocess, foolip, Malvoz, pepelsbey, myshov, detinsley1s, Diklla, johnrich85, lweichselbaum, molaycule, sisidovski, Djuffin, rahulrao0209, web-padawan, tannerdolby, FluorescentHallucinogen, nucliweb, patrickhulce, sofiayem, kaslee, remigius42, Abhiram-Gullapalli, lizzisassman, egsweeny, connorjclark, adamraine, christianliebel, myakura, tcope25, andreban, mathiasbynens, surma, vegerot, AVGP, mgechev, nitinmalave, uskay, IvanBila, brendankenny, jh3y, mattletford, estelle, twifkak, paulirish, jakearchibald, developit, jecfish, bramus, rowan-m, RReverser, ebidel, matthiasrohmer, tropicadri, maudnals, demianrenzulli, chaficnajjar, kosamari, rviscomi, addyosmani, TimvdLippe, mamieorine, digi-booster, una, heyawhite, simgobb, housseindjirdeh, AaronForinton, mfriesenhahn, Andy-set-studio, philipwalton, petele, agektmr, mihajlija, jeffposnick, khempenius, Meggin, tunetheweb, samdutton, malchata, argyleink, beaufortfrancois, jpmedley, MichaelSolati, rachelandrew, devnook, samthor, tomayac, robdodson.</small></p>
+
+      <p>Thank you!</p>
+
+      <p>Paul Kinlan.</p>
+    ]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[九月新增网络平台]]></title>
             <link>https://web.dev/web-platform-09-2023/</link>
             <guid>https://web.dev/web-platform-09-2023/</guid>
