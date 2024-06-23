@@ -52,7 +52,7 @@ const main = async () => {
 
   async function translateContent(item: FeedParse.Item) {
     const $ = cheerio.load(item.content!);
-    const summary = await gptSummary($("body").text());
+    // const summary = await gptSummary($("body").text());
     await Promise.all(
       $("*")
         .contents()
@@ -68,10 +68,7 @@ const main = async () => {
     );
     $("body")
       .prepend(
-        `<div>
-    <h1>GPT总结</h1>
-    <summary>${summary}</summary>
-    <div>
+        `
     <div>OriginTitle: ${item.title}</div>
 
     `
