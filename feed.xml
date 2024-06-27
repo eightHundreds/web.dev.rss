@@ -4,9 +4,18 @@
         <title>web.dev: Blog</title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Wed, 29 May 2024 16:06:13 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Jun 2024 23:06:01 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[JavaScript Set 方法现在是 Baseline 的一部分]]></title>
+            <link>https://web.dev/blog/set-methods?hl=en</link>
+            <guid>https://web.dev/blog/set-methods?hl=en</guid>
+            <content:encoded><![CDATA[
+    <div>OriginTitle: The JavaScript Set methods are now part of Baseline</div>
+
+    JavaScript 集合方法（例如并集和交集）现在可以互操作，从而使集合操作变得更加容易。<hr>JavaScript set methods like union and intersection are now interoperable, making set operations easier.]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[5月份网络平台新功能]]></title>
             <link>https://web.dev/blog/web-platform-05-2024?hl=en</link>
@@ -87,15 +96,6 @@
     <div>OriginTitle: The Intl.Segmenter object is now part of Baseline</div>
 
     JavaScript Intl.Segmenter 对象现在是可互操作的，支持区域设置敏感的文本分段。<hr>The JavaScript Intl.Segmenter object is now interoperable, enabling locale-sensitive text segmentation.]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[块布局的align-content属性现在是Baseline的一部分]]></title>
-            <link>https://web.dev/blog/align-content-block?hl=en</link>
-            <guid>https://web.dev/blog/align-content-block?hl=en</guid>
-            <content:encoded><![CDATA[
-    <div>OriginTitle: The align-content property for block layouts is now part of Baseline</div>
-
-    块布局的 CSSalign-content 属性现在是新推出的 Baseline 的一部分。<hr>The CSS align-content property for block layout is now part of Baseline Newly Available.]]></content:encoded>
         </item>
     </channel>
 </rss>
