@@ -95,7 +95,7 @@
             <content:encoded><![CDATA[
     <div>OriginTitle: The Intl.Segmenter object is now part of Baseline</div>
 
-    JavaScript Intl.Segmenter 对象现在可互操作，支持区域设置敏感的文本分段。<hr>The JavaScript Intl.Segmenter object is now interoperable, enabling locale-sensitive text segmentation.]]></content:encoded>
+    JavaScript Intl.Segmenter 对象现在是可互操作的，支持区域设置敏感的文本分段。<hr>The JavaScript Intl.Segmenter object is now interoperable, enabling locale-sensitive text segmentation.]]></content:encoded>
         </item>
     </channel>
 </rss>
