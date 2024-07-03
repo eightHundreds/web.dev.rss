@@ -4,9 +4,18 @@
         <title>web.dev: Blog</title>
         <link>undefined</link>
         <description>undefined</description>
-        <lastBuildDate>Tue, 25 Jun 2024 23:06:01 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Jul 2024 18:06:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[现在如何使用容器查询]]></title>
+            <link>https://web.dev/blog/how-to-use-container-queries-now?hl=en</link>
+            <guid>https://web.dev/blog/how-to-use-container-queries-now?hl=en</guid>
+            <content:encoded><![CDATA[
+    <div>OriginTitle: How to use container queries now</div>
+
+    分步指南展示了如何使用带有跨浏览器后备的容器查询。<hr>A step-by-step guide showing how to use container queries with cross-browser fallbacks.]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[JavaScript Set 方法现在是 Baseline 的一部分]]></title>
             <link>https://web.dev/blog/set-methods?hl=en</link>
@@ -15,6 +24,15 @@
     <div>OriginTitle: The JavaScript Set methods are now part of Baseline</div>
 
     JavaScript 集合方法（例如并集和交集）现在可以互操作，从而使集合操作变得更加容易。<hr>JavaScript set methods like union and intersection are now interoperable, making set operations easier.]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[六月网络平台新功能]]></title>
+            <link>https://web.dev/blog/web-platform-06-2024?hl=en</link>
+            <guid>https://web.dev/blog/web-platform-06-2024?hl=en</guid>
+            <content:encoded><![CDATA[
+    <div>OriginTitle: New to the web platform in June</div>
+
+    了解 2024 年 6 月期间稳定版和 Beta 版网络浏览器中推出的一些有趣功能。<hr>Discover some of the interesting features that have landed in stable and beta web browsers during June 2024.]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[5月份网络平台新功能]]></title>
@@ -78,24 +96,6 @@
     <div>OriginTitle: New to the web platform in April</div>
 
     了解 2024 年 4 月稳定版和 Beta 版网络浏览器中推出的一些有趣功能。<hr>Discover some of the interesting features that have landed in stable and beta web browsers during April 2024.]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Popover API 登陆 Baseline]]></title>
-            <link>https://web.dev/blog/popover-api?hl=en</link>
-            <guid>https://web.dev/blog/popover-api?hl=en</guid>
-            <content:encoded><![CDATA[
-    <div>OriginTitle: Popover API lands in Baseline</div>
-
-    popover API 出现在所有现代浏览器引擎中。<hr>The popover API lands in all modern browser engines.]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Intl.Segmenter 对象现在是 Baseline 的一部分]]></title>
-            <link>https://web.dev/blog/intl-segmenter?hl=en</link>
-            <guid>https://web.dev/blog/intl-segmenter?hl=en</guid>
-            <content:encoded><![CDATA[
-    <div>OriginTitle: The Intl.Segmenter object is now part of Baseline</div>
-
-    JavaScript Intl.Segmenter 对象现在是可互操作的，支持区域设置敏感的文本分段。<hr>The JavaScript Intl.Segmenter object is now interoperable, enabling locale-sensitive text segmentation.]]></content:encoded>
         </item>
     </channel>
 </rss>
